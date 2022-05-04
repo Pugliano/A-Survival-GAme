@@ -1,5 +1,6 @@
 package Umani;
 
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
 /**
@@ -15,4 +16,7 @@ public class umani {
     
     public int Contatore=0;
     public int Num=1;
+    
+    public Rectangle AreaS;
+    public boolean collisioniSI=false;
 }

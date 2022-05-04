@@ -34,6 +34,7 @@ public class Pannello extends JPanel implements Runnable{
     Gestione GB=new Gestione(this);
     Tastiera tastiera=new Tastiera();
     Thread gameThread;
+    public Collisioni collis=new Collisioni(this);
     public giocatore player=new giocatore(this,tastiera);
     
     
@@ -102,4 +103,6 @@ public class Pannello extends JPanel implements Runnable{
         
         g2.dispose();
     }
+
+    
 }

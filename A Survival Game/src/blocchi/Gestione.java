@@ -15,12 +15,12 @@ import javax.imageio.ImageIO;
  */
 public class Gestione {
     Pannello p;
-    Blocchi[] blocchi;
-    int Nmappe[][];
+    public Blocchi[] blocchi;
+    public int Nmappe[][];
     
     public Gestione(Pannello p) {
         this.p=p;
-        blocchi=new Blocchi[10];
+        blocchi=new Blocchi[50];
         Nmappe=new int[p.WordCol][p.WordRig];
         
         getImmagineB();
@@ -37,13 +37,15 @@ public class Gestione {
             blocchi[1] = new Blocchi();
             blocchi[1].image = ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/erba.png"));
             
-            //acqua
+            //acqua --> solida
             blocchi[3] = new Blocchi();
             blocchi[3].image = ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/acqua.png"));
+            blocchi[3].collisioni=true;
             
-            //albero
+            //albero --> solida
             blocchi[4] = new Blocchi();
             blocchi[4].image = ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/albero.png"));
+            blocchi[4].collisioni = true;
             
             //acqua su
             blocchi[6] = new Blocchi();
@@ -69,6 +71,13 @@ public class Gestione {
             blocchi[5] = new Blocchi();
             blocchi[5].image = ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/acqua06.png"));
             
+            //acqua basso a destra
+            blocchi[10] = new Blocchi();
+            blocchi[10].image = ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/acqua08.png"));
+            
+            //acqua basso a sinistra
+            blocchi[11] = new Blocchi();
+            blocchi[11].image = ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/acqua07.png"));
         }catch(IOException e) {
             e.printStackTrace();
         }

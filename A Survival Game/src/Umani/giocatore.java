@@ -3,6 +3,7 @@ package Umani;
 import a.survival.game.Pannello;
 import a.survival.game.Tastiera;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -24,6 +25,12 @@ public class giocatore extends umani{
         
         schermoX=p.FinestraA /2-(p.FinalAP/2);
         schermoY=p.FinestraL/2-(p.FinalAP/2);
+        
+        AreaS=new Rectangle();
+        AreaS.x=8;
+        AreaS.y = 16;
+        AreaS.width = 32; 
+        AreaS.height= 32;
         
         setBasi();
         getImmagineG();
@@ -55,17 +62,34 @@ public class giocatore extends umani{
         
         if(t.su==true||t.giu==true||t.sinistra==true||t.destra==true) {
             if (t.su == true) {
-                direzione = "su";
-                Mondoy -= velocita;
+                direzione = "su";               
             } else if (t.giu == true) {
-                direzione = "giu";
-                Mondoy += velocita;
+                direzione = "giu";               
             } else if (t.sinistra == true) {
-                direzione = "sinistra";
-                Mondox -= velocita;
+                direzione = "sinistra";               
             } else if (t.destra == true) {
                 direzione = "destra";
-                Mondox += velocita;
+            }
+            
+            //collisioni blocco controlli
+            collisioniSI=false;
+            p.collis.Controlla(this);
+            
+            if(collisioniSI==false) {
+                switch(direzione) {
+                    case "su":
+                        Mondoy -= velocita;
+                        break;
+                    case "giu":
+                        Mondoy += velocita;
+                        break;
+                    case "sinistra":
+                        Mondox -= velocita;
+                        break;
+                    case "destra":
+                        Mondox += velocita;
+                        break;
+                }
             }
 
             Contatore++;
