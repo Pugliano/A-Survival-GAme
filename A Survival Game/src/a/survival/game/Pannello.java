@@ -7,6 +7,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
+import oggetti.TuttiOGG;
 
 /**
  *
@@ -35,8 +36,9 @@ public class Pannello extends JPanel implements Runnable{
     Tastiera tastiera=new Tastiera();
     Thread gameThread;
     public Collisioni collis=new Collisioni(this);
+    public SettOgg sett=new SettOgg(this);
     public giocatore player=new giocatore(this,tastiera);
-    
+    public TuttiOGG ogg[]=new TuttiOGG[10];
     
     
     
@@ -46,6 +48,10 @@ public class Pannello extends JPanel implements Runnable{
         this.setDoubleBuffered(true);
         this.addKeyListener(tastiera);
         this.setFocusable(true);
+    }
+    
+    public void setGioco() {
+        sett.setoggetto();
     }
 
     public void startGameThred() {
@@ -97,8 +103,15 @@ public class Pannello extends JPanel implements Runnable{
         
         Graphics2D g2=(Graphics2D)g;
         
+        //blocchi
         GB.draw(g2);
-        
+        //oggetti
+        for (int i = 0; i < ogg.length; i++) {
+            if(ogg[i]!=null) {
+                ogg[i].draw(g2, this);
+            }
+        }
+        //giocatore
         player.draw(g2);
         
         g2.dispose();

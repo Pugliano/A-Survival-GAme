@@ -25,6 +25,7 @@ public class ASurvivalGame {
         finestra.setLocationRelativeTo(null);
         finestra.setVisible(true);
         
+        pannello.setGioco();
         pannello.startGameThred();
         
     }

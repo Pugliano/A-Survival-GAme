@@ -33,7 +33,7 @@ public class Gestione {
             blocchi[0]=new Blocchi();
             blocchi[0].image=ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/sabbia.png"));
             
-            //terra
+            //erba
             blocchi[1] = new Blocchi();
             blocchi[1].image = ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/erba.png"));
             
@@ -50,34 +50,52 @@ public class Gestione {
             //acqua su
             blocchi[6] = new Blocchi();
             blocchi[6].image = ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/acqua01.png"));
+            blocchi[6].collisioni = true;
             
             //acqua giu
             blocchi[7] = new Blocchi();
             blocchi[7].image = ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/acqua02.png"));
+            blocchi[7].collisioni = true;
             
             //acqua destra
             blocchi[8] = new Blocchi();
             blocchi[8].image = ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/acqua03.png"));
+            blocchi[8].collisioni = true;
             
             //acqua sinistra
             blocchi[9] = new Blocchi();
             blocchi[9].image = ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/acqua04.png"));
+            blocchi[9].collisioni = true;
             
             //acqua alto a destra
             blocchi[2] = new Blocchi();
             blocchi[2].image = ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/acqua05.png"));
+            blocchi[2].collisioni = true;
             
             //acqua alto a sinistra
             blocchi[5] = new Blocchi();
             blocchi[5].image = ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/acqua06.png"));
+            blocchi[5].collisioni = true;
             
             //acqua basso a destra
             blocchi[10] = new Blocchi();
             blocchi[10].image = ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/acqua08.png"));
+            blocchi[10].collisioni = true;
             
             //acqua basso a sinistra
             blocchi[11] = new Blocchi();
             blocchi[11].image = ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/acqua07.png"));
+            blocchi[11].collisioni = true;
+            
+            //muro
+            blocchi[12] = new Blocchi();
+            blocchi[12].image = ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/muro.png"));
+            blocchi[12].collisioni = true;
+            
+            //terra
+            blocchi[13] = new Blocchi();
+            blocchi[13].image = ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/terra.png"));
+            
         }catch(IOException e) {
             e.printStackTrace();
         }
