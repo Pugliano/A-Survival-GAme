@@ -116,6 +116,7 @@ public class giocatore extends umani{
             String tipoOGG=p.ogg[i].nome;
             switch(tipoOGG) {
                 case "coltello":
+                    p.viaEFF(2);
                     coltelloSI=coltelloSI+2;
                     p.ogg[i]=null;
                     break;
@@ -124,9 +125,15 @@ public class giocatore extends umani{
                     break;
                 case "porta":
                     if(coltelloSI>0) {
+                        p.viaEFF(3);
                         p.ogg[i]=null;
                         coltelloSI--;
                     }
+                    break;
+                case "mela":
+                    p.viaEFF(1);
+                    velocita+=1;
+                    p.ogg[i]=null;
                     break;
             }
         }

@@ -24,19 +24,23 @@ public class Pannello extends JPanel implements Runnable{
     public final int FinestraA=FinalAP*AltezzaSMX; //768px->altezza
     public final int FinestraL=FinalAP*AltezzaSMY; //576px->larghezza
     
+    //impostazioni mappa
     public final int WordCol=120;
     public final int WordRig=120;
-    public final int WordA = FinalAP*WordCol;
-    public final int WordL = FinalAP*WordRig;
     
     //fps
     int fps=60;
     
+    //gioco 
     Gestione GB=new Gestione(this);
     Tastiera tastiera=new Tastiera();
-    Thread gameThread;
+    //Suoni
+    Suoni s=new Suoni();
+    //collisioni
     public Collisioni collis=new Collisioni(this);
     public SettOgg sett=new SettOgg(this);
+    Thread gameThread;
+    //umani e oggetti
     public giocatore player=new giocatore(this,tastiera);
     public TuttiOGG ogg[]=new TuttiOGG[10];
     
@@ -52,6 +56,8 @@ public class Pannello extends JPanel implements Runnable{
     
     public void setGioco() {
         sett.setoggetto();
+        
+        viaMusica(0);
     }
 
     public void startGameThred() {
@@ -117,5 +123,16 @@ public class Pannello extends JPanel implements Runnable{
         g2.dispose();
     }
 
-    
+    public void viaMusica(int i) {
+        s.setFile(i);
+        s.vai();
+        s.loop();
+    }
+    public void stopMusica() {
+        s.stop();
+    }
+    public void viaEFF(int i) {
+        s.setFile(i);
+        s.vai();
+    }
 }
