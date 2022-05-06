@@ -16,5 +16,7 @@ public class OGGcoltello extends TuttiOGG{
         }catch(IOException e) {
             e.printStackTrace();
         }
+        
+        SArea.x=5;
     }
 }

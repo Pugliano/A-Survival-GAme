@@ -15,5 +15,6 @@ public class OGGporta extends TuttiOGG{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        collisioni=true;
     }
 }

@@ -60,4 +60,44 @@ public class Collisioni {
                 break;
         }
     }
+    public int ControllaOGG(umani u, boolean giocatore) {
+        int ind=999;
+        for (int i = 0; i < p.ogg.length; i++) {
+            if(p.ogg[i]!=null) {
+                u.AreaS.x=u.Mondox+u.AreaS.x;
+                u.AreaS.y=u.Mondoy+u.AreaS.y;
+                
+                p.ogg[i].SArea.x=p.ogg[i].mondox+p.ogg[i].SArea.x;
+                p.ogg[i].SArea.y=p.ogg[i].mondoy+p.ogg[i].SArea.y;
+                
+                switch(u.direzione) {
+                    case"su":
+                        u.AreaS.y-=u.velocita;
+                        if(u.AreaS.intersects(p.ogg[i].SArea)) {
+                            System.out.println("su coll");
+                        }
+                        break;
+                    case"giu":
+                        u.AreaS.y+=u.velocita;
+                        if(u.AreaS.intersects(p.ogg[i].SArea)) {
+                            System.out.println("giu coll");
+                        }
+                        break;
+                    case"destra":
+                        u.AreaS.x+=u.velocita;
+                        if(u.AreaS.intersects(p.ogg[i].SArea)) {
+                            System.out.println("destra coll");
+                        }
+                        break;
+                    case"sinistra":
+                        u.AreaS.x-=u.velocita;
+                        if(u.AreaS.intersects(p.ogg[i].SArea)) {
+                            System.out.println("sinistra coll");
+                        }
+                        break;
+                }
+            }
+        }
+        return ind;
+    }
 }

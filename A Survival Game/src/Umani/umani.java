@@ -18,5 +18,7 @@ public class umani {
     public int Num=1;
     
     public Rectangle AreaS;
+    
+    public int AreaSX,AreaSY;
     public boolean collisioniSI=false;
 }

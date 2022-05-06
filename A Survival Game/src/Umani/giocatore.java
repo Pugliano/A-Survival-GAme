@@ -29,6 +29,8 @@ public class giocatore extends umani{
         AreaS=new Rectangle();
         AreaS.x=8;
         AreaS.y = 16;
+        AreaSX=AreaS.x;
+        AreaSY=AreaS.y;
         AreaS.width = 32; 
         AreaS.height= 32;
         

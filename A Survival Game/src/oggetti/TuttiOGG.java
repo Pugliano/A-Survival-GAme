@@ -2,6 +2,7 @@ package oggetti;
 
 import a.survival.game.Pannello;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
 /**
@@ -13,6 +14,9 @@ public class TuttiOGG {
     public String nome;
     public boolean collisioni=false;
     public int mondox,mondoy;
+    public Rectangle SArea=new Rectangle(0,0,48,48);
+    public int AreaSX=0;
+    public int AreaSY=0;
     
     public void draw(Graphics2D g2,Pannello p) {
         int schermoX = mondox - p.player.Mondox + p.player.schermoX;
