@@ -67,6 +67,7 @@ public class Collisioni {
                 u.AreaS.x=u.Mondox+u.AreaS.x;
                 u.AreaS.y=u.Mondoy+u.AreaS.y;
                 
+                //vedere posizione degli oggetti piazzati
                 p.ogg[i].SArea.x=p.ogg[i].mondox+p.ogg[i].SArea.x;
                 p.ogg[i].SArea.y=p.ogg[i].mondoy+p.ogg[i].SArea.y;
                 
@@ -74,28 +75,52 @@ public class Collisioni {
                     case"su":
                         u.AreaS.y-=u.velocita;
                         if(u.AreaS.intersects(p.ogg[i].SArea)) {
-                            System.out.println("su coll");
+                            if(p.ogg[i].collisioni==true) {
+                                u.collisioniSI=true;
+                            }
+                            if(giocatore==true) {
+                                ind=i;
+                            }
                         }
                         break;
                     case"giu":
                         u.AreaS.y+=u.velocita;
                         if(u.AreaS.intersects(p.ogg[i].SArea)) {
-                            System.out.println("giu coll");
+                            if (p.ogg[i].collisioni == true) {
+                                u.collisioniSI = true;
+                            }
+                            if (giocatore == true) {
+                                ind = i;
+                            }
+                        }
+                        break;
+                    case "sinistra":
+                        u.AreaS.x -= u.velocita;
+                        if (u.AreaS.intersects(p.ogg[i].SArea)) {
+                            if (p.ogg[i].collisioni == true) {
+                                u.collisioniSI = true;
+                            }
+                            if (giocatore == true) {
+                                ind = i;
+                            }
                         }
                         break;
                     case"destra":
                         u.AreaS.x+=u.velocita;
                         if(u.AreaS.intersects(p.ogg[i].SArea)) {
-                            System.out.println("destra coll");
+                            if (p.ogg[i].collisioni == true) {
+                                u.collisioniSI = true;
+                            }
+                            if (giocatore == true) {
+                                ind = i;
+                            }
                         }
-                        break;
-                    case"sinistra":
-                        u.AreaS.x-=u.velocita;
-                        if(u.AreaS.intersects(p.ogg[i].SArea)) {
-                            System.out.println("sinistra coll");
-                        }
-                        break;
+                    break;
                 }
+                u.AreaS.x=u.AreaSX;
+                u.AreaS.y=u.AreaSY;
+                p.ogg[i].SArea.x=p.ogg[i].AreaSX;
+                p.ogg[i].SArea.y = p.ogg[i].AreaSY;
             }
         }
         return ind;

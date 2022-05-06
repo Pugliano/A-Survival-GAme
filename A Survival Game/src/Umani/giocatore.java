@@ -18,6 +18,7 @@ public class giocatore extends umani{
     
     public final int schermoX;
     public final int schermoY;
+    int coltelloSI=0;
     
     public giocatore(Pannello p,Tastiera t) {
         this.p=p;
@@ -77,6 +78,10 @@ public class giocatore extends umani{
             collisioniSI=false;
             p.collis.Controlla(this);
             
+            //collisioni con oggetti o no
+            int indOGG = p.collis.ControllaOGG(this, true);
+            RaccogliOGG(indOGG);
+            
             if(collisioniSI==false) {
                 switch(direzione) {
                     case "su":
@@ -102,6 +107,27 @@ public class giocatore extends umani{
                     Num = 1;
                 }
                 Contatore = 0;
+            }
+        }
+    }
+    
+    public void RaccogliOGG(int i) {
+        if(i!=999) {
+            String tipoOGG=p.ogg[i].nome;
+            switch(tipoOGG) {
+                case "coltello":
+                    coltelloSI=coltelloSI+2;
+                    p.ogg[i]=null;
+                    break;
+                case "cassa":
+                    
+                    break;
+                case "porta":
+                    if(coltelloSI>0) {
+                        p.ogg[i]=null;
+                        coltelloSI--;
+                    }
+                    break;
             }
         }
     }
