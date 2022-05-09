@@ -18,6 +18,7 @@ public class Suoni {
         suonoURL[1] = getClass().getResource("/immagini/suoni/cibo.wav");
         suonoURL[2] = getClass().getResource("/immagini/suoni/coltello.wav");
         suonoURL[3] = getClass().getResource("/immagini/suoni/porta.wav");
+        suonoURL[4] = getClass().getResource("/immagini/suoni/casse.wav");
     }
     
     public void setFile(int i) {

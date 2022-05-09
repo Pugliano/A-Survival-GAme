@@ -18,7 +18,7 @@ public class giocatore extends umani{
     
     public final int schermoX;
     public final int schermoY;
-    int coltelloSI=0;
+    public int coltelloSI=0;
     
     public giocatore(Pannello p,Tastiera t) {
         this.p=p;
@@ -117,23 +117,36 @@ public class giocatore extends umani{
             switch(tipoOGG) {
                 case "coltello":
                     p.viaEFF(2);
-                    coltelloSI=coltelloSI+2;
+                    coltelloSI++;
                     p.ogg[i]=null;
+                    p.messaggi.PrintMess("Hai preso un coltellino svizzero");
                     break;
                 case "cassa":
-                    
+                    if (coltelloSI > 0) {
+                        p.viaEFF(4);
+                        p.ogg[i] = null;
+                        coltelloSI--;
+                        p.messaggi.PrintMess("Hai aperto una cassa");
+                    } else {
+                        p.messaggi.PrintMess("Ti serve il coltellino svizzero");
+                    }
                     break;
                 case "porta":
                     if(coltelloSI>0) {
                         p.viaEFF(3);
                         p.ogg[i]=null;
                         coltelloSI--;
+                        p.messaggi.PrintMess("Hai aperto la porta");
+                    }
+                    else {
+                        p.messaggi.PrintMess("Ti serve il coltellino svizzero");
                     }
                     break;
                 case "mela":
                     p.viaEFF(1);
                     velocita+=1;
                     p.ogg[i]=null;
+                    p.messaggi.PrintMess("Mela mangiata");
                     break;
             }
         }

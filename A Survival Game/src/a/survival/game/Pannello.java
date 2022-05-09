@@ -35,10 +35,14 @@ public class Pannello extends JPanel implements Runnable{
     Gestione GB=new Gestione(this);
     Tastiera tastiera=new Tastiera();
     //Suoni
-    Suoni s=new Suoni();
+    Suoni musica=new Suoni();
+    Suoni effs = new Suoni();
     //collisioni
     public Collisioni collis=new Collisioni(this);
     public SettOgg sett=new SettOgg(this);
+    //messaggi
+    public Messaggi messaggi=new Messaggi(this);
+    
     Thread gameThread;
     //umani e oggetti
     public giocatore player=new giocatore(this,tastiera);
@@ -120,19 +124,22 @@ public class Pannello extends JPanel implements Runnable{
         //giocatore
         player.draw(g2);
         
+        //messaggi
+        messaggi.draw(g2);
+        
         g2.dispose();
     }
 
     public void viaMusica(int i) {
-        s.setFile(i);
-        s.vai();
-        s.loop();
+        musica.setFile(i);
+        musica.vai();
+        musica.loop();
     }
     public void stopMusica() {
-        s.stop();
+        musica.stop();
     }
     public void viaEFF(int i) {
-        s.setFile(i);
-        s.vai();
+        effs.setFile(i);
+        effs.vai();
     }
 }

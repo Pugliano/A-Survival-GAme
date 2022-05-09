@@ -37,5 +37,9 @@ public class SettOgg {
         p.ogg[4].mondox = 24 * p.FinalAP;
         p.ogg[4].mondoy = 13 * p.FinalAP;
         
+        p.ogg[5] = new OGGcoltello();
+        p.ogg[5].mondox = 23 * p.FinalAP;
+        p.ogg[5].mondoy = 14 * p.FinalAP;
+        
     }
 }
