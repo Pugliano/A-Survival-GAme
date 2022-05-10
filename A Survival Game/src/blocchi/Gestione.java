@@ -22,10 +22,18 @@ public class Gestione {
         this.p=p;
         blocchi=new Blocchi[50];
         Nmappe=new int[p.WordCol][p.WordRig];
+        for (int i = 0; i < Nmappe.length; i++) {
+            for (int j = 0; j < Nmappe.length; j++) {
+                Nmappe[i][j]=4;
+            }
+        }
         
         getImmagineB();
         caricaM("/immagini/mappe/word.txt");
+        
     }
+
+    
     
     public void getImmagineB() {
         try {
@@ -144,7 +152,7 @@ public class Gestione {
                mondoX - p.FinalAP<p.player.Mondox+p.player.schermoX &&
                mondoY + p.FinalAP>p.player.Mondoy-p.player.schermoY &&
                mondoY - p.FinalAP<p.player.Mondoy+p.player.schermoY) {
-                g2.drawImage(blocchi[Nblocchi].image, schermoX, schermoY, p.FinalAP, p.FinalAP, null);
+               g2.drawImage(blocchi[Nblocchi].image, schermoX, schermoY, p.FinalAP, p.FinalAP, null);
             }
             
             col++;
@@ -153,7 +161,7 @@ public class Gestione {
                 col=0;
                 rig++;
                 
-            }
+            }  
         }
     }
 }

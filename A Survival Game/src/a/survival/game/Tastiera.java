@@ -9,7 +9,12 @@ import java.awt.event.KeyListener;
  */
 public class Tastiera implements KeyListener{
 
+    Pannello p;
     public boolean su,giu,sinistra,destra;
+    
+    public Tastiera(Pannello p) {
+        this.p=p;
+    }
     
     @Override
     public void keyTyped(KeyEvent e) {
@@ -34,6 +39,14 @@ public class Tastiera implements KeyListener{
         
         if (tasto == KeyEvent.VK_D) {
             destra=true;
+        }
+        
+        if (tasto == KeyEvent.VK_P) {
+            if(p.pausaG==p.pausaP) {
+                p.pausaG=p.pausaPa;
+            }else if(p.pausaG==p.pausaPa) {
+                p.pausaG=p.pausaP;
+            }
         }
     }
 

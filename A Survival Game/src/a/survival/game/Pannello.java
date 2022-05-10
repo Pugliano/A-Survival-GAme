@@ -33,7 +33,7 @@ public class Pannello extends JPanel implements Runnable{
     
     //gioco 
     Gestione GB=new Gestione(this);
-    Tastiera tastiera=new Tastiera();
+    Tastiera tastiera=new Tastiera(this);
     //Suoni
     Suoni musica=new Suoni();
     Suoni effs = new Suoni();
@@ -48,7 +48,10 @@ public class Pannello extends JPanel implements Runnable{
     public giocatore player=new giocatore(this,tastiera);
     public TuttiOGG ogg[]=new TuttiOGG[10];
     
-    
+    //pausa
+    public int pausaG;
+    public final int pausaP=1;
+    public final int pausaPa=2;
     
     public Pannello() {
         this.setPreferredSize(new Dimension(FinestraA,FinestraL));
@@ -60,8 +63,8 @@ public class Pannello extends JPanel implements Runnable{
     
     public void setGioco() {
         sett.setoggetto();
-        
         viaMusica(0);
+        pausaG=pausaP;
     }
 
     public void startGameThred() {
@@ -105,7 +108,12 @@ public class Pannello extends JPanel implements Runnable{
     }
     
     public void muovi() {
-        player.muovi();
+        if(pausaG==pausaP) {
+            player.muovi();
+        }
+        if(pausaG==pausaPa) {
+            
+        }
     }
     
     public void paintComponent(Graphics g) {
@@ -121,11 +129,13 @@ public class Pannello extends JPanel implements Runnable{
                 ogg[i].draw(g2, this);
             }
         }
+        //messaggi
+        messaggi.draw(g2);
+        
         //giocatore
         player.draw(g2);
         
-        //messaggi
-        messaggi.draw(g2);
+        
         
         g2.dispose();
     }

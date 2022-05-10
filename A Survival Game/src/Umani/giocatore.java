@@ -18,7 +18,8 @@ public class giocatore extends umani{
     
     public final int schermoX;
     public final int schermoY;
-    public int coltelloSI=0;
+    //public int coltelloSI=0;
+    int ContFermo=0;
     
     public giocatore(Pannello p,Tastiera t) {
         this.p=p;
@@ -65,7 +66,7 @@ public class giocatore extends umani{
         
         if(t.su==true||t.giu==true||t.sinistra==true||t.destra==true) {
             if (t.su == true) {
-                direzione = "su";               
+                direzione = "su";  
             } else if (t.giu == true) {
                 direzione = "giu";               
             } else if (t.sinistra == true) {
@@ -108,47 +109,18 @@ public class giocatore extends umani{
                 }
                 Contatore = 0;
             }
+        }else {
+            ContFermo++;
+            if(ContFermo==20) {
+                Num = 1;
+                ContFermo=0;
+            }
         }
     }
     
     public void RaccogliOGG(int i) {
         if(i!=999) {
-            String tipoOGG=p.ogg[i].nome;
-            switch(tipoOGG) {
-                case "coltello":
-                    p.viaEFF(2);
-                    coltelloSI++;
-                    p.ogg[i]=null;
-                    p.messaggi.PrintMess("Hai preso un coltellino svizzero");
-                    break;
-                case "cassa":
-                    if (coltelloSI > 0) {
-                        p.viaEFF(4);
-                        p.ogg[i] = null;
-                        coltelloSI--;
-                        p.messaggi.PrintMess("Hai aperto una cassa");
-                    } else {
-                        p.messaggi.PrintMess("Ti serve il coltellino svizzero");
-                    }
-                    break;
-                case "porta":
-                    if(coltelloSI>0) {
-                        p.viaEFF(3);
-                        p.ogg[i]=null;
-                        coltelloSI--;
-                        p.messaggi.PrintMess("Hai aperto la porta");
-                    }
-                    else {
-                        p.messaggi.PrintMess("Ti serve il coltellino svizzero");
-                    }
-                    break;
-                case "mela":
-                    p.viaEFF(1);
-                    velocita+=1;
-                    p.ogg[i]=null;
-                    p.messaggi.PrintMess("Mela mangiata");
-                    break;
-            }
+            
         }
     }
     
