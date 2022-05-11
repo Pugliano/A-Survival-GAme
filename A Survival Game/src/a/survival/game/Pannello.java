@@ -55,7 +55,7 @@ public class Pannello extends JPanel implements Runnable{
     
     public Pannello() {
         this.setPreferredSize(new Dimension(FinestraA,FinestraL));
-        this.setBackground(new Color(31,65,91,65));
+        this.setBackground(new Color(87, 165, 224, 206));
         this.setDoubleBuffered(true);
         this.addKeyListener(tastiera);
         this.setFocusable(true);

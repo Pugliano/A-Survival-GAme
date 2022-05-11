@@ -41,8 +41,8 @@ public class giocatore extends umani{
     }
     
     public void setBasi() {
-        Mondox=p.FinalAP*20;
-        Mondoy=p.FinalAP*13;
+        Mondox=p.FinalAP*54;
+        Mondoy=p.FinalAP*137;
         velocita=15;
         direzione="giu";
     }
