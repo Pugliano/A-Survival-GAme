@@ -1,6 +1,10 @@
 package a.survival.game;
 
 import Umani.umani;
+import blocchi.TileMenager;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  *
@@ -8,10 +12,45 @@ import Umani.umani;
  */
 public class Collisioni {
     Pannello p;
+    public int Nmappe[][];
+    TileMenager tm;
+    
     public Collisioni(Pannello p) {
         this.p=p;
+        tm=new TileMenager();
+        Nmappe=new int[p.WordCol][p.WordRig];
+        for (int i = 0; i < Nmappe.length; i++) {
+            for (int j = 0; j < Nmappe.length; j++) {
+                Nmappe[i][j]=0;
+            }
+        }
+        caricaM("/immagini/mappe/ban.txt");
     }
-    
+    public void caricaM(String file) {
+        try{
+            InputStream is = getClass().getResourceAsStream(file);
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            int col=0;
+            int rig=0;
+            while(col<p.WordCol && rig<p.WordRig) {
+                String linea=br.readLine();
+                while(col<p.WordCol) {
+                    String numeri[]=linea.split(",");
+                    
+                    int num = Integer.parseInt(numeri[col]);
+                    Nmappe[col][rig]=num;
+                    col++;
+                }
+                if(col==p.WordCol) {
+                    col=0;
+                    rig++;
+                }
+            }
+            br.close();
+        }catch(Exception e) {
+            
+        }
+    }
     public void Controlla(umani u) {
         int umaniSX=u.Mondox+u.AreaS.x;
         int umaniDX = u.Mondox + u.AreaS.x + u.AreaS.width;
@@ -24,39 +63,27 @@ public class Collisioni {
         int umaniGUR = umaniGUY / p.FinalAP;
         
         int NB1, NB2;
-        
+        int id;
         switch(u.direzione) {
             case "su":
-                umaniSUR=(umaniSUY-u.velocita)/p.FinalAP;
-                NB1=p.GB.Nmappe[umaniSC][umaniSUR];
-                NB2=p.GB.Nmappe[umaniRC][umaniSUR];
-                if(p.GB.blocchi[NB1].collisioni==true||p.GB.blocchi[NB2].collisioni==true) {
+                id = Nmappe[p.player.Mondoy/p.FinalAP-1][p.player.Mondox/p.FinalAP];
+                if(tm.getTile(id).getTileType()==1)
                     u.collisioniSI=true;
-                }
                 break;
             case "giu":
-                umaniGUR = (umaniGUY + u.velocita) / p.FinalAP;
-                NB1 = p.GB.Nmappe[umaniSC][umaniGUR];
-                NB2 = p.GB.Nmappe[umaniRC][umaniGUR];
-                if (p.GB.blocchi[NB1].collisioni == true || p.GB.blocchi[NB2].collisioni == true) {
-                    u.collisioniSI = true;
-                }
+                id = Nmappe[p.player.Mondoy/p.FinalAP+2][p.player.Mondox/p.FinalAP];
+                if(tm.getTile(id).getTileType()==1)
+                    u.collisioniSI=true;
                 break;
             case "sinistra":
-                umaniSC = (umaniSX - u.velocita) / p.FinalAP;
-                NB1 = p.GB.Nmappe[umaniSC][umaniSUR];
-                NB2 = p.GB.Nmappe[umaniSC][umaniGUR];
-                if (p.GB.blocchi[NB1].collisioni == true || p.GB.blocchi[NB2].collisioni == true) {
-                    u.collisioniSI = true;
-                }
+                id = Nmappe[p.player.Mondoy/p.FinalAP][p.player.Mondox/p.FinalAP-1];
+                if(tm.getTile(id).getTileType()==1)
+                    u.collisioniSI=true;
                 break;
             case "destra":
-                umaniRC = (umaniDX + u.velocita) / p.FinalAP;
-                NB1 = p.GB.Nmappe[umaniRC][umaniSUR];
-                NB2 = p.GB.Nmappe[umaniRC][umaniGUR];
-                if (p.GB.blocchi[NB1].collisioni == true || p.GB.blocchi[NB2].collisioni == true) {
-                    u.collisioniSI = true;
-                }
+                id = Nmappe[p.player.Mondoy/p.FinalAP][p.player.Mondox/p.FinalAP+2];
+                if(tm.getTile(id).getTileType()==1)
+                    u.collisioniSI=true;
                 break;
         }
     }

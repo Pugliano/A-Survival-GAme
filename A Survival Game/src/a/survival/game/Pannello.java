@@ -25,8 +25,8 @@ public class Pannello extends JPanel implements Runnable{
     public final int FinestraL=FinalAP*AltezzaSMY; //576px->larghezza
     
     //impostazioni mappa
-    public final int WordCol=120;
-    public final int WordRig=120;
+    public final int WordCol=150;
+    public final int WordRig=150;
     
     //fps
     int fps=60;
@@ -55,7 +55,7 @@ public class Pannello extends JPanel implements Runnable{
     
     public Pannello() {
         this.setPreferredSize(new Dimension(FinestraA,FinestraL));
-        this.setBackground(Color.cyan);
+        this.setBackground(new Color(31,65,91,65));
         this.setDoubleBuffered(true);
         this.addKeyListener(tastiera);
         this.setFocusable(true);
