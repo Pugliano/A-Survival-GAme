@@ -24,7 +24,7 @@ public class Collisioni {
                 Nmappe[i][j]=0;
             }
         }
-        caricaM("/immagini/mappe/ban.txt");
+        caricaM("/immagini/mappe/word.txt");
     }
     public void caricaM(String file) {
         try{
@@ -64,28 +64,33 @@ public class Collisioni {
         
         int NB1, NB2;
         int id;
-        switch(u.direzione) {
+        switch (u.direzione) {
             case "su":
-                id = Nmappe[p.player.Mondoy/p.FinalAP-1][p.player.Mondox/p.FinalAP];
-                if(tm.getTile(id).getTileType()==1)
-                    u.collisioniSI=true;
+                id = Nmappe[p.player.Mondox / p.FinalAP][p.player.Mondoy / p.FinalAP -1];
+                if (tm.getTile(id).getTileType() == 1) {
+                    u.collisioniSI = true;
+                }
                 break;
             case "giu":
-                id = Nmappe[p.player.Mondoy/p.FinalAP+2][p.player.Mondox/p.FinalAP];
-                if(tm.getTile(id).getTileType()==1)
-                    u.collisioniSI=true;
+                id = Nmappe[p.player.Mondox / p.FinalAP][p.player.Mondoy / p.FinalAP + 2];
+                if (tm.getTile(id).getTileType() == 1) {
+                    u.collisioniSI = true;
+                }
                 break;
             case "sinistra":
-                id = Nmappe[p.player.Mondoy/p.FinalAP][p.player.Mondox/p.FinalAP-1];
-                if(tm.getTile(id).getTileType()==1)
-                    u.collisioniSI=true;
+                id = Nmappe[p.player.Mondox / p.FinalAP - 1][p.player.Mondoy / p.FinalAP+2];
+                if (tm.getTile(id).getTileType() == 1) {
+                    u.collisioniSI = true;
+                }
                 break;
             case "destra":
-                id = Nmappe[p.player.Mondoy/p.FinalAP][p.player.Mondox/p.FinalAP+2];
-                if(tm.getTile(id).getTileType()==1)
-                    u.collisioniSI=true;
+                id = Nmappe[p.player.Mondox / p.FinalAP + 2][p.player.Mondoy / p.FinalAP];
+                if (tm.getTile(id).getTileType() == 1) {
+                    u.collisioniSI = true;
+                }
                 break;
         }
+
     }
     public int ControllaOGG(umani u, boolean giocatore) {
         int ind=999;

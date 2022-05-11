@@ -14,10 +14,9 @@ import oggetti.TuttiOGG;
  * @author Denis
  */
 public class Pannello extends JPanel implements Runnable{
+    final int altezzaP=32; //altezza del personaggio e degli npc fissi
+    final int scala=2;
     //Impostazioni dello schermo
-    final int altezzaP=16; //altezza del personaggio e degli npc fissi
-    final int scala=3;
-    
     public final int FinalAP=altezzaP*scala; //48*48
     public final int AltezzaSMX=24;
     public final int AltezzaSMY=15;

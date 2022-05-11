@@ -18,6 +18,7 @@ public class giocatore extends umani{
     
     public final int schermoX;
     public final int schermoY;
+    
     //public int coltelloSI=0;
     int ContFermo=0;
     
