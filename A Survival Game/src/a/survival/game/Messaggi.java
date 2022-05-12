@@ -58,26 +58,22 @@ public class Messaggi {
         g2.setFont(g2.getFont().deriveFont(Font.BOLD,96F));
         String testo="A Survival Game";
         int x=getXTestoCentrato(testo);
-        int y=p.FinalAP*3;
+        int y=p.FinalAP*4;
         
         //ombra
-        
         g2.setColor(new Color(181,181,181));
         g2.drawString(testo, x+5, y+5);
         
         //scritta principale
-        
         g2.setColor(Color.white);
         g2.drawString(testo, x, y);
         
         //personaggio
-        
-        x= (p.FinestraA/2)-(p.FinalAP*2);
+        x= (p.FinestraA/2)-(p.FinalAP*2)/2;
         y+=p.FinalAP*2;
         g2.drawImage(p.player.giu1, x, y, p.FinalAP*2,p.FinalAP*2,null);
         
         //menu
-        
         g2.setFont(g2.getFont().deriveFont(Font.BOLD,48F));
     
         testo = "Nuova partita";

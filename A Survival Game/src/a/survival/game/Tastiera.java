@@ -26,7 +26,6 @@ public class Tastiera implements KeyListener {
         int tasto = e.getKeyCode();
 
         //menu
-        
         if (p.pausaG == p.menuS)
         {
             if (tasto == KeyEvent.VK_UP) {
@@ -62,7 +61,6 @@ public class Tastiera implements KeyListener {
         }
         
         //gioco
-        
         if (p.pausaG == p.pausaP) {
             if (tasto == KeyEvent.VK_W) {
                 su = true;

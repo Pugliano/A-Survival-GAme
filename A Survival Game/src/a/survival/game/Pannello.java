@@ -102,8 +102,6 @@ public class Pannello extends JPanel implements Runnable{
                 conta=0;
                 timer=0;
             }
-            
-            
         }
     }
     
@@ -120,7 +118,7 @@ public class Pannello extends JPanel implements Runnable{
         super.paintComponent(g);
         
         Graphics2D g2=(Graphics2D)g;
-        
+       
         //Menu
         if(pausaG == menuS)
         {
@@ -128,25 +126,22 @@ public class Pannello extends JPanel implements Runnable{
         }
         //altro
         else{
-             //messaggi
-        messaggi.draw(g2);
+            //messaggi
+            messaggi.draw(g2);
         
-         //blocchi
-        GB.draw(g2);
-        //oggetti
-        for (int i = 0; i < ogg.length; i++) {
-            if(ogg[i]!=null) {
-                ogg[i].draw(g2, this);
+            //blocchi
+            GB.draw(g2);
+            //oggetti
+            for (int i = 0; i < ogg.length; i++) {
+                if(ogg[i]!=null) {
+                    ogg[i].draw(g2, this);
+                }
             }
+        
+            //giocatore
+            player.draw(g2);
         }
-        
-        //giocatore
-        player.draw(g2);
-        
-        }
-        
-        
-        
+       
         g2.dispose();
     }
 
