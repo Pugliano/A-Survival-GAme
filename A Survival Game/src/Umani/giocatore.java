@@ -1,5 +1,6 @@
 package Umani;
 
+import a.survival.game.UtilityTool;
 import a.survival.game.Pannello;
 import a.survival.game.Tastiera;
 import java.awt.Graphics2D;
@@ -12,80 +13,90 @@ import javax.imageio.ImageIO;
  *
  * @author Denis
  */
-public class giocatore extends umani{
+public class giocatore extends umani {
+
     Pannello p;
     Tastiera t;
-    
+
     public final int schermoX;
     public final int schermoY;
-    
+
     //public int coltelloSI=0;
-    int ContFermo=0;
-    
-    public giocatore(Pannello p,Tastiera t) {
-        this.p=p;
-        this.t=t;
-        
-        schermoX=p.FinestraA /2-(p.FinalAP/2);
-        schermoY=p.FinestraL/2-(p.FinalAP/2);
-        
-        AreaS=new Rectangle();
-        AreaS.x=8;
+    int ContFermo = 0;
+
+    public giocatore(Pannello p, Tastiera t) {
+        this.p = p;
+        this.t = t;
+
+        schermoX = p.FinestraA / 2 - (p.FinalAP / 2);
+        schermoY = p.FinestraL / 2 - (p.FinalAP / 2);
+
+        AreaS = new Rectangle();
+        AreaS.x = 8;
         AreaS.y = 16;
-        AreaSX=AreaS.x;
-        AreaSY=AreaS.y;
-        AreaS.width = 32; 
-        AreaS.height= 32;
-        
+        AreaSX = AreaS.x;
+        AreaSY = AreaS.y;
+        AreaS.width = 32;
+        AreaS.height = 32;
+
         setBasi();
         getImmagineG();
     }
-    
+
     public void setBasi() {
-        Mondox=p.FinalAP*54;
-        Mondoy=p.FinalAP*137;
-        velocita=15;
-        direzione="giu";
+        Mondox = p.FinalAP * 54;
+        Mondoy = p.FinalAP * 137;
+        velocita = 15;
+        direzione = "giu";
     }
-    
+
     public void getImmagineG() {
-        try{
-            giu1 = ImageIO.read(getClass().getResourceAsStream("/immagini/giocatore/giu1.png"));
-            giu2 = ImageIO.read(getClass().getResourceAsStream("/immagini/giocatore/giu2.png"));
-            su1 = ImageIO.read(getClass().getResourceAsStream("/immagini/giocatore/su1.png"));
-            su2 = ImageIO.read(getClass().getResourceAsStream("/immagini/giocatore/su2.png"));
-            sinistra1 = ImageIO.read(getClass().getResourceAsStream("/immagini/giocatore/sinistra1.png"));
-            sinistra2 = ImageIO.read(getClass().getResourceAsStream("/immagini/giocatore/sinistra2.png"));
-            destra1 = ImageIO.read(getClass().getResourceAsStream("/immagini/giocatore/destra1.png"));
-            destra2 = ImageIO.read(getClass().getResourceAsStream("/immagini/giocatore/destra2.png"));
-        }catch(IOException e) {
+        su1 = setup("gsu1");
+        su2 = setup("gsu2");
+        giu1 = setup("gg1");
+        giu2 = setup("gg2");
+        sinistra1 = setup("gs1");
+        sinistra2 = setup("gs2");
+        destra1 = setup("gd1");
+        destra2 = setup("gd2");
+    }
+
+    public BufferedImage setup(String Nimmagine) {
+        UtilityTool uTool = new UtilityTool();
+        BufferedImage image = null;
+
+        try {
+            image = ImageIO.read(getClass().getResourceAsStream("/immagini/giocatore/" + Nimmagine + ".png"));
+            image = uTool.Simm(image, p.FinalAP, p.FinalAP);
+        } catch (IOException e) {
             e.printStackTrace();
         }
+        return image;
     }
-    
+
     public void muovi() {
-        
-        if(t.su==true||t.giu==true||t.sinistra==true||t.destra==true) {
+
+        if (t.su == true || t.giu == true || t.sinistra == true || t.destra == true) {
             if (t.su == true) {
-                direzione = "su";  
+                direzione = "su";
             } else if (t.giu == true) {
-                direzione = "giu";               
+                direzione = "giu";
             } else if (t.sinistra == true) {
-                direzione = "sinistra";               
+                direzione = "sinistra";
             } else if (t.destra == true) {
                 direzione = "destra";
             }
-            
+
             //collisioni blocco controlli
-            collisioniSI=false;
+            collisioniSI = false;
             p.collis.Controlla(this);
-            
+
             //collisioni con oggetti o no
             int indOGG = p.collis.ControllaOGG(this, true);
             RaccogliOGG(indOGG);
-            
-            if(collisioniSI==false) {
-                switch(direzione) {
+
+            if (collisioniSI == false) {
+                switch (direzione) {
                     case "su":
                         Mondoy -= velocita;
                         break;
@@ -110,31 +121,31 @@ public class giocatore extends umani{
                 }
                 Contatore = 0;
             }
-        }else {
+        } else {
             ContFermo++;
-            if(ContFermo==20) {
+            if (ContFermo == 20) {
                 Num = 1;
-                ContFermo=0;
+                ContFermo = 0;
             }
         }
     }
-    
+
     public void RaccogliOGG(int i) {
-        if(i!=999) {
-            
+        if (i != 999) {
+
         }
     }
-    
+
     public void draw(Graphics2D g2) {
-        BufferedImage image=null;
-        
-        switch(direzione) {
+        BufferedImage image = null;
+
+        switch (direzione) {
             case "su":
-                if(Num==1) {
+                if (Num == 1) {
                     image = su1;
                 }
-                if(Num==2) {
-                    image=su2;
+                if (Num == 2) {
+                    image = su2;
                 }
                 break;
             case "giu":
@@ -162,6 +173,6 @@ public class giocatore extends umani{
                 }
                 break;
         }
-        g2.drawImage(image,schermoX,schermoY,p.FinalAP,p.FinalAP,null);
+        g2.drawImage(image, schermoX, schermoY, null);
     }
 }

@@ -137,6 +137,13 @@ public class Pannello extends JPanel implements Runnable{
                     ogg[i].draw(g2, this);
                 }
             }
+            
+            //npc
+            /*for (int i = 0; i < npc.length; i++) {
+                if (npc[i] != null) {
+                    npc[i].draw(g2);
+                }
+            }*/
         
             //giocatore
             player.draw(g2);

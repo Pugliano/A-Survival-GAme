@@ -12,22 +12,19 @@ import java.io.InputStreamReader;
  */
 public class Gestione {
     Pannello p;
-    public Blocchi[] blocchi;
     public int Nmappe[][];
     TileMenager tm;
     
     public Gestione(Pannello p) {
         tm=new TileMenager();
         this.p=p;
-        blocchi=new Blocchi[50];
         Nmappe=new int[p.WordCol][p.WordRig];
         for (int i = 0; i < Nmappe.length; i++) {
             for (int j = 0; j < Nmappe.length; j++) {
                 Nmappe[i][j]=0;
             }
         }
-        
-        //getImmagineB();
+       
         caricaM("/immagini/mappe/word.txt");
         
     }
@@ -64,8 +61,6 @@ public class Gestione {
         int rig=0;
         
         while(col<p.WordCol && rig<p.WordRig) {
-            
-            int Nblocchi = Nmappe[col][rig];
             
             int mondoX=col * p.FinalAP;
             int mondoY = rig * p.FinalAP;

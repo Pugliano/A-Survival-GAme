@@ -52,17 +52,6 @@ public class Collisioni {
         }
     }
     public void Controlla(umani u) {
-        int umaniSX=u.Mondox+u.AreaS.x;
-        int umaniDX = u.Mondox + u.AreaS.x + u.AreaS.width;
-        int umaniSUY = u.Mondoy + u.AreaS.y;
-        int umaniGUY = u.Mondoy + u.AreaS.y + u.AreaS.height;
-        
-        int umaniSC=umaniSX/p.FinalAP;
-        int umaniRC = umaniDX / p.FinalAP;
-        int umaniSUR = umaniSUY / p.FinalAP;
-        int umaniGUR = umaniGUY / p.FinalAP;
-        
-        int NB1, NB2;
         int id;
         switch (u.direzione) {
             case "su":

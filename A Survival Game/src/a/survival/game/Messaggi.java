@@ -26,7 +26,7 @@ public class Messaggi {
         this.p=p;
         Arial_40=new Font("Arial", Font.PLAIN, 40);
         Arial_80B = new Font("Arial", Font.BOLD, 80);
-        OGGcoltello col=new OGGcoltello();
+        OGGcoltello col=new OGGcoltello(p);
         //colIM=col.image;
     }
     
