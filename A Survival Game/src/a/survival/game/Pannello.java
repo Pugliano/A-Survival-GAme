@@ -49,6 +49,7 @@ public class Pannello extends JPanel implements Runnable{
     
     //pausa
     public int pausaG;
+    public final int menuS=0;
     public final int pausaP=1;
     public final int pausaPa=2;
     
@@ -63,7 +64,7 @@ public class Pannello extends JPanel implements Runnable{
     public void setGioco() {
         sett.setoggetto();
         viaMusica(0);
-        pausaG=pausaP;
+        pausaG=menuS;
     }
 
     public void startGameThred() {
@@ -120,7 +121,17 @@ public class Pannello extends JPanel implements Runnable{
         
         Graphics2D g2=(Graphics2D)g;
         
-        //blocchi
+        //Menu
+        if(pausaG == menuS)
+        {
+            messaggi.draw(g2);
+        }
+        //altro
+        else{
+             //messaggi
+        messaggi.draw(g2);
+        
+         //blocchi
         GB.draw(g2);
         //oggetti
         for (int i = 0; i < ogg.length; i++) {
@@ -128,11 +139,11 @@ public class Pannello extends JPanel implements Runnable{
                 ogg[i].draw(g2, this);
             }
         }
-        //messaggi
-        messaggi.draw(g2);
         
         //giocatore
         player.draw(g2);
+        
+        }
         
         
         
