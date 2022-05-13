@@ -77,7 +77,7 @@ public class umani {
                 break;
         }
             
-            g2.drawImage(image, schermoX, schermoY, p.FinalAP, p.FinalAP, null);
+            g2.drawImage(image, schermoX, schermoY, 48, 48, null);
         }
     }
     

@@ -7,6 +7,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.MouseEvent;
 import javax.swing.JPanel;
 import oggetti.TuttiOGG;
 
@@ -34,6 +35,7 @@ public class Pannello extends JPanel implements Runnable{
     //gioco 
     Gestione GB=new Gestione(this);
     Tastiera tastiera=new Tastiera(this);
+    Mouse mouse=new Mouse(this);
     //Suoni
     Suoni musica=new Suoni();
     Suoni effs = new Suoni();
@@ -58,6 +60,8 @@ public class Pannello extends JPanel implements Runnable{
         this.setBackground(new Color(87, 165, 224, 206));
         this.setDoubleBuffered(true);
         this.addKeyListener(tastiera);
+        this.addMouseListener(mouse);
+        this.addMouseMotionListener(mouse);
         this.setFocusable(true);
     }
     
@@ -172,5 +176,17 @@ public class Pannello extends JPanel implements Runnable{
     
     public boolean getPausa() {
         return pausa;
+    }
+    
+    public void mouseMoved(MouseEvent e) {
+        if(state==0) {
+            messaggi.mouseMoved(e);
+        }
+    }
+    
+    public void mouseClicked(MouseEvent e) {
+        if(state==0) {
+            messaggi.mouseClicked(e);
+        }
     }
 }
