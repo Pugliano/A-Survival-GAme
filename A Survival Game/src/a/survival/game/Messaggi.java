@@ -3,6 +3,8 @@ package a.survival.game;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
+import java.awt.event.MouseEvent;
 import java.text.DecimalFormat;
 import oggetti.OGGcoltello;
 
@@ -21,6 +23,10 @@ public class Messaggi {
     double tempoG;    
     DecimalFormat df=new DecimalFormat("#0.00");
     public int comandi=0;
+    private Rectangle rettangoloNuovo;
+    private Rectangle rettangoloCarica;
+    private Rectangle rettangoloEsci;
+    
     
     public Messaggi(Pannello p) {
         this.p=p;
@@ -79,6 +85,7 @@ public class Messaggi {
         testo = "Nuova partita";
         x=getXTestoCentrato(testo);
         y+=p.FinalAP*4;
+        rettangoloNuovo=new Rectangle(x, y-getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
         g2.drawString(testo, x, y);
         if (comandi==0){
             g2.drawString(">", x-p.FinalAP, y);
@@ -87,6 +94,7 @@ public class Messaggi {
         testo = "Carica partita";
         x=getXTestoCentrato(testo);
         y+=p.FinalAP;
+        rettangoloCarica=new Rectangle(x, y-getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
         g2.drawString(testo, x, y);
         if (comandi==1){
             g2.drawString(">", x-p.FinalAP, y);
@@ -95,10 +103,13 @@ public class Messaggi {
         testo = "Esci";
         x=getXTestoCentrato(testo);
         y+=p.FinalAP;
+        rettangoloEsci=new Rectangle(x, y-getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
         g2.drawString(testo, x, y);
         if (comandi==2){
             g2.drawString(">", x-p.FinalAP, y);
         }
+        
+        
     }
     
     
@@ -111,8 +122,34 @@ public class Messaggi {
     }
     
     public int getXTestoCentrato(String testo) {
-        int lunghezza = (int) g2.getFontMetrics().getStringBounds(testo, g2).getWidth();
-        int x = p.FinestraA/2 - lunghezza / 2;
-        return x;
+        return p.FinestraA/2 - getLunghezzaStringa(testo) / 2;
+    
+    }
+    
+    public int getLunghezzaStringa(String testo) {
+        return (int) g2.getFontMetrics().getStringBounds(testo, g2).getWidth();
+    }
+    
+    public int getAltezzaStringa(String testo) {
+        return (int) g2.getFontMetrics().getStringBounds(testo, g2).getHeight();
+    }
+    
+    public void mouseMoved(MouseEvent e) {
+        if (rettangoloNuovo.contains(e.getX(),e.getY()))
+            comandi=0;
+        if (rettangoloCarica.contains(e.getX(),e.getY()))
+            comandi=1;
+        if (rettangoloEsci.contains(e.getX(),e.getY()))
+            comandi=2;
+        
+    }
+    
+    public void mouseClicked(MouseEvent e) {
+        if (rettangoloNuovo.contains(e.getX(),e.getY()))
+            p.state=1;
+        if (rettangoloCarica.contains(e.getX(),e.getY()))
+            System.out.println("carica partita");
+        if (rettangoloEsci.contains(e.getX(),e.getY()))
+            System.exit(0);
     }
 }
