@@ -85,8 +85,8 @@ public class Collisioni {
         int ind=999;
         for (int i = 0; i < p.ogg.length; i++) {
             if(p.ogg[i]!=null) {
-                u.AreaS.x=u.Mondox+u.AreaS.x;
-                u.AreaS.y=u.Mondoy+u.AreaS.y;
+                u.SArea.x=u.Mondox+u.SArea.x;
+                u.SArea.y=u.Mondoy+u.SArea.y;
                 
                 //vedere posizione degli oggetti piazzati
                 p.ogg[i].SArea.x=p.ogg[i].mondox+p.ogg[i].SArea.x;
@@ -94,8 +94,8 @@ public class Collisioni {
                 
                 switch(u.direzione) {
                     case"su":
-                        u.AreaS.y-=u.velocita;
-                        if(u.AreaS.intersects(p.ogg[i].SArea)) {
+                        u.SArea.y-=u.velocita;
+                        if(u.SArea.intersects(p.ogg[i].SArea)) {
                             if(p.ogg[i].collisioni==true) {
                                 u.collisioniSI=true;
                             }
@@ -105,8 +105,8 @@ public class Collisioni {
                         }
                         break;
                     case"giu":
-                        u.AreaS.y+=u.velocita;
-                        if(u.AreaS.intersects(p.ogg[i].SArea)) {
+                        u.SArea.y+=u.velocita;
+                        if(u.SArea.intersects(p.ogg[i].SArea)) {
                             if (p.ogg[i].collisioni == true) {
                                 u.collisioniSI = true;
                             }
@@ -116,8 +116,8 @@ public class Collisioni {
                         }
                         break;
                     case "sinistra":
-                        u.AreaS.x -= u.velocita;
-                        if (u.AreaS.intersects(p.ogg[i].SArea)) {
+                        u.SArea.x -= u.velocita;
+                        if (u.SArea.intersects(p.ogg[i].SArea)) {
                             if (p.ogg[i].collisioni == true) {
                                 u.collisioniSI = true;
                             }
@@ -127,8 +127,8 @@ public class Collisioni {
                         }
                         break;
                     case"destra":
-                        u.AreaS.x+=u.velocita;
-                        if(u.AreaS.intersects(p.ogg[i].SArea)) {
+                        u.SArea.x+=u.velocita;
+                        if(u.SArea.intersects(p.ogg[i].SArea)) {
                             if (p.ogg[i].collisioni == true) {
                                 u.collisioniSI = true;
                             }
@@ -138,12 +138,103 @@ public class Collisioni {
                         }
                     break;
                 }
-                u.AreaS.x=u.AreaSX;
-                u.AreaS.y=u.AreaSY;
+                u.SArea.x=u.AreaSX;
+                u.SArea.y=u.AreaSY;
                 p.ogg[i].SArea.x=p.ogg[i].AreaSX;
                 p.ogg[i].SArea.y = p.ogg[i].AreaSY;
             }
         }
         return ind;
+    }
+    
+    //npc o nemici collisioni
+    public int ControllaU(umani u,umani[] target) {
+        int ind = 999;
+        for (int i = 0; i < target.length; i++) {
+            if (target[i] != null) {
+                u.SArea.x = u.Mondox + u.SArea.x;
+                u.SArea.y = u.Mondoy + u.SArea.y;
+
+                //vedere posizione degli oggetti piazzati
+                target[i].SArea.x = target[i].Mondox + target[i].SArea.x;
+                target[i].SArea.y = target[i].Mondoy + target[i].SArea.y;
+
+                switch (u.direzione) {
+                    case "su":
+                        u.SArea.y -= u.velocita;
+                        if (u.SArea.intersects(target[i].SArea)) {
+                            u.collisioniSI = true;
+                            ind = i;   
+                        }
+                        break;
+                    case "giu":
+                        u.SArea.y += u.velocita;
+                        if (u.SArea.intersects(target[i].SArea)) {
+                            u.collisioniSI = true;
+                            ind = i;
+                        }
+                        break;
+                    case "sinistra":
+                        u.SArea.x -= u.velocita;
+                        if (u.SArea.intersects(target[i].SArea)) {
+                            u.collisioniSI = true;
+                            ind = i;
+                        }
+                        break;
+                    case "destra":
+                        u.SArea.x += u.velocita;
+                        if (u.SArea.intersects(target[i].SArea)) {
+                            u.collisioniSI = true;
+                            ind = i;
+                        }
+                        break;
+                }
+                u.SArea.x = u.AreaSX;
+                u.SArea.y = u.AreaSY;
+                target[i].SArea.x = target[i].AreaSX;
+                target[i].SArea.y = target[i].AreaSY;
+            }
+        }
+        return ind;
+    }
+    
+    public void ControllaP(umani u) {
+        u.SArea.x = u.Mondox + u.SArea.x;
+        u.SArea.y = u.Mondoy + u.SArea.y;
+
+        //vedere posizione degli oggetti piazzati
+        p.player.SArea.x = p.player.Mondox + p.player.SArea.x;
+        p.player.SArea.y = p.player.Mondoy + p.player.SArea.y;
+
+        switch (u.direzione) {
+            case "su":
+                u.SArea.y -= u.velocita;
+                if (u.SArea.intersects(p.player.SArea)) {
+                    u.collisioniSI = true;
+                }
+                break;
+            case "giu":
+                u.SArea.y += u.velocita;
+                if (u.SArea.intersects(p.player.SArea)) {
+                    u.collisioniSI = true;
+                }
+                break;
+            case "sinistra":
+                u.SArea.x -= u.velocita;
+                if (u.SArea.intersects(p.player.SArea)) {
+                    u.collisioniSI = true;
+                }
+                break;
+            case "destra":
+                u.SArea.x += u.velocita;
+                if (u.SArea.intersects(p.player.SArea)) {
+                    u.collisioniSI = true;
+                }
+                break;
+        }
+        u.SArea.x = u.AreaSX;
+        u.SArea.y = u.AreaSY;
+        p.player.SArea.x = p.player.AreaSX;
+        p.player.SArea.y = p.player.AreaSY;
     }
 }

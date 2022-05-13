@@ -27,13 +27,13 @@ public class giocatore extends umani {
         schermoX = p.FinestraA / 2 - (p.FinalAP / 2);
         schermoY = p.FinestraL / 2 - (p.FinalAP / 2);
 
-        AreaS = new Rectangle();
-        AreaS.x = 8;
-        AreaS.y = 16;
-        AreaSX = AreaS.x;
-        AreaSY = AreaS.y;
-        AreaS.width = 32;
-        AreaS.height = 32;
+        SArea = new Rectangle();
+        SArea.x = 8;
+        SArea.y = 16;
+        AreaSX = SArea.x;
+        AreaSY = SArea.y;
+        SArea.width = 32;
+        SArea.height = 32;
 
         setBasi();
         getImmagineG();
@@ -77,32 +77,28 @@ public class giocatore extends umani {
             //collisioni con oggetti o no
             int indOGG = p.collis.ControllaOGG(this, true);
             RaccogliOGG(indOGG);
+            
+            //collisioni con npc
+            int indNPC=p.collis.ControllaU(this, p.npc);
+            interazNPC(indNPC);
 
             if (collisioniSI == false) {
                 switch (direzione) {
-                    case "su":
-                        Mondoy -= velocita;
-                        break;
-                    case "giu":
-                        Mondoy += velocita;
-                        break;
-                    case "sinistra":
-                        Mondox -= velocita;
-                        break;
-                    case "destra":
-                        Mondox += velocita;
-                        break;
+                    case "su": Mondoy -= velocita; break;
+                    case "giu": Mondoy += velocita; break;
+                    case "sinistra": Mondox -= velocita; break;
+                    case "destra": Mondox += velocita; break;
                 }
             }
 
-            Contatore++;
-            if (Contatore > 12) {
+            Contat++;
+            if (Contat > 12) {
                 if (Num == 1) {
                     Num = 2;
                 } else if (Num == 2) {
                     Num = 1;
                 }
-                Contatore = 0;
+                Contat = 0;
             }
         } else {
             ContFermo++;
@@ -116,6 +112,12 @@ public class giocatore extends umani {
     public void RaccogliOGG(int i) {
         if (i != 999) {
 
+        }
+    }
+    
+    public void interazNPC(int i) {
+        if (i != 999) {
+            System.out.println("Hit npc");
         }
     }
 

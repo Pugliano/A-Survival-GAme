@@ -1,6 +1,7 @@
 package Umani;
 
 import a.survival.game.Pannello;
+import java.util.Random;
 
 /**
  *
@@ -15,7 +16,7 @@ public class NPC_anziano extends umani{
         
         getImmagineV();
     }
-    
+ 
     public void getImmagineV() {
         su1 = setup("/immagini/npc/Vsu1");
         su2 = setup("/immagini/npc/vsu2");
@@ -25,5 +26,27 @@ public class NPC_anziano extends umani{
         sinistra2 = setup("/immagini/npc/vsinistra2");
         destra1 = setup("/immagini/npc/vdestra1");
         destra2 = setup("/immagini/npc/vdestra2");
+    }
+    
+    public void setMove() {
+        VelocitaM++;
+        if(VelocitaM==120) {
+            Random random = new Random();
+            int i =random.nextInt(100) + 1;
+
+            if (i <= 25) {
+                direzione = "su";
+            }
+            if (i > 25 && i <= 50) {
+                direzione = "giu";
+            }
+            if (i > 50 && i <= 75) {
+                direzione = "sinistra";
+            }
+            if (i > 75 && i <= 100) {
+                direzione = "destra";
+            }
+            VelocitaM=0;
+        }
     }
 }

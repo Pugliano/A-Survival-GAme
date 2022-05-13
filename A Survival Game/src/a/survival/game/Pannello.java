@@ -112,7 +112,14 @@ public class Pannello extends JPanel implements Runnable{
     
     public void muovi() {
         if(pausa==false) {
+            //giocatore
             player.muovi();
+            //npc
+            for (int i = 0; i < npc.length; i++) {
+                if(npc[i]!=null) {
+                    npc[i].muovi();
+                }
+            }
         }
     }
     
@@ -137,7 +144,6 @@ public class Pannello extends JPanel implements Runnable{
             for (int i = 0; i < npc.length; i++) {
                 if (npc[i] != null) {
                     npc[i].draw(g2);
-                    System.out.println("npc caricato");
                 }
             }
             

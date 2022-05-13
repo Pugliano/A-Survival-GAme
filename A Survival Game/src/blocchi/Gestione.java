@@ -14,6 +14,8 @@ public class Gestione {
     Pannello p;
     public int Nmappe[][];
     TileManager tm;
+    int schermoX;
+    int schermoY;
     
     public Gestione(Pannello p) {
         tm=new TileManager();
@@ -54,8 +56,7 @@ public class Gestione {
             
         }
     }
-    int schermoX;
-    int schermoY;
+    
     public void draw(Graphics2D g2) {
         int col=0;
         int rig=0;

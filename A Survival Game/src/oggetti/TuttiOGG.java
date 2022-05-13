@@ -25,7 +25,7 @@ public class TuttiOGG {
         int schermoY = mondoy - p.player.Mondoy + p.player.schermoY;
 
         if (mondox + p.FinalAP > p.player.Mondox - p.player.schermoX
-                && mondoy - p.FinalAP < p.player.Mondox + p.player.schermoX
+                && mondox - p.FinalAP < p.player.Mondox + p.player.schermoX
                 && mondoy + p.FinalAP > p.player.Mondoy - p.player.schermoY
                 && mondoy - p.FinalAP < p.player.Mondoy + p.player.schermoY) {
             g2.drawImage(image, schermoX, schermoY, p.FinalAP, p.FinalAP, null);

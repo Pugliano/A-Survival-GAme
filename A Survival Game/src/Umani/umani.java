@@ -20,16 +20,48 @@ public class umani {
     public BufferedImage  su1,su2,giu1,giu2,sinistra1,sinistra2,destra1,destra2;
     public String direzione;
     
-    public int Contatore=0;
+    public int Contat=0;
     public int Num=1;
     
-    public Rectangle AreaS=new Rectangle(0,0,48,48);
+    public Rectangle SArea=new Rectangle(0,0,48,48);
     
     public int AreaSX,AreaSY;
     public boolean collisioniSI=false;
+    public int VelocitaM=0;
     
     public umani(Pannello p) {
         this.p=p;
+    }
+    
+    public void setMove() {
+        
+    }
+    
+    public void muovi() {
+        setMove();
+        collisioniSI=false;
+        p.collis.Controlla(this);
+        p.collis.ControllaOGG(this,false);
+        p.collis.ControllaP(this);
+        
+        if (collisioniSI == false) {
+            switch (direzione) {
+                case "su": Mondoy -= velocita; break;
+                case "giu": Mondoy += velocita; break; 
+                case "sinistra": Mondox -= velocita; break;
+                case "destra": Mondox += velocita; break;
+            }
+        }
+
+        Contat++;
+        if (Contat > 12) {
+            if (Num == 1) {
+                Num = 2;
+            } else if (Num == 2) {
+                Num = 1;
+            }
+            Contat = 0;
+        }
     }
     
     public void draw(Graphics2D g2) {
@@ -37,10 +69,10 @@ public class umani {
         int schermoX = Mondox - p.player.Mondox + p.player.schermoX;
         int schermoY = Mondoy - p.player.Mondoy + p.player.schermoY;
 
-        if (Mondox + p.FinalAP > p.player.Mondox - p.player.schermoX
-                && Mondox - p.FinalAP < p.player.Mondox + p.player.schermoX
-                && Mondoy + p.FinalAP > p.player.Mondoy - p.player.schermoY
-                && Mondoy - p.FinalAP < p.player.Mondoy + p.player.schermoY) {
+        if (Mondox + p.FinalAP > p.player.Mondox - p.player.schermoX && 
+            Mondox - p.FinalAP < p.player.Mondox + p.player.schermoX && 
+            Mondoy + p.FinalAP > p.player.Mondoy - p.player.schermoY && 
+            Mondoy - p.FinalAP < p.player.Mondoy + p.player.schermoY) {
             
             switch (direzione) {
             case "su":
