@@ -29,11 +29,18 @@ public class umani {
     public boolean collisioniSI=false;
     public int VelocitaM=0;
     
+    String dialoghi[]=new String[20];
+    int Inddialoghi=0;
+    
     public umani(Pannello p) {
         this.p=p;
     }
     
     public void setMove() {
+        
+    }
+    
+    public void parla() {
         
     }
     
@@ -109,7 +116,7 @@ public class umani {
                 break;
         }
             
-            g2.drawImage(image, schermoX, schermoY, 48, 48, null);
+            g2.drawImage(image, schermoX, schermoY, 45, 45, null);
         }
     }
     

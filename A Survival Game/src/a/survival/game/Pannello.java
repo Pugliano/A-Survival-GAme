@@ -22,8 +22,8 @@ public class Pannello extends JPanel implements Runnable{
     public final int FinalAP=altezzaP*scala; //64*64
     public final int AltezzaSMX=24;
     public final int AltezzaSMY=15;
-    public final int FinestraA=FinalAP*AltezzaSMX; //768px->altezza
-    public final int FinestraL=FinalAP*AltezzaSMY; //576px->larghezza
+    public final int FinestraL=FinalAP*AltezzaSMX; //768px->altezza
+    public final int FinestraA=FinalAP*AltezzaSMY; //576px->larghezza
     
     //impostazioni mappa
     public final int WordCol=150;
@@ -34,7 +34,7 @@ public class Pannello extends JPanel implements Runnable{
     
     //gioco 
     Gestione GB=new Gestione(this);
-    Tastiera tastiera=new Tastiera(this);
+    public Tastiera tastiera=new Tastiera(this);
     Mouse mouse=new Mouse(this);
     //Suoni
     Suoni musica=new Suoni();
@@ -54,9 +54,10 @@ public class Pannello extends JPanel implements Runnable{
     //pausa
     public boolean pausa=false;
     public int state;
+    public boolean dialoghi=false;
     
     public Pannello() {
-        this.setPreferredSize(new Dimension(FinestraA,FinestraL));
+        this.setPreferredSize(new Dimension(FinestraL,FinestraL));
         this.setBackground(new Color(87, 165, 224, 206));
         this.setDoubleBuffered(true);
         this.addKeyListener(tastiera);

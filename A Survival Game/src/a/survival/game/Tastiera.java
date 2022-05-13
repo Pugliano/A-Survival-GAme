@@ -2,9 +2,6 @@ package a.survival.game;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
 
 /**
  *
@@ -13,7 +10,7 @@ import java.awt.event.MouseMotionListener;
 public class Tastiera implements KeyListener{
 
     Pannello p;
-    public boolean su, giu, sinistra, destra;
+    public boolean su, giu, sinistra, destra, enterP;
 
     public Tastiera(Pannello p) {
         this.p = p;
@@ -27,7 +24,7 @@ public class Tastiera implements KeyListener{
     @Override
     public void keyPressed(KeyEvent e) {
         int tasto = e.getKeyCode();
-
+        
         //menu
         if (p.state==0)
         {
@@ -64,7 +61,7 @@ public class Tastiera implements KeyListener{
         }
         
         //gioco
-        if (p.state==1) {
+        else if (p.state==1) {
             if (tasto == KeyEvent.VK_W) {
                 su = true;
             }
@@ -87,8 +84,20 @@ public class Tastiera implements KeyListener{
             
             if (tasto == KeyEvent.VK_ESCAPE) {
                 p.state=0;
+            } 
+            if (tasto == KeyEvent.VK_ENTER) {
+                enterP=true;
+                p.dialoghi=true;
+                p.state = 3;
             }
+        } 
+        if(p.dialoghi==true) {
+            if (tasto == KeyEvent.VK_ENTER) {
+                p.state = 1;
+                System.out.println("prova");
+            } 
         }
+        
     }
 
     @Override

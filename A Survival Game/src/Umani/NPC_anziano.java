@@ -15,6 +15,7 @@ public class NPC_anziano extends umani{
         velocita=1;
         
         getImmagineV();
+        setDialoghi();
     }
  
     public void getImmagineV() {
@@ -28,9 +29,16 @@ public class NPC_anziano extends umani{
         destra2 = setup("/immagini/npc/vdestra2");
     }
     
+    public void setDialoghi() {
+        dialoghi[0] = "Ciao";
+        dialoghi[1] = "Mi chiamo bosyz";
+        dialoghi[2] = "Sono naufragato qui 12 anni fa";
+        dialoghi[3] = "Spero che almeno tu possa andartene, io sono troppo vecchio ormai";
+    }
+    
     public void setMove() {
         VelocitaM++;
-        if(VelocitaM==120) {
+        if(VelocitaM==110) {
             Random random = new Random();
             int i =random.nextInt(100) + 1;
 
@@ -47,6 +55,29 @@ public class NPC_anziano extends umani{
                 direzione = "destra";
             }
             VelocitaM=0;
+        }
+    }
+    
+    public void parla() {
+        if(dialoghi[Inddialoghi]==null) {
+            Inddialoghi=0;
+        }
+        p.messaggi.FraseD=dialoghi[Inddialoghi];
+        Inddialoghi++;
+        
+        switch(p.player.direzione) {
+            case"su":
+                direzione="giu";
+                break;
+            case"giu":
+                direzione="su";
+                break;
+            case"sinistra":
+                direzione="destra";
+                break;
+            case"destra":
+                direzione="sinistra";
+                break;
         }
     }
 }

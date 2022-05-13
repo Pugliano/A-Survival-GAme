@@ -24,7 +24,7 @@ public class giocatore extends umani {
         super(p);
         this.t = t;
 
-        schermoX = p.FinestraA / 2 - (p.FinalAP / 2);
+        schermoX = p.FinestraL / 2 - (p.FinalAP / 2);
         schermoY = p.FinestraL / 2 - (p.FinalAP / 2);
 
         SArea = new Rectangle();
@@ -117,7 +117,11 @@ public class giocatore extends umani {
     
     public void interazNPC(int i) {
         if (i != 999) {
-            System.out.println("Hit npc");
+            if(p.tastiera.enterP==true) {
+                p.dialoghi = true;
+                p.npc[i].parla();
+            }
+            p.tastiera.enterP=false;
         }
     }
 
