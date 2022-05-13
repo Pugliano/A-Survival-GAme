@@ -1,6 +1,7 @@
 package a.survival.game;
 
 import Umani.giocatore;
+import Umani.umani;
 import blocchi.Gestione;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -17,7 +18,7 @@ public class Pannello extends JPanel implements Runnable{
     final int altezzaP=32; //altezza del personaggio e degli npc fissi
     final int scala=2;
     //Impostazioni dello schermo
-    public final int FinalAP=altezzaP*scala; //48*48
+    public final int FinalAP=altezzaP*scala; //64*64
     public final int AltezzaSMX=24;
     public final int AltezzaSMY=15;
     public final int FinestraA=FinalAP*AltezzaSMX; //768px->altezza
@@ -45,13 +46,10 @@ public class Pannello extends JPanel implements Runnable{
     Thread gameThread;
     //umani e oggetti
     public giocatore player=new giocatore(this,tastiera);
+    public umani npc[]=new umani[10];
     public TuttiOGG ogg[]=new TuttiOGG[10];
     
     //pausa
-//    public int pausaG;
-//    public final int menuS=0;
-//    public final int pausaP=1;
-//    public final int pausaPa=2;
     public boolean pausa=false;
     public int state;
     
@@ -65,6 +63,7 @@ public class Pannello extends JPanel implements Runnable{
     
     public void setGioco() {
         sett.setoggetto();
+        sett.setNpc();
         viaMusica(0);
         state=0;
     }
@@ -115,7 +114,6 @@ public class Pannello extends JPanel implements Runnable{
     
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        
         Graphics2D g2=(Graphics2D)g;
        
         //Menu
@@ -125,10 +123,19 @@ public class Pannello extends JPanel implements Runnable{
         }
         //altro
         else if(state==1){
-            
-        
             //blocchi
             GB.draw(g2);
+            
+            //giocatore
+            player.draw(g2);
+            
+            //npc
+            for (int i = 0; i < npc.length; i++) {
+                if (npc[i] != null) {
+                    npc[i].draw(g2);
+                    System.out.println("npc caricato");
+                }
+            }
             
             //messaggi
             messaggi.draw(g2);
@@ -140,15 +147,7 @@ public class Pannello extends JPanel implements Runnable{
                 }
             }
             
-            //npc
-            /*for (int i = 0; i < npc.length; i++) {
-                if (npc[i] != null) {
-                    npc[i].draw(g2);
-                }
-            }*/
-        
-            //giocatore
-            player.draw(g2);
+            
         }
        
         g2.dispose();

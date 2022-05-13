@@ -2,6 +2,7 @@ package Umani;
 
 import a.survival.game.Pannello;
 import a.survival.game.UtilityTool;
+import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -31,13 +32,60 @@ public class umani {
         this.p=p;
     }
     
+    public void draw(Graphics2D g2) {
+        BufferedImage image=null;
+        int schermoX = Mondox - p.player.Mondox + p.player.schermoX;
+        int schermoY = Mondoy - p.player.Mondoy + p.player.schermoY;
+
+        if (Mondox + p.FinalAP > p.player.Mondox - p.player.schermoX
+                && Mondox - p.FinalAP < p.player.Mondox + p.player.schermoX
+                && Mondoy + p.FinalAP > p.player.Mondoy - p.player.schermoY
+                && Mondoy - p.FinalAP < p.player.Mondoy + p.player.schermoY) {
+            
+            switch (direzione) {
+            case "su":
+                if (Num == 1) {
+                    image = su1;
+                }
+                if (Num == 2) {
+                    image = su2;
+                }
+                break;
+            case "giu":
+                if (Num == 1) {
+                    image = giu1;
+                }
+                if (Num == 2) {
+                    image = giu2;
+                }
+                break;
+            case "sinistra":
+                if (Num == 1) {
+                    image = sinistra1;
+                }
+                if (Num == 2) {
+                    image = sinistra2;
+                }
+                break;
+            case "destra":
+                if (Num == 1) {
+                    image = destra1;
+                }
+                if (Num == 2) {
+                    image = destra2;
+                }
+                break;
+        }
+            
+            g2.drawImage(image, schermoX, schermoY, p.FinalAP, p.FinalAP, null);
+        }
+    }
+    
     public BufferedImage setup(String Nimmagine) {
-        UtilityTool uTool = new UtilityTool();
         BufferedImage image = null;
 
         try {
             image = ImageIO.read(getClass().getResourceAsStream(Nimmagine + ".png"));
-            //image = uTool.Simm(image, p.FinalAP, p.FinalAP);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -61,7 +61,7 @@ public class Collisioni {
                 }
                 break;
             case "giu":
-                id = Nmappe[p.player.Mondox / p.FinalAP][p.player.Mondoy / p.FinalAP + 2];
+                id = Nmappe[p.player.Mondox / p.FinalAP+2][p.player.Mondoy / p.FinalAP+2];
                 if (tm.getTile(id).getTileType() == 1) {
                     u.collisioniSI = true;
                 }
