@@ -1,13 +1,10 @@
 package Umani;
 
-import a.survival.game.UtilityTool;
 import a.survival.game.Pannello;
 import a.survival.game.Tastiera;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 
 /**
  *

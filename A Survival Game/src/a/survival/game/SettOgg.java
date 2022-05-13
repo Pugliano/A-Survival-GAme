@@ -1,6 +1,6 @@
 package a.survival.game;
 
-import oggetti.OGGcoltello;
+import Umani.NPC_anziano;
 
 /**
  *
@@ -14,8 +14,12 @@ public class SettOgg {
     }
     
     public void setoggetto() {
-      p.ogg[0]=new OGGcoltello(p);
-      p.ogg[0].mondox=54*p.FinalAP;
-      p.ogg[0].mondoy=135*p.FinalAP;
+        
+    }
+    
+    public void setNpc() {
+        p.npc[0]=new NPC_anziano(p);
+        p.npc[0].Mondox=p.FinalAP*55;
+        p.npc[0].Mondoy=p.FinalAP*133;
     }
 }

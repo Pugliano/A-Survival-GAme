@@ -1,10 +1,6 @@
 package Umani;
 
 import a.survival.game.Pannello;
-import a.survival.game.UtilityTool;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 
 /**
  *
@@ -16,16 +12,18 @@ public class NPC_anziano extends umani{
         
         direzione="giu";
         velocita=1;
+        
+        getImmagineV();
     }
     
-    public void getImmagineG() {
-        su1 = setup("/immagini/npc/vsu1");
+    public void getImmagineV() {
+        su1 = setup("/immagini/npc/Vsu1");
         su2 = setup("/immagini/npc/vsu2");
-        giu1 = setup("/immagini/npc/vg1");
-        giu2 = setup("/immagini/npc/vg2");
+        giu1 = setup("/immagini/npc/vgiu1");
+        giu2 = setup("/immagini/npc/vgiu2");
         sinistra1 = setup("/immagini/npc/vsinistra1");
         sinistra2 = setup("/immagini/npc/vsinistra2");
-        destra1 = setup("/immagini/npc/gd1");
-        destra2 = setup("/immagini/npc/gd2");
+        destra1 = setup("/immagini/npc/vdestra1");
+        destra2 = setup("/immagini/npc/vdestra2");
     }
 }
