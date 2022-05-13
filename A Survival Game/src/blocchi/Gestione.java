@@ -13,10 +13,10 @@ import java.io.InputStreamReader;
 public class Gestione {
     Pannello p;
     public int Nmappe[][];
-    TileMenager tm;
+    TileManager tm;
     
     public Gestione(Pannello p) {
-        tm=new TileMenager();
+        tm=new TileManager();
         this.p=p;
         Nmappe=new int[p.WordCol][p.WordRig];
         for (int i = 0; i < Nmappe.length; i++) {

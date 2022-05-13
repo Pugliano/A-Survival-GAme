@@ -1,7 +1,7 @@
 package a.survival.game;
 
 import Umani.umani;
-import blocchi.TileMenager;
+import blocchi.TileManager;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -13,11 +13,11 @@ import java.io.InputStreamReader;
 public class Collisioni {
     Pannello p;
     public int Nmappe[][];
-    TileMenager tm;
+    TileManager tm;
     
     public Collisioni(Pannello p) {
         this.p=p;
-        tm=new TileMenager();
+        tm=new TileManager();
         Nmappe=new int[p.WordCol][p.WordRig];
         for (int i = 0; i < Nmappe.length; i++) {
             for (int j = 0; j < Nmappe.length; j++) {

@@ -15,7 +15,6 @@ import javax.imageio.ImageIO;
  */
 public class giocatore extends umani {
 
-    Pannello p;
     Tastiera t;
 
     public final int schermoX;
@@ -25,7 +24,7 @@ public class giocatore extends umani {
     int ContFermo = 0;
 
     public giocatore(Pannello p, Tastiera t) {
-        this.p = p;
+        super(p);
         this.t = t;
 
         schermoX = p.FinestraA / 2 - (p.FinalAP / 2);
@@ -51,27 +50,14 @@ public class giocatore extends umani {
     }
 
     public void getImmagineG() {
-        su1 = setup("gsu1");
-        su2 = setup("gsu2");
-        giu1 = setup("gg1");
-        giu2 = setup("gg2");
-        sinistra1 = setup("gs1");
-        sinistra2 = setup("gs2");
-        destra1 = setup("gd1");
-        destra2 = setup("gd2");
-    }
-
-    public BufferedImage setup(String Nimmagine) {
-        UtilityTool uTool = new UtilityTool();
-        BufferedImage image = null;
-
-        try {
-            image = ImageIO.read(getClass().getResourceAsStream("/immagini/giocatore/" + Nimmagine + ".png"));
-            //image = uTool.Simm(image, p.FinalAP, p.FinalAP);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return image;
+        su1 = setup("/immagini/giocatore/gsu1");
+        su2 = setup("/immagini/giocatore/gsu2");
+        giu1 = setup("/immagini/giocatore/gg1");
+        giu2 = setup("/immagini/giocatore/gg2");
+        sinistra1 = setup("/immagini/giocatore/gs1");
+        sinistra2 = setup("/immagini/giocatore/gs2");
+        destra1 = setup("/immagini/giocatore/gd1");
+        destra2 = setup("/immagini/giocatore/gd2");
     }
 
     public void muovi() {

@@ -11,12 +11,12 @@ import javax.imageio.ImageIO;
  *
  * @author Denis
  */
-public class TileMenager {
+public class TileManager {
     public Tile ERBA, ACQUA; //erba=0 , acqua=1,
     public BufferedImage atlas;
     public ArrayList<Tile> tiles = new ArrayList<>();
 
-    public TileMenager() {
+    public TileManager() {
         loadAtlas();
         createTiles();
     }
@@ -37,7 +37,7 @@ public class TileMenager {
         try {
             atlas = ImageIO.read(getClass().getResourceAsStream("/immagini/blocchi/atlas.png"));
         } catch (IOException ex) {
-            Logger.getLogger(TileMenager.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TileManager.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
