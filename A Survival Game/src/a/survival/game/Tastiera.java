@@ -26,7 +26,7 @@ public class Tastiera implements KeyListener {
         int tasto = e.getKeyCode();
 
         //menu
-        if (p.pausaG == p.menuS)
+        if (p.state==0)
         {
             if (tasto == KeyEvent.VK_UP) {
                 if (p.messaggi.comandi!=0)
@@ -45,7 +45,7 @@ public class Tastiera implements KeyListener {
                 {
                     case 0:
                         System.out.println("nuova partita");
-                        p.pausaG=p.pausaP;
+                        p.state=1;
                         break;
                     case 1:
                         System.out.println("carica partita");
@@ -61,7 +61,7 @@ public class Tastiera implements KeyListener {
         }
         
         //gioco
-        if (p.pausaG == p.pausaP) {
+        if (p.state==1) {
             if (tasto == KeyEvent.VK_W) {
                 su = true;
             }
@@ -79,15 +79,11 @@ public class Tastiera implements KeyListener {
             }
 
             if (tasto == KeyEvent.VK_P) {
-                if (p.pausaG == p.pausaP) {
-                    p.pausaG = p.pausaPa;
-                } else if (p.pausaG == p.pausaPa) {
-                    p.pausaG = p.pausaP;
-                }
+                p.setPausa(!p.getPausa());
             }
             
             if (tasto == KeyEvent.VK_ESCAPE) {
-                p.pausaG=p.menuS;
+                p.state=0;
             }
         }
     }

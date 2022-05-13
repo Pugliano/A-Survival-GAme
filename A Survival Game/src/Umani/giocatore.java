@@ -67,7 +67,7 @@ public class giocatore extends umani {
 
         try {
             image = ImageIO.read(getClass().getResourceAsStream("/immagini/giocatore/" + Nimmagine + ".png"));
-            image = uTool.Simm(image, p.FinalAP, p.FinalAP);
+            //image = uTool.Simm(image, p.FinalAP, p.FinalAP);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -173,6 +173,6 @@ public class giocatore extends umani {
                 }
                 break;
         }
-        g2.drawImage(image, schermoX, schermoY, null);
+        g2.drawImage(image, schermoX, schermoY,p.FinalAP, p.FinalAP, null);
     }
 }

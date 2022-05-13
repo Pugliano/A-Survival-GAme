@@ -39,16 +39,16 @@ public class Messaggi {
         this.g2=g2;
         g2.setFont(Arial_40);
         g2.setColor(Color.white);
-        if(p.pausaG == p.menuS)
+        if(p.state==0)
         {
             drawMenu();
         }
-        if(p.pausaG==p.pausaP) {
-            
+        else if(p.state==1) {
+            if(p.getPausa()) {
+                drawScrittaPausa();
+            }
         }
-        if(p.pausaG==p.pausaPa) {
-            drawScrittaPausa();
-        }   
+           
     }
     
     public void drawMenu(){

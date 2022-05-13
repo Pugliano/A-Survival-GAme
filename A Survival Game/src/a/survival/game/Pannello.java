@@ -48,10 +48,12 @@ public class Pannello extends JPanel implements Runnable{
     public TuttiOGG ogg[]=new TuttiOGG[10];
     
     //pausa
-    public int pausaG;
-    public final int menuS=0;
-    public final int pausaP=1;
-    public final int pausaPa=2;
+//    public int pausaG;
+//    public final int menuS=0;
+//    public final int pausaP=1;
+//    public final int pausaPa=2;
+    public boolean pausa=false;
+    public int state;
     
     public Pannello() {
         this.setPreferredSize(new Dimension(FinestraA,FinestraL));
@@ -64,7 +66,7 @@ public class Pannello extends JPanel implements Runnable{
     public void setGioco() {
         sett.setoggetto();
         viaMusica(0);
-        pausaG=menuS;
+        state=0;
     }
 
     public void startGameThred() {
@@ -106,11 +108,8 @@ public class Pannello extends JPanel implements Runnable{
     }
     
     public void muovi() {
-        if(pausaG==pausaP) {
+        if(pausa==false) {
             player.muovi();
-        }
-        if(pausaG==pausaPa) {
-            
         }
     }
     
@@ -120,17 +119,20 @@ public class Pannello extends JPanel implements Runnable{
         Graphics2D g2=(Graphics2D)g;
        
         //Menu
-        if(pausaG == menuS)
+        if(state==0)
         {
             messaggi.draw(g2);
         }
         //altro
-        else{
-            //messaggi
-            messaggi.draw(g2);
+        else if(state==1){
+            
         
             //blocchi
             GB.draw(g2);
+            
+            //messaggi
+            messaggi.draw(g2);
+            
             //oggetti
             for (int i = 0; i < ogg.length; i++) {
                 if(ogg[i]!=null) {
@@ -163,5 +165,13 @@ public class Pannello extends JPanel implements Runnable{
     public void viaEFF(int i) {
         effs.setFile(i);
         effs.vai();
+    }
+    
+    public void setPausa(boolean p) {
+        pausa=p;
+    }
+    
+    public boolean getPausa() {
+        return pausa;
     }
 }
