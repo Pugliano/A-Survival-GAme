@@ -166,15 +166,15 @@ public class Messaggi {
         return (int) g2.getFontMetrics().getStringBounds(testo, g2).getHeight();
     }
     
-    public void mouseMoved(MouseEvent e) {
-        if (rettangoloNuovo.contains(e.getX(),e.getY()))
-            comandi=0;
-        if (rettangoloCarica.contains(e.getX(),e.getY()))
-            comandi=1;
-        if (rettangoloEsci.contains(e.getX(),e.getY()))
-            comandi=2;
-        
-    }
+//    public void mouseMoved(MouseEvent e) {
+//        if (rettangoloNuovo.contains(e.getX(),e.getY()))
+//            comandi=0;
+//        if (rettangoloCarica.contains(e.getX(),e.getY()))
+//            comandi=1;
+//        if (rettangoloEsci.contains(e.getX(),e.getY()))
+//            comandi=2;
+//        
+//    }
     
     public void mouseClicked(MouseEvent e) {
         if (rettangoloNuovo.contains(e.getX(),e.getY()))

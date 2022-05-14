@@ -26,21 +26,21 @@ public class Pannello extends JPanel implements Runnable{
     public final int FinestraA=FinalAP*AltezzaSMY; //576px->larghezza
     
     //impostazioni mappa
-    public final int WordCol=150;
-    public final int WordRig=150;
+    public final int WordCol=50;
+    public final int WordRig=50;
     
     //fps
     int fps=60;
     
     //gioco 
-    Gestione GB=new Gestione(this);
+    Gestione gestione=new Gestione(this);
     public Tastiera tastiera=new Tastiera(this);
     Mouse mouse=new Mouse(this);
     //Suoni
     Suoni musica=new Suoni();
     Suoni effs = new Suoni();
     //collisioni
-    public Collisioni collis=new Collisioni(this);
+    public Collisioni collisioni=new Collisioni(this);
     public SettOgg sett=new SettOgg(this);
     //messaggi
     public Messaggi messaggi=new Messaggi(this);
@@ -127,40 +127,9 @@ public class Pannello extends JPanel implements Runnable{
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2=(Graphics2D)g;
-       
-        //Menu
-        if(state==0)
-        {
-            messaggi.draw(g2);
-        }
-        //altro
-        else if(state==1){
-            //blocchi
-            GB.draw(g2);
-            
-            //giocatore
-            player.draw(g2);
-            
-            //npc
-            for (int i = 0; i < npc.length; i++) {
-                if (npc[i] != null) {
-                    npc[i].draw(g2);
-                }
-            }
-            
-            //messaggi
-            messaggi.draw(g2);
-            
-            //oggetti
-            for (int i = 0; i < ogg.length; i++) {
-                if(ogg[i]!=null) {
-                    ogg[i].draw(g2, this);
-                }
-            }
-            
-            
-        }
-       
+        gestione.draw(g2);
+        
+        player.draw(g2);
         g2.dispose();
     }
 
@@ -185,11 +154,11 @@ public class Pannello extends JPanel implements Runnable{
         return pausa;
     }
     
-    public void mouseMoved(MouseEvent e) {
-        if(state==0) {
-            messaggi.mouseMoved(e);
-        }
-    }
+//    public void mouseMoved(MouseEvent e) {
+//        if(state==0) {
+//            messaggi.mouseMoved(e);
+//        }
+//    }
     
     public void mouseClicked(MouseEvent e) {
         if(state==0) {
