@@ -17,6 +17,7 @@ public class giocatore extends umani {
     public final int schermoX;
     public final int schermoY;
 
+    //public int coltelloSI=0;
     int ContFermo = 0;
 
     public giocatore(Pannello p, Tastiera t) {
@@ -26,7 +27,6 @@ public class giocatore extends umani {
         schermoX = p.FinestraL / 2 - (p.FinalAP / 2);
         schermoY = p.FinestraL / 2 - (p.FinalAP / 2);
 
-        //rettangolo collisioni degli esseri umani
         SArea = new Rectangle();
         SArea.x = 8;
         SArea.y = 16;
@@ -40,8 +40,8 @@ public class giocatore extends umani {
     }
 
     public void setBasi() {
-        mondoX = p.FinalAP * 54;
-        mondoY = p.FinalAP * 137;
+        Mondox = p.FinalAP * 54;
+        Mondoy = p.FinalAP * 137;
         velocita = 15;
         direzione = "giu";
     }
@@ -59,9 +59,7 @@ public class giocatore extends umani {
 
     public void muovi() {
 
-        if (t.su == true || t.giu == true || 
-                t.sinistra == true || t.destra == true) {
-            
+        if (t.su == true || t.giu == true || t.sinistra == true || t.destra == true) {
             if (t.su == true) {
                 direzione = "su";
             } else if (t.giu == true) {
@@ -73,34 +71,25 @@ public class giocatore extends umani {
             }
 
             //collisioni blocco controlli
-            collisioniOn = false;
-            p.collisioni.controllaCollisioni(this);
-            
-            //se le collisioni non ci sono il player si può muovere
-            if(collisioniOn==false) {
-                switch (direzione) {
-                    case "su":
-                        mondoY -= velocita;
-                        break;
-                    case "giu":
-                        mondoY += velocita;
-                        break;
-                    case "sinistra":
-                        mondoX -= velocita;
-                        break;
-                    case "destra":
-                        mondoX += velocita;
-                        break;
-                }
-            }
+            collisioniSI = false;
+            p.collis.Controlla(this);
 
             //collisioni con oggetti o no
-            int indOGG = p.collisioni.ControllaOGG(this, true);
+            int indOGG = p.collis.ControllaOGG(this, true);
             RaccogliOGG(indOGG);
             
             //collisioni con npc
-            int indNPC=p.collisioni.ControllaU(this, p.npc);
+            int indNPC=p.collis.ControllaU(this, p.npc);
             interazNPC(indNPC);
+
+            if (collisioniSI == false) {
+                switch (direzione) {
+                    case "su": Mondoy -= velocita; break;
+                    case "giu": Mondoy += velocita; break;
+                    case "sinistra": Mondox -= velocita; break;
+                    case "destra": Mondox += velocita; break;
+                }
+            }
 
             Contat++;
             if (Contat > 12) {

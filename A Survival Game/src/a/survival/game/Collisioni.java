@@ -1,6 +1,7 @@
 package a.survival.game;
 
 import Umani.umani;
+import blocchi.TileManager;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -11,65 +12,81 @@ import java.io.InputStreamReader;
  */
 public class Collisioni {
     Pannello p;
+    public int Nmappe[][];
+    TileManager tm;
     
     public Collisioni(Pannello p) {
         this.p=p;
+        tm=new TileManager();
+        Nmappe=new int[p.WordCol][p.WordRig];
+        for (int i = 0; i < Nmappe.length; i++) {
+            for (int j = 0; j < Nmappe.length; j++) {
+                Nmappe[i][j]=0;
+            }
+        }
+        caricaM("/immagini/mappe/word.txt");
     }
-
-    public void controllaCollisioni(umani u) {
-        int USMX=u.mondoX+u.SArea.x; //set bordo sinistro degli umani per le collisioni
-        int UDMX=u.mondoX+u.SArea.x+u.SArea.width; //set bordo destro degli umani per le collisioni
-        int UTMY=u.mondoY+u.SArea.y; //set bordo in alto degli umani per le collisioni
-        int UGMY=u.mondoY+u.SArea.y+u.SArea.height; //set bordo in basso degli umani per le collisioni
-    
-        int USCol=USMX/p.FinalAP; 
-        int UDCol=UDMX/p.FinalAP;
-        int UTRig=UTMY/p.FinalAP;
-        int UGRig=UGMY/p.FinalAP;
-        
-        int tileN1,tileN2;
-        
-        switch(u.direzione) {
+    public void caricaM(String file) {
+        try{
+            InputStream is = getClass().getResourceAsStream(file);
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            int col=0;
+            int rig=0;
+            while(col<p.WordCol && rig<p.WordRig) {
+                String linea=br.readLine();
+                while(col<p.WordCol) {
+                    String numeri[]=linea.split(",");
+                    
+                    int num = Integer.parseInt(numeri[col]);
+                    Nmappe[col][rig]=num;
+                    col++;
+                }
+                if(col==p.WordCol) {
+                    col=0;
+                    rig++;
+                }
+            }
+            br.close();
+        }catch(Exception e) {
+            
+        }
+    }
+    public void Controlla(umani u) {
+        int id;
+        switch (u.direzione) {
             case "su":
-//                UTRig=(UTMY-u.velocita)/p.FinalAP;
-//                tileN1=p.gestione.Nmappe[USCol][UTRig];
-//                tileN2=p.gestione.Nmappe[UDCol][UTRig];
-//                if(p.gestione.blocco[tileN1].collisioni==true||p.gestione.blocco[tileN2].collisioni==true) {
-//                    u.collisioniOn=true;
-//                }
+                id = Nmappe[p.player.Mondox / p.FinalAP][p.player.Mondoy / p.FinalAP -1];
+                if (tm.getTile(id).getTileType() == 1) {
+                    u.collisioniSI = true;
+                }
                 break;
             case "giu":
-//                UGRig = (UGMY + u.velocita) / p.FinalAP;
-//                tileN1 = p.gestione.Nmappe[USCol][UGRig];
-//                tileN2 = p.gestione.Nmappe[UDCol][UGRig];
-//                if (p.gestione.blocco[tileN1].collisioni == true || p.gestione.blocco[tileN2].collisioni == true) {
-//                    u.collisioniOn = true;
-//                }
+                id = Nmappe[p.player.Mondox / p.FinalAP+2][p.player.Mondoy / p.FinalAP+2];
+                if (tm.getTile(id).getTileType() == 1) {
+                    u.collisioniSI = true;
+                }
                 break;
             case "sinistra":
-//                USCol = (USMX - u.velocita) / p.FinalAP;
-//                tileN1 = p.gestione.Nmappe[USCol][UTRig];
-//                tileN2 = p.gestione.Nmappe[USCol][UGRig];
-//                if (p.gestione.blocco[tileN1].collisioni == true || p.gestione.blocco[tileN2].collisioni == true) {
-//                    u.collisioniOn = true;
-//                }
+                id = Nmappe[p.player.Mondox / p.FinalAP - 1][p.player.Mondoy / p.FinalAP+2];
+                if (tm.getTile(id).getTileType() == 1) {
+                    u.collisioniSI = true;
+                }
                 break;
             case "destra":
-//                UDCol = (UDMX - u.velocita) / p.FinalAP;
-//                tileN1 = p.gestione.Nmappe[UDCol][UTRig];
-//                tileN2 = p.gestione.Nmappe[UDCol][UGRig];
-//                if (p.gestione.blocco[tileN1].collisioni == true || p.gestione.blocco[tileN2].collisioni == true) {
-//                    u.collisioniOn = true;
-//                }
+                id = Nmappe[p.player.Mondox / p.FinalAP + 2][p.player.Mondoy / p.FinalAP+2];
+                if (tm.getTile(id).getTileType() == 1) {
+                    u.collisioniSI = true;
+                }
                 break;
         }
+
     }
     public int ControllaOGG(umani u, boolean giocatore) {
         int ind=999;
         for (int i = 0; i < p.ogg.length; i++) {
             if(p.ogg[i]!=null) {
-                u.SArea.x=u.mondoX+u.SArea.x;
-                u.SArea.y=u.mondoY+u.SArea.y;
+                u.SArea.x=u.Mondox+u.SArea.x;
+                u.SArea.y=u.Mondoy+u.SArea.y;
                 
                 //vedere posizione degli oggetti piazzati
                 p.ogg[i].SArea.x=p.ogg[i].mondox+p.ogg[i].SArea.x;
@@ -80,7 +97,7 @@ public class Collisioni {
                         u.SArea.y-=u.velocita;
                         if(u.SArea.intersects(p.ogg[i].SArea)) {
                             if(p.ogg[i].collisioni==true) {
-                                u.collisioniOn=true;
+                                u.collisioniSI=true;
                             }
                             if(giocatore==true) {
                                 ind=i;
@@ -91,7 +108,7 @@ public class Collisioni {
                         u.SArea.y+=u.velocita;
                         if(u.SArea.intersects(p.ogg[i].SArea)) {
                             if (p.ogg[i].collisioni == true) {
-                                u.collisioniOn = true;
+                                u.collisioniSI = true;
                             }
                             if (giocatore == true) {
                                 ind = i;
@@ -102,7 +119,7 @@ public class Collisioni {
                         u.SArea.x -= u.velocita;
                         if (u.SArea.intersects(p.ogg[i].SArea)) {
                             if (p.ogg[i].collisioni == true) {
-                                u.collisioniOn = true;
+                                u.collisioniSI = true;
                             }
                             if (giocatore == true) {
                                 ind = i;
@@ -113,7 +130,7 @@ public class Collisioni {
                         u.SArea.x+=u.velocita;
                         if(u.SArea.intersects(p.ogg[i].SArea)) {
                             if (p.ogg[i].collisioni == true) {
-                                u.collisioniOn = true;
+                                u.collisioniSI = true;
                             }
                             if (giocatore == true) {
                                 ind = i;
@@ -135,39 +152,39 @@ public class Collisioni {
         int ind = 999;
         for (int i = 0; i < target.length; i++) {
             if (target[i] != null) {
-                u.SArea.x = u.mondoX + u.SArea.x;
-                u.SArea.y = u.mondoY + u.SArea.y;
+                u.SArea.x = u.Mondox + u.SArea.x;
+                u.SArea.y = u.Mondoy + u.SArea.y;
 
                 //vedere posizione degli oggetti piazzati
-                target[i].SArea.x = target[i].mondoX + target[i].SArea.x;
-                target[i].SArea.y = target[i].mondoY + target[i].SArea.y;
+                target[i].SArea.x = target[i].Mondox + target[i].SArea.x;
+                target[i].SArea.y = target[i].Mondoy + target[i].SArea.y;
 
                 switch (u.direzione) {
                     case "su":
                         u.SArea.y -= u.velocita;
                         if (u.SArea.intersects(target[i].SArea)) {
-                            u.collisioniOn = true;
+                            u.collisioniSI = true;
                             ind = i;   
                         }
                         break;
                     case "giu":
                         u.SArea.y += u.velocita;
                         if (u.SArea.intersects(target[i].SArea)) {
-                            u.collisioniOn = true;
+                            u.collisioniSI = true;
                             ind = i;
                         }
                         break;
                     case "sinistra":
                         u.SArea.x -= u.velocita;
                         if (u.SArea.intersects(target[i].SArea)) {
-                            u.collisioniOn = true;
+                            u.collisioniSI = true;
                             ind = i;
                         }
                         break;
                     case "destra":
                         u.SArea.x += u.velocita;
                         if (u.SArea.intersects(target[i].SArea)) {
-                            u.collisioniOn = true;
+                            u.collisioniSI = true;
                             ind = i;
                         }
                         break;
@@ -182,36 +199,36 @@ public class Collisioni {
     }
     
     public void ControllaP(umani u) {
-        u.SArea.x = u.mondoX + u.SArea.x;
-        u.SArea.y = u.mondoY + u.SArea.y;
+        u.SArea.x = u.Mondox + u.SArea.x;
+        u.SArea.y = u.Mondoy + u.SArea.y;
 
         //vedere posizione degli oggetti piazzati
-        p.player.SArea.x = p.player.mondoX + p.player.SArea.x;
-        p.player.SArea.y = p.player.mondoY + p.player.SArea.y;
+        p.player.SArea.x = p.player.Mondox + p.player.SArea.x;
+        p.player.SArea.y = p.player.Mondoy + p.player.SArea.y;
 
         switch (u.direzione) {
             case "su":
                 u.SArea.y -= u.velocita;
                 if (u.SArea.intersects(p.player.SArea)) {
-                    u.collisioniOn = true;
+                    u.collisioniSI = true;
                 }
                 break;
             case "giu":
                 u.SArea.y += u.velocita;
                 if (u.SArea.intersects(p.player.SArea)) {
-                    u.collisioniOn = true;
+                    u.collisioniSI = true;
                 }
                 break;
             case "sinistra":
                 u.SArea.x -= u.velocita;
                 if (u.SArea.intersects(p.player.SArea)) {
-                    u.collisioniOn = true;
+                    u.collisioniSI = true;
                 }
                 break;
             case "destra":
                 u.SArea.x += u.velocita;
                 if (u.SArea.intersects(p.player.SArea)) {
-                    u.collisioniOn = true;
+                    u.collisioniSI = true;
                 }
                 break;
         }

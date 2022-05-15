@@ -14,17 +14,19 @@ import javax.imageio.ImageIO;
  */
 public class umani {
     Pannello p;
-    public int mondoX,mondoY;
+    public int Mondox,Mondoy;
     public int velocita;
+    
     public BufferedImage  su1,su2,giu1,giu2,sinistra1,sinistra2,destra1,destra2;
     public String direzione;
+    
     public int Contat=0;
     public int Num=1;
     
     public Rectangle SArea=new Rectangle(0,0,48,48);
     
     public int AreaSX,AreaSY;
-    public boolean collisioniOn=false;
+    public boolean collisioniSI=false;
     public int VelocitaM=0;
     
     String dialoghi[]=new String[20];
@@ -44,17 +46,17 @@ public class umani {
     
     public void muovi() {
         setMove();
-        collisioniOn=false;
-        p.collisioni.controllaCollisioni(this);
-        p.collisioni.ControllaOGG(this,false);
-        p.collisioni.ControllaP(this);
+        collisioniSI=false;
+        p.collis.Controlla(this);
+        p.collis.ControllaOGG(this,false);
+        p.collis.ControllaP(this);
         
-        if (collisioniOn == false) {
+        if (collisioniSI == false) {
             switch (direzione) {
-                case "su": mondoY -= velocita; break;
-                case "giu": mondoY += velocita; break; 
-                case "sinistra": mondoX -= velocita; break;
-                case "destra": mondoX += velocita; break;
+                case "su": Mondoy -= velocita; break;
+                case "giu": Mondoy += velocita; break; 
+                case "sinistra": Mondox -= velocita; break;
+                case "destra": Mondox += velocita; break;
             }
         }
 
@@ -71,13 +73,13 @@ public class umani {
     
     public void draw(Graphics2D g2) {
         BufferedImage image=null;
-        int schermoX = mondoX - p.player.mondoX + p.player.schermoX;
-        int schermoY = mondoY - p.player.mondoY + p.player.schermoY;
+        int schermoX = Mondox - p.player.Mondox + p.player.schermoX;
+        int schermoY = Mondoy - p.player.Mondoy + p.player.schermoY;
 
-        if (mondoX + p.FinalAP > p.player.mondoX - p.player.schermoX && 
-            mondoX - p.FinalAP < p.player.mondoX + p.player.schermoX && 
-            mondoY + p.FinalAP > p.player.mondoY - p.player.schermoY && 
-            mondoY - p.FinalAP < p.player.mondoY + p.player.schermoY) {
+        if (Mondox + p.FinalAP > p.player.Mondox - p.player.schermoX && 
+            Mondox - p.FinalAP < p.player.Mondox + p.player.schermoX && 
+            Mondoy + p.FinalAP > p.player.Mondoy - p.player.schermoY && 
+            Mondoy - p.FinalAP < p.player.Mondoy + p.player.schermoY) {
             
             switch (direzione) {
             case "su":

@@ -21,13 +21,13 @@ public class TuttiOGG {
     UtilityTool uTool=new UtilityTool();
     
     public void draw(Graphics2D g2,Pannello p) {
-        int schermoX = mondox - p.player.mondoX + p.player.schermoX;
-        int schermoY = mondoy - p.player.mondoY + p.player.schermoY;
+        int schermoX = mondox - p.player.Mondox + p.player.schermoX;
+        int schermoY = mondoy - p.player.Mondoy + p.player.schermoY;
 
-        if (mondox + p.FinalAP > p.player.mondoX - p.player.schermoX
-                && mondox - p.FinalAP < p.player.mondoX + p.player.schermoX
-                && mondoy + p.FinalAP > p.player.mondoY - p.player.schermoY
-                && mondoy - p.FinalAP < p.player.mondoY + p.player.schermoY) {
+        if (mondox + p.FinalAP > p.player.Mondox - p.player.schermoX
+                && mondox - p.FinalAP < p.player.Mondox + p.player.schermoX
+                && mondoy + p.FinalAP > p.player.Mondoy - p.player.schermoY
+                && mondoy - p.FinalAP < p.player.Mondoy + p.player.schermoY) {
             g2.drawImage(image, schermoX, schermoY, p.FinalAP, p.FinalAP, null);
         }
     }
