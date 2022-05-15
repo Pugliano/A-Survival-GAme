@@ -20,6 +20,7 @@ public class SettOgg {
     public void setNpc() {
         p.npc[0]=new NPC_anziano(p);
         p.npc[0].Mondox=p.FinalAP*55;
-        p.npc[0].Mondoy=p.FinalAP*133;
+        p.npc[0].Mondoy=p.FinalAP*93;
+        p.npc[0].collisioniSI=true;
     }
 }

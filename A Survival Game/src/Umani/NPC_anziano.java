@@ -38,7 +38,7 @@ public class NPC_anziano extends umani{
     
     public void setMove() {
         VelocitaM++;
-        if(VelocitaM==110) {
+        if(VelocitaM==50) {
             Random random = new Random();
             int i =random.nextInt(100) + 1;
 

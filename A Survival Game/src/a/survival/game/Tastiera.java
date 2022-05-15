@@ -86,15 +86,15 @@ public class Tastiera implements KeyListener{
                 p.state=0;
             } 
             if (tasto == KeyEvent.VK_ENTER) {
-                enterP=true;
-                p.dialoghi=true;
                 p.state = 3;
             }
         } 
-        if(p.dialoghi==true) {
+        
+        //parla con npc
+        if(p.state==3) {
             if (tasto == KeyEvent.VK_ENTER) {
+                enterP=true;
                 p.state = 1;
-                System.out.println("prova");
             } 
         }
         
