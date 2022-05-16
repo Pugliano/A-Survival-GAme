@@ -31,9 +31,9 @@ public class NPC_anziano extends umani{
     
     public void setDialoghi() {
         dialoghi[0] = "Ciao";
-        dialoghi[1] = "Mi chiamo bosyz";
+        dialoghi[1] = "Sono un fantasma";
         dialoghi[2] = "Sono naufragato qui 12 anni fa";
-        dialoghi[3] = "Spero che almeno tu possa andartene, io sono troppo vecchio ormai";
+        dialoghi[3] = "Spero che almeno tu possa andartene ma stai attento, non siamo gli unici su questa isola";
     }
     
     public void setMove() {
@@ -59,25 +59,6 @@ public class NPC_anziano extends umani{
     }
     
     public void parla() {
-        if(dialoghi[Inddialoghi]==null) {
-            Inddialoghi=0;
-        }
-        p.messaggi.FraseD=dialoghi[Inddialoghi];
-        Inddialoghi++;
-        
-        switch(p.player.direzione) {
-            case"su":
-                direzione="giu";
-                break;
-            case"giu":
-                direzione="su";
-                break;
-            case"sinistra":
-                direzione="destra";
-                break;
-            case"destra":
-                direzione="sinistra";
-                break;
-        }
+        super.parla();
     }
 }

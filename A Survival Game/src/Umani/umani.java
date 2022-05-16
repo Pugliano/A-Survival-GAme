@@ -29,6 +29,10 @@ public class umani {
     public boolean collisioniSI=false;
     public int VelocitaM=0;
     
+    //vita giocatore
+    public int VitaMax;
+    public int vita;
+    
     String dialoghi[]=new String[20];
     int Inddialoghi=0;
     
@@ -41,7 +45,26 @@ public class umani {
     }
     
     public void parla() {
-        
+        if (dialoghi[Inddialoghi] == null) {
+            Inddialoghi = 0;
+        }
+        p.messaggi.FraseD = dialoghi[Inddialoghi];
+        Inddialoghi++;
+
+        switch (p.player.direzione) {
+            case "su":
+                direzione = "giu";
+                break;
+            case "giu":
+                direzione = "su";
+                break;
+            case "sinistra":
+                direzione = "destra";
+                break;
+            case "destra":
+                direzione = "sinistra";
+                break;
+        }
     }
     
     public void muovi() {

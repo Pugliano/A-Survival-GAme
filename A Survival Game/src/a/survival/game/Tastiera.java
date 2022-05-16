@@ -24,6 +24,7 @@ public class Tastiera implements KeyListener{
     @Override
     public void keyPressed(KeyEvent e) {
         int tasto = e.getKeyCode();
+        enterP=false;
         
         //menu
         if (p.state==0)
@@ -94,8 +95,9 @@ public class Tastiera implements KeyListener{
         if(p.state==3) {
             if (tasto == KeyEvent.VK_ENTER) {
                 enterP=true;
+                
                 p.state = 1;
-            } 
+            }
         }
         
     }

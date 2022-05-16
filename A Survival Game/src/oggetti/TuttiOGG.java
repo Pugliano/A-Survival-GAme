@@ -11,7 +11,7 @@ import java.awt.image.BufferedImage;
  * @author Denis
  */
 public class TuttiOGG {
-    public BufferedImage image;
+    public BufferedImage image,image2,image3;
     public String nome;
     public boolean collisioni=false;
     public int mondox,mondoy;

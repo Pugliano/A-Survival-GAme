@@ -6,8 +6,11 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 import java.text.DecimalFormat;
 import oggetti.OGGcoltello;
+import oggetti.OGGcuore;
+import oggetti.TuttiOGG;
 
 /**
  *
@@ -17,6 +20,7 @@ public class Messaggi {
     Pannello p;
     Graphics2D g2;
     Font Arial_40, Arial_80B;
+    BufferedImage cuore_b,cuore_p,cuore_m;
     public boolean messON=false;
     public String messag="";
     int messT=0;
@@ -31,9 +35,13 @@ public class Messaggi {
     
     public Messaggi(Pannello p) {
         this.p=p;
-        Arial_40=new Font("Arial", Font.PLAIN, 40);
+        Arial_40=new Font("Cambria", Font.PLAIN, 40);
         Arial_80B = new Font("Arial", Font.BOLD, 80);
-        OGGcoltello col=new OGGcoltello(p);
+        
+        TuttiOGG cuore=new OGGcuore(p);
+        cuore_m=cuore.image;
+        cuore_p = cuore.image2;
+        cuore_b = cuore.image3;
     }
     
     public void PrintMess(String testo) {
@@ -53,13 +61,46 @@ public class Messaggi {
         }
         //pausa
         else if(p.state==1) {
+            drawVitaPlayer();
             if(p.getPausa()) {
                 drawScrittaPausa();
             }
         }
         //dialoghi
         if(p.dialoghi==true) {
+            drawVitaPlayer();
             drawDialoghi();
+        }
+    }
+    
+    public void drawVitaPlayer() {
+        p.player.vita=2;
+        
+        int x=p.FinalAP/2;
+        int y=p.FinalAP/2;
+        int i=0;
+        
+        //vita max
+        while(i<p.player.VitaMax/2) {
+            g2.drawImage(cuore_b, x,y, null);
+            i++;
+            x+=p.FinalAP;
+        }
+        
+        //reset
+        x = p.FinalAP / 2;
+        y = p.FinalAP / 2;
+        i = 0;
+        
+        //vita 
+        while (i < p.player.vita) {
+            g2.drawImage(cuore_m, x, y, null);
+            i++;
+            if(i<p.player.vita) {
+                g2.drawImage(cuore_p, x, y, null);
+            }
+            i++;
+            x+=p.FinalAP;
         }
     }
     
@@ -136,10 +177,14 @@ public class Messaggi {
         drawDialoghiF(x,y,larghezza,altezza);
         
         //frase
-        g2.setFont(g2.getFont().deriveFont(Font.PLAIN,32F));
+        g2.setFont(g2.getFont().deriveFont(Font.PLAIN,28F));
         x+=p.FinalAP;
         y+=p.FinalAP;
-        g2.drawString(FraseD,x,y);
+        
+        for(String linea:FraseD.split("\n")) {
+            g2.drawString(FraseD, x, y);
+            y+=40;
+        }
     }
     
     public void drawDialoghiF(int x,int y,int larghezza,int altezza) {

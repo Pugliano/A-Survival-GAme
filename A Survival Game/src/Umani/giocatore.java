@@ -44,6 +44,10 @@ public class giocatore extends umani {
         Mondoy = p.FinalAP * 137;
         velocita = 15;
         direzione = "giu";
+        
+        //vita
+        VitaMax=6;
+        vita=VitaMax;
     }
 
     public void getImmagineG() {
