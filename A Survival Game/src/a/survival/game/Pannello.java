@@ -49,7 +49,7 @@ public class Pannello extends JPanel implements Runnable{
     //umani e oggetti
     public giocatore player=new giocatore(this,tastiera);
     public umani npc[]=new umani[10];
-    public TuttiOGG ogg[]=new TuttiOGG[10];
+    public TuttiOGG ogg[]=new TuttiOGG[50];
     
     //pausa
     public boolean pausa=false;
@@ -138,8 +138,7 @@ public class Pannello extends JPanel implements Runnable{
             //blocchi
             GB.draw(g2);
             
-            //giocatore
-            player.draw(g2);
+            
             
             //npc
             for (int i = 0; i < npc.length; i++) {
@@ -158,7 +157,8 @@ public class Pannello extends JPanel implements Runnable{
                 }
             }
             
-            
+            //giocatore
+            player.draw(g2);
         }
        
         g2.dispose();
