@@ -23,7 +23,9 @@ public class Mouse implements MouseListener, MouseMotionListener{
     
     @Override
     public void mouseClicked(MouseEvent e) {
-        p.mouseClicked(e);
+        if (p.state == p.menu) {
+            p.messaggi.mouseClicked(e);
+        }
     }
 
     @Override
@@ -53,7 +55,9 @@ public class Mouse implements MouseListener, MouseMotionListener{
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        p.mouseMoved(e);
+        if (p.state == p.menu) {
+            p.messaggi.mouseMoved(e);
+        }
     }
     
 }
