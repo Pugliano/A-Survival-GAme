@@ -7,7 +7,10 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 import oggetti.TuttiOGG;
 
@@ -22,14 +25,19 @@ public class Pannello extends JPanel implements Runnable {
 
     //Impostazioni dello schermo
     public final int FinalAP = altezzaP * scala; //64*64
-    public final int AltezzaSMX = 24;
-    public final int AltezzaSMY = 15;
+    public final int AltezzaSMX = 16;
+    public final int AltezzaSMY = 9;
     public final int FinestraL = FinalAP * AltezzaSMX; //768px->altezza
     public final int FinestraA = FinalAP * AltezzaSMY; //576px->larghezza
 
     //impostazioni mappa
     public final int WordCol = 150;
     public final int WordRig = 150;
+    //schermo intero
+    int IntFinestraL=FinestraL;
+    int IntFinestraA=FinestraA;
+    BufferedImage schermoTemp;
+    Graphics2D g2;
 
     //fps
     int fps = 60;
@@ -80,9 +88,15 @@ public class Pannello extends JPanel implements Runnable {
         sett.setNpc();
         viaMusica(0);
         state = menu;
+        
+        
+        //schermo temporaneo
+        schermoTemp=new BufferedImage(FinestraL, FinestraA, BufferedImage.TYPE_INT_ARGB);
+        g2 = (Graphics2D) schermoTemp.getGraphics();
+        schermoIntero();
     }
 
-    public void startGameThred() {
+    public void startGameThread() {
         gameThread = new Thread(this);
         gameThread.start();
     }
@@ -107,7 +121,8 @@ public class Pannello extends JPanel implements Runnable {
 
             if (delta >= 1) {
                 muovi();
-                repaint();
+                drawSchermoTemp();
+                drawSchermo();
                 delta--;
                 conta++;
             }
@@ -132,11 +147,8 @@ public class Pannello extends JPanel implements Runnable {
             }
         }
     }
-
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        Graphics2D g2 = (Graphics2D) g;
-
+    
+    public void drawSchermoTemp(){
         //Menu
         if (state == menu) {
             messaggi.draw(g2);
@@ -165,8 +177,21 @@ public class Pannello extends JPanel implements Runnable {
             //giocatore
             player.draw(g2);
         }
-
-        g2.dispose();
+    }
+    
+    public void drawSchermo()
+    {
+        Graphics g = getGraphics();
+        g.drawImage(schermoTemp, 0, 0, IntFinestraL, IntFinestraA, null);
+    }
+    
+    public void schermoIntero()
+    {
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        GraphicsDevice gd = ge.getDefaultScreenDevice();
+        gd.setFullScreenWindow(ASurvivalGame.finestra);
+        IntFinestraL=ASurvivalGame.finestra.getWidth();
+        IntFinestraA=ASurvivalGame.finestra.getHeight();
     }
 
     public void viaMusica(int i) {

@@ -7,17 +7,20 @@ import java.util.Random;
  *
  * @author Andrea
  */
-public class NPC_anziano extends umani{
+public class NPC_anziano extends umani {
+
+    Pannello p;
+
     public NPC_anziano(Pannello p) {
         super(p);
-        
-        direzione="giu";
-        velocita=1;
-        
+        this.p = p;
+        direzione = "giu";
+        velocita = 1;
+
         getImmagineV();
         setDialoghi();
     }
- 
+
     public void getImmagineV() {
         su1 = setup("/immagini/npc/Vsu1");
         su2 = setup("/immagini/npc/vsu2");
@@ -28,36 +31,41 @@ public class NPC_anziano extends umani{
         destra1 = setup("/immagini/npc/vdestra1");
         destra2 = setup("/immagini/npc/vdestra2");
     }
-    
+
     public void setDialoghi() {
         dial[0] = "Ciao";
         dial[1] = "Sono un fantasma";
         dial[2] = "Sono naufragato qui 12 anni fa";
         dial[3] = "Spero che almeno tu possa andartene ma stai attento, non siamo gli unici su questa isola";
     }
-    
-    public void setMove() {
-        VelocitaM++;
-        if(VelocitaM==50) {
-            Random random = new Random();
-            int i =random.nextInt(100) + 1;
 
-            if (i <= 25) {
-                direzione = "su";
+    public void setMove() {
+        if (p.state == p.dialoghi) {
+            
+        } 
+        else {
+            VelocitaM++;
+            if (VelocitaM == 50) {
+                Random random = new Random();
+                int i = random.nextInt(100) + 1;
+
+                if (i <= 25) {
+                    direzione = "su";
+                }
+                if (i > 25 && i <= 50) {
+                    direzione = "giu";
+                }
+                if (i > 50 && i <= 75) {
+                    direzione = "sinistra";
+                }
+                if (i > 75 && i <= 100) {
+                    direzione = "destra";
+                }
+                VelocitaM = 0;
             }
-            if (i > 25 && i <= 50) {
-                direzione = "giu";
-            }
-            if (i > 50 && i <= 75) {
-                direzione = "sinistra";
-            }
-            if (i > 75 && i <= 100) {
-                direzione = "destra";
-            }
-            VelocitaM=0;
         }
     }
-    
+
     public void parla() {
         super.parla();
     }

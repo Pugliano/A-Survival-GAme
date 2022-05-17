@@ -8,14 +8,14 @@ import javax.swing.JFrame;
  */
 public class ASurvivalGame {
 
-    /**
-     * @param args the command line arguments
-     */
+    public static JFrame finestra;
+            
     public static void main(String[] args) {
-        JFrame finestra=new JFrame();
+        finestra=new JFrame();
         finestra.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         finestra.setResizable(false);
         finestra.setTitle("A Survival Game");
+        finestra.setUndecorated(true);
         
         Pannello pannello = new Pannello();
         finestra.add(pannello);
@@ -26,7 +26,7 @@ public class ASurvivalGame {
         finestra.setVisible(true);
         
         pannello.setGioco();
-        pannello.startGameThred();
+        pannello.startGameThread();
         
     }
     

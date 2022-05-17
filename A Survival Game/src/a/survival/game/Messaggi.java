@@ -226,12 +226,14 @@ public class Messaggi {
     public void mouseClicked(MouseEvent e) {
         if (rettangoloNuovo.contains(e.getX(), e.getY())) {
             p.state = p.gioco;
+            System.out.println("nuova partita");
         }
         if (rettangoloCarica.contains(e.getX(), e.getY())) {
             System.out.println("carica partita");
         }
         if (rettangoloEsci.contains(e.getX(), e.getY())) {
             System.exit(0);
+            System.out.println("esci");
         }
     }
 }
