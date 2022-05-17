@@ -139,7 +139,7 @@ public class umani {
                 break;
         }
             
-            g2.drawImage(image, schermoX, schermoY, 45, 45, null);
+            g2.drawImage(image, schermoX, schermoY, 32, 32, null);
         }
     }
     
