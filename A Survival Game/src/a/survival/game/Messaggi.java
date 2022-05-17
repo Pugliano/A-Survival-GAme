@@ -30,7 +30,7 @@ public class Messaggi {
     private Rectangle rettangoloNuovo;
     private Rectangle rettangoloCarica;
     private Rectangle rettangoloEsci;
-    public String FraseD="";
+    public String Dcorrente="";
     
     
     public Messaggi(Pannello p) {
@@ -67,14 +67,14 @@ public class Messaggi {
             }
         }
         //dialoghi
-        if(p.dialoghi==true) {
+        if(p.state==p.dialoghi) {
             drawVitaPlayer();
             drawDialoghi();
         }
     }
     
     public void drawVitaPlayer() {
-        p.player.vita=2;
+        //p.player.vita=2;
         
         int x=p.FinalAP/2;
         int y=p.FinalAP/2;
@@ -181,10 +181,8 @@ public class Messaggi {
         x+=p.FinalAP;
         y+=p.FinalAP;
         
-        for(String linea:FraseD.split("\n")) {
-            g2.drawString(FraseD, x, y);
-            y+=40;
-        }
+        g2.drawString(Dcorrente, x, y);
+        
     }
     
     public void drawDialoghiF(int x,int y,int larghezza,int altezza) {

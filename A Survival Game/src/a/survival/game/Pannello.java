@@ -44,6 +44,7 @@ public class Pannello extends JPanel implements Runnable{
     public SettOgg sett=new SettOgg(this);
     //messaggi
     public Messaggi messaggi=new Messaggi(this);
+    public Azioni azioni=new Azioni(this);
     
     Thread gameThread;
     //umani e oggetti
@@ -54,7 +55,7 @@ public class Pannello extends JPanel implements Runnable{
     //pausa
     public boolean pausa=false;
     public int state;
-    public boolean dialoghi=false;
+    public final int dialoghi=3;
     
     public Pannello() {
         this.setPreferredSize(new Dimension(FinestraL,FinestraL));

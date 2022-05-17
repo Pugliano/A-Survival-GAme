@@ -30,10 +30,10 @@ public class NPC_anziano extends umani{
     }
     
     public void setDialoghi() {
-        dialoghi[0] = "Ciao";
-        dialoghi[1] = "Sono un fantasma";
-        dialoghi[2] = "Sono naufragato qui 12 anni fa";
-        dialoghi[3] = "Spero che almeno tu possa andartene ma stai attento, non siamo gli unici su questa isola";
+        dial[0] = "Ciao";
+        dial[1] = "Sono un fantasma";
+        dial[2] = "Sono naufragato qui 12 anni fa";
+        dial[3] = "Spero che almeno tu possa andartene ma stai attento, non siamo gli unici su questa isola";
     }
     
     public void setMove() {

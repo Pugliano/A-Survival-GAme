@@ -33,7 +33,7 @@ public class umani {
     public int VitaMax;
     public int vita;
     
-    String dialoghi[]=new String[20];
+    String[] dial=new String[20];
     int Inddialoghi=0;
     
     public umani(Pannello p) {
@@ -45,10 +45,10 @@ public class umani {
     }
     
     public void parla() {
-        if (dialoghi[Inddialoghi] == null) {
+        if (dial[Inddialoghi] == null) {
             Inddialoghi = 0;
         }
-        p.messaggi.FraseD = dialoghi[Inddialoghi];
+        p.messaggi.Dcorrente = dial[Inddialoghi];
         Inddialoghi++;
 
         switch (p.player.direzione) {

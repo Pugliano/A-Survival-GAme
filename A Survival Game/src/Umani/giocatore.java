@@ -85,6 +85,11 @@ public class giocatore extends umani {
             //collisioni con npc
             int indNPC=p.collis.ControllaU(this, p.npc);
             interazNPC(indNPC);
+            
+            //controlla azione
+            p.azioni.ControllaAzioni();
+            
+            p.tastiera.enterP = false;
 
             if (collisioniSI == false) {
                 switch (direzione) {
@@ -122,10 +127,9 @@ public class giocatore extends umani {
     public void interazNPC(int i) {
         if (i != 999) {
             if(p.tastiera.enterP==true) {
-                p.dialoghi = true;
+                p.state = p.dialoghi;
                 p.npc[i].parla();
             }
-            p.tastiera.enterP=false;
         }
     }
 

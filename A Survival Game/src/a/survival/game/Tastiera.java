@@ -10,7 +10,8 @@ import java.awt.event.KeyListener;
 public class Tastiera implements KeyListener{
 
     Pannello p;
-    public boolean su, giu, sinistra, destra, enterP;
+    public boolean su, giu, sinistra, destra;
+    public boolean enterP;
 
     public Tastiera(Pannello p) {
         this.p = p;
@@ -87,16 +88,14 @@ public class Tastiera implements KeyListener{
                 p.state=0;
             } 
             if (tasto == KeyEvent.VK_ENTER) {
-                p.state = 3;
+                enterP=true;
             }
         } 
         
         //parla con npc
-        if(p.state==3) {
+        else if(p.state==p.dialoghi) {
             if (tasto == KeyEvent.VK_ENTER) {
-                enterP=true;
-                
-                p.state = 1;
+                p.state=1;
             }
         }
         
