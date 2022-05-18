@@ -1,5 +1,6 @@
 package a.survival.game;
 
+import Umani.umani;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
@@ -10,7 +11,6 @@ import java.awt.image.BufferedImage;
 import java.text.DecimalFormat;
 import oggetti.OGGcoltello;
 import oggetti.OGGcuore;
-import oggetti.TuttiOGG;
 
 /**
  *
@@ -38,8 +38,9 @@ public class Messaggi {
         Arial_40 = new Font("Cambria", Font.PLAIN, 40);
         Arial_80B = new Font("Arial", Font.BOLD, 80);
 
-        TuttiOGG cuore = new OGGcuore(p);
-        cuore_m = cuore.image;
+        //set immagine cuore
+        umani cuore = new OGGcuore(p);
+        cuore_m = cuore.image1;
         cuore_p = cuore.image2;
         cuore_b = cuore.image3;
     }
@@ -129,7 +130,9 @@ public class Messaggi {
 
         testo = "Nuova partita";
         x = getXTestoCentrato(testo);
-        y += p.FinalAP * 4;
+        y += p.FinalAP * 4; 
+        g2.drawRect(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
+        
         rettangoloNuovo = new Rectangle(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
         g2.drawString(testo, x, y);
         if (comandi == 0) {
@@ -139,6 +142,7 @@ public class Messaggi {
         testo = "Carica partita";
         x = getXTestoCentrato(testo);
         y += p.FinalAP;
+        g2.drawRect(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
         rettangoloCarica = new Rectangle(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
         g2.drawString(testo, x, y);
         if (comandi == 1) {
@@ -148,6 +152,7 @@ public class Messaggi {
         testo = "Esci";
         x = getXTestoCentrato(testo);
         y += p.FinalAP;
+        g2.drawRect(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
         rettangoloEsci = new Rectangle(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
         g2.drawString(testo, x, y);
         if (comandi == 2) {

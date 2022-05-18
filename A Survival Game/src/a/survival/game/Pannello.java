@@ -11,8 +11,10 @@ import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import javax.swing.JPanel;
-import oggetti.TuttiOGG;
 
 /**
  *
@@ -25,8 +27,8 @@ public class Pannello extends JPanel implements Runnable {
 
     //Impostazioni dello schermo
     public final int FinalAP = altezzaP * scala; //64*64
-    public final int AltezzaSMX = 16;
-    public final int AltezzaSMY = 9;
+    public final int AltezzaSMX = 24;
+    public final int AltezzaSMY = 15;
     public final int FinestraL = FinalAP * AltezzaSMX; //768px->altezza
     public final int FinestraA = FinalAP * AltezzaSMY; //576px->larghezza
 
@@ -63,8 +65,10 @@ public class Pannello extends JPanel implements Runnable {
 
     //umani e oggetti
     public giocatore player = new giocatore(this, tastiera);
-    public umani npc[] = new umani[10];
-    public TuttiOGG ogg[] = new TuttiOGG[50];
+    public umani npc[] = new umani[50];
+    public umani ogg[] = new umani[50];
+    public umani nemici[]=new umani[50];
+    ArrayList<umani> umaniList=new ArrayList<>();
 
     //stato del gioco
     public boolean pausa = false;
@@ -86,6 +90,7 @@ public class Pannello extends JPanel implements Runnable {
     public void setGioco() {
         sett.setoggetto();
         sett.setNpc();
+        sett.setNemici();
         viaMusica(0);
         state = menu;
         
@@ -145,6 +150,11 @@ public class Pannello extends JPanel implements Runnable {
                     npc[i].muovi();
                 }
             }
+            for (int i = 0; i < nemici.length; i++) {
+                if (nemici[i] != null) {
+                    nemici[i].muovi();
+                }
+            }
         }
     }
     
@@ -156,26 +166,51 @@ public class Pannello extends JPanel implements Runnable {
         else {
             //blocchi
             GB.draw(g2);
-
+            
+            //aggiungo umani alla lista
+            umaniList.add(player);
+            
             //npc
             for (int i = 0; i < npc.length; i++) {
-                if (npc[i] != null) {
-                    npc[i].draw(g2);
+                if(npc[i]!=null) {
+                    umaniList.add(npc[i]);
                 }
             }
-
-            //messaggi
-            messaggi.draw(g2);
-
+            
             //oggetti
             for (int i = 0; i < ogg.length; i++) {
                 if (ogg[i] != null) {
-                    ogg[i].draw(g2, this);
+                    umaniList.add(ogg[i]);
                 }
             }
-
-            //giocatore
-            player.draw(g2);
+            
+            //nemici
+            for (int i = 0; i < nemici.length; i++) {
+                if (nemici[i] != null) {
+                    umaniList.add(nemici[i]);
+                }
+            }
+            
+            //sort
+            Collections.sort(umaniList,new Comparator<umani>() {
+                @Override
+                public int compare(umani e1, umani e2) {
+                    int result=Integer.compare(e1.Mondox, e2.Mondoy);
+                    return result;
+                }
+            });
+            
+            //umani
+            for (int i = 0; i < umaniList.size(); i++) {
+                umaniList.get(i).draw(g2);
+            }
+            //resetto
+            for (int i = 0; i < umaniList.size(); i++) {
+                umaniList.clear();
+            }
+            
+            //messaggi
+            messaggi.draw(g2);
         }
     }
     

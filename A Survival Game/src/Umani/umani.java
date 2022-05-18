@@ -18,7 +18,7 @@ public class umani {
     public int velocita;
     
     public BufferedImage  su1,su2,giu1,giu2,sinistra1,sinistra2,destra1,destra2;
-    public String direzione;
+    public String direzione="giu";
     
     public int Contat=0;
     public int Num=1;
@@ -28,6 +28,15 @@ public class umani {
     public int AreaSX,AreaSY;
     public boolean collisioniSI=false;
     public int VelocitaM=0;
+    
+    public BufferedImage image,image1, image2, image3;
+    public String nome;
+    public boolean collisioni = false;
+    
+    public boolean invincibile=false;
+    int invincibileContatore;
+    
+    public int type; //0->giocatore 1->npc 2->nemico
     
     //vita giocatore
     public int VitaMax;
@@ -72,7 +81,17 @@ public class umani {
         collisioniSI=false;
         p.collis.Controlla(this);
         p.collis.ControllaOGG(this,false);
-        p.collis.ControllaP(this);
+        p.collis.ControllaU(this, p.npc);
+        p.collis.ControllaU(this, p.nemici);
+        boolean contattoPlayer=p.collis.ControllaP(this);
+        
+        if(this.type==2 && contattoPlayer==true) {
+            if(p.player.invincibile==false) {
+                //prendiamo danno
+                p.player.vita-=1;
+                p.player.invincibile=true;
+            }
+        }
         
         if (collisioniSI == false) {
             switch (direzione) {
@@ -144,6 +163,7 @@ public class umani {
     }
     
     public BufferedImage setup(String Nimmagine) {
+        UtilityTool uTool=new UtilityTool();
         BufferedImage image = null;
 
         try {

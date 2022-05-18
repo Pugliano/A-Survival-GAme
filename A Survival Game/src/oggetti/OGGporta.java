@@ -1,24 +1,24 @@
 package oggetti;
 
+import Umani.umani;
 import a.survival.game.Pannello;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 
 /**
  *
  * @author Denis
  */
-public class OGGporta extends TuttiOGG{
-    Pannello p;
+public class OGGporta extends umani{
     public OGGporta(Pannello p) {
-        this.p=p;
+        super(p);
         nome = "porta";
-        try {
-            image = ImageIO.read(getClass().getResourceAsStream("/immagini/oggetti/porta.png"));
-            uTool.Simm(image, p.FinalAP, p.FinalAP);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        //collisioni=true;
+        giu1 = setup("/immagini/oggetti/porta");
+        collisioni=true;
+        
+        SArea.x=10;
+        SArea.y=0;
+        SArea.width=31;
+        SArea.height=32;
+        AreaSX=SArea.x;
+        AreaSY=SArea.y;
     }
 }

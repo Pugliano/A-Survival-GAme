@@ -24,12 +24,12 @@ public class Azioni {
     }
     
     public void ControllaAzioni() {
-        if(hit(54,135,"su")==true) {
+        if(hit(54,135,"su")==true || hit(54, 135, "giu") == true) {
             //accade qual che accade
             dannoP(p.dialoghi);
             System.out.println("cade");
         }
-        if (hit(51, 137, "sinistra") == true) {
+        if (hit(58, 119, "giu") == true|| hit(58, 120, "su") == true) {
             //accade qual che accade
             Bere(p.dialoghi);
             System.out.println("Acqua");

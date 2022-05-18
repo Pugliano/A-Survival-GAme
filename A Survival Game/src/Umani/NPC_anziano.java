@@ -45,7 +45,7 @@ public class NPC_anziano extends umani {
         } 
         else {
             VelocitaM++;
-            if (VelocitaM == 50) {
+            if (VelocitaM == 150) {
                 Random random = new Random();
                 int i = random.nextInt(100) + 1;
 

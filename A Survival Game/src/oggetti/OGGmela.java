@@ -1,23 +1,16 @@
 package oggetti;
 
+import Umani.umani;
 import a.survival.game.Pannello;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 
 /**
  *
  * @author Denis
  */
-public class OGGmela extends TuttiOGG{
-    Pannello p;
+public class OGGmela extends umani{
     public OGGmela(Pannello p) {
-        this.p = p;
+        super(p);
         nome = "mela";
-        try {
-            image = ImageIO.read(getClass().getResourceAsStream("/immagini/oggetti/mela.png"));
-            uTool.Simm(image, p.FinalAP, p.FinalAP);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        giu1 = setup("/immagini/oggetti/mela");
     }
 }

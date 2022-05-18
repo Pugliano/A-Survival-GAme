@@ -1,24 +1,17 @@
 package oggetti;
 
+import Umani.umani;
 import a.survival.game.Pannello;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 
 /**
  *
  * @author Denis
  */
-public class OGGcassa extends TuttiOGG{
-    Pannello p;
+public class OGGcassa extends umani{
     public OGGcassa(Pannello p) {
-        this.p = p;
+        super(p);
         nome = "cassa";
-        try {
-            image = ImageIO.read(getClass().getResourceAsStream("/immagini/oggetti/cassa.png"));
-            uTool.Simm(image, p.FinalAP, p.FinalAP);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        giu1 = setup("/immagini/oggetti/cassa");
         collisioni=true;
     }
 }

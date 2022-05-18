@@ -2,6 +2,9 @@ package Umani;
 
 import a.survival.game.Pannello;
 import a.survival.game.Tastiera;
+import java.awt.AlphaComposite;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
@@ -42,6 +45,7 @@ public class giocatore extends umani {
     public void setBasi() {
         Mondox = p.FinalAP * 54;
         Mondoy = p.FinalAP * 137;
+
         velocita = 15;
         direzione = "giu";
         
@@ -86,6 +90,10 @@ public class giocatore extends umani {
             int indNPC=p.collis.ControllaU(this, p.npc);
             interazNPC(indNPC);
             
+            //collisioni con nemici
+            int indNemici=p.collis.ControllaU(this, p.nemici);
+            contattoNemici(indNemici);
+            
             //controlla azione
             p.azioni.ControllaAzioni();
             
@@ -116,6 +124,14 @@ public class giocatore extends umani {
                 ContFermo = 0;
             }
         }
+        
+        if(invincibile==true) {
+            invincibileContatore++;
+            if(invincibileContatore>60) {
+                invincibile=false;
+                invincibileContatore=0;
+            }
+        }
     }
 
     public void RaccogliOGG(int i) {
@@ -130,6 +146,16 @@ public class giocatore extends umani {
                 p.state = p.dialoghi;
                 p.npc[i].parla();
             }
+        }
+    }
+    
+    public void contattoNemici(int i) {
+        if(i!=999) {
+            if(invincibile==false) {
+                vita -= 1;
+                invincibile=true;
+            }
+            
         }
     }
 
@@ -170,6 +196,17 @@ public class giocatore extends umani {
                 }
                 break;
         }
+        if(invincibile==true) {
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER,0.3f));
+        }
         g2.drawImage(image, schermoX, schermoY,p.FinalAP, p.FinalAP, null);
+        
+        //reset alpha
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
+        
+//        //debug
+//        g2.setFont(new Font("Arial",Font.PLAIN,26));
+//        g2.setColor(Color.white);
+//        g2.drawString("Invincibile: "+invincibileContatore,10,400);
     }
 }
