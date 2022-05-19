@@ -12,6 +12,6 @@ public class OGGcoltello extends umani{
     public OGGcoltello(Pannello p) {
         super(p);
         nome="coltello";
-        giu1=setup("/immagini/oggetti/cs");
+        giu1=setup("/immagini/oggetti/cs",p.FinalAP,p.FinalAP);
     }
 }

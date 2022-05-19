@@ -106,6 +106,20 @@ public class Messaggi {
             x += p.FinalAP;
         }
     }
+    
+    public void drawOra(String ora) {
+        //p.player.vita=2;
+
+        int x = p.IntFinestraL - (p.FinalAP / 2) - getLunghezzaStringa(ora);
+        int y = p.FinalAP / 2;
+        
+        //ombra
+        g2.setColor(new Color(255,255,255));
+        g2.drawString(ora, x + 5, y + 5);
+        
+        g2.setColor(new Color(0,0,0));
+        g2.drawString(ora, x, y);
+    }
 
     public void drawMenu() {
         //set e sfondo nero
@@ -290,9 +304,9 @@ public class Messaggi {
         testoY += lunghezzaLinea;
         
         //arma immagine
-        g2.drawImage(p.player.Arma.giu1, parolaX-p.FinalAP, testoY-15,null);
+        g2.drawImage(p.player.Arma.giu1, parolaX-p.FinalAP, testoY-30,p.FinalAP, p.FinalAP,null);
         testoY+=p.FinalAP;
-        g2.drawImage(p.player.Scudo.giu1, parolaX-p.FinalAP, testoY-14,null);
+        g2.drawImage(p.player.Scudo.giu1, parolaX-p.FinalAP, testoY-20,p.FinalAP, p.FinalAP,null);
     }
     
     public void drawDialoghiF(int x, int y, int larghezza, int altezza) {

@@ -18,6 +18,7 @@ public class umani {
     public int velocita;
     
     public BufferedImage  su1,su2,giu1,giu2,sinistra1,sinistra2,destra1,destra2;
+    public BufferedImage attaccoSu1, attaccoSu2, attaccoGiu1, attaccoGiu2, attaccoSinistra1, attaccoSinistra2, attaccoDestra1, attaccoDestra2;
     public String direzione="giu";
     
     public int Contat=0;
@@ -56,6 +57,8 @@ public class umani {
     //statistiche armi
     public int attaccoSpada;
     public int difesaScudo;
+    
+    boolean attaccando=false;
     
     
     String[] dial=new String[20];
@@ -182,15 +185,16 @@ public class umani {
         }
     }
     
-    public BufferedImage setup(String Nimmagine) {
+    public BufferedImage setup(String Nimmagine, int l, int a) {
         UtilityTool uTool=new UtilityTool();
-        BufferedImage image = null;
+        BufferedImage img = null;
 
         try {
-            image = ImageIO.read(getClass().getResourceAsStream(Nimmagine + ".png"));
+            img = ImageIO.read(getClass().getResourceAsStream(Nimmagine + ".png"));
+            img = uTool.Simm(img, l, a);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return image;
+        return img;
     }
 }
