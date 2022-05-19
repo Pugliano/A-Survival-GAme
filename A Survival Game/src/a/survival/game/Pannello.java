@@ -88,7 +88,6 @@ public class Pannello extends JPanel implements Runnable {
     }
 
     public void setGioco() {
-        sett.setoggetto();
         sett.setNpc();
         sett.setNemici();
         viaMusica(0);

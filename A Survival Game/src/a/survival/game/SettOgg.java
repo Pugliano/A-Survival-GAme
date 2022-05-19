@@ -15,13 +15,6 @@ public class SettOgg {
         this.p=p;
     }
     
-    public void setoggetto() {
-        p.ogg[1] = new OGGpozzo(p);
-        p.ogg[1].Mondox = p.FinalAP * 58;
-        p.ogg[1].Mondoy = p.FinalAP * 120;
-        
-    }
-    
     public void setNpc() {
         //npc anziano
         p.npc[0]=new NPC_anziano(p);
