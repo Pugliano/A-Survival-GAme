@@ -204,9 +204,7 @@ public class Pannello extends JPanel implements Runnable {
                 umaniList.get(i).draw(g2);
             }
             //resetto
-            for (int i = 0; i < umaniList.size(); i++) {
-                umaniList.clear();
-            }
+            umaniList.clear();
             
             //messaggi
             messaggi.draw(g2);

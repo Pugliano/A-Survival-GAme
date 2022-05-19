@@ -67,7 +67,7 @@ public class giocatore extends umani {
 
     public void muovi() {
 
-        if (t.su == true || t.giu == true || t.sinistra == true || t.destra == true) {
+        if (t.su == true || t.giu == true || t.sinistra == true || t.destra == true || t.enterP==true) {
             if (t.su == true) {
                 direzione = "su";
             } else if (t.giu == true) {
@@ -99,7 +99,7 @@ public class giocatore extends umani {
             
             p.tastiera.enterP = false;
 
-            if (collisioniSI == false) {
+            if (collisioniSI == false && t.enterP==false) {
                 switch (direzione) {
                     case "su": Mondoy -= velocita; break;
                     case "giu": Mondoy += velocita; break;
@@ -107,6 +107,8 @@ public class giocatore extends umani {
                     case "destra": Mondox += velocita; break;
                 }
             }
+            
+            p.tastiera.enterP=false;
 
             Contat++;
             if (Contat > 12) {
