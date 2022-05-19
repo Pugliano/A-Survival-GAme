@@ -8,6 +8,8 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+import oggetti.OGGscudo;
+import oggetti.OGGspada;
 
 /**
  *
@@ -22,6 +24,7 @@ public class giocatore extends umani {
 
     //public int coltelloSI=0;
     int ContFermo = 0;
+    public boolean ContAttacchi=false;
 
     public giocatore(Pannello p, Tastiera t) {
         super(p);
@@ -50,8 +53,24 @@ public class giocatore extends umani {
         direzione = "giu";
         
         //vita
+        livello=1;
         VitaMax=6;
         vita=VitaMax;
+        forza=1; //più forza hai, più colpisci forte
+        exp=0;
+        soldi=0;
+        spirito=1; //più spirito hai, più sei invulnerabile
+        Arma=new OGGspada(p);
+        Scudo=new OGGscudo(p);
+        attacco=getAttacco();
+        difesa=getDifesa();
+    }
+    
+    public int getAttacco() {
+        return attacco=forza*Arma.attaccoSpada;
+    }
+    public int getDifesa() {
+        return difesa=spirito*Scudo.difesaScudo;
     }
 
     public void getImmagineG() {
@@ -154,6 +173,7 @@ public class giocatore extends umani {
     public void contattoNemici(int i) {
         if(i!=999) {
             if(invincibile==false) {
+                ContAttacchi=true;
                 vita -= 1;
                 invincibile=true;
             }

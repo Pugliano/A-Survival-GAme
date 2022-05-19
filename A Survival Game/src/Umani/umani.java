@@ -42,6 +42,22 @@ public class umani {
     public int VitaMax;
     public int vita;
     
+    //statistiche giocatore
+    public int livello;
+    public int forza;
+    public int attacco;
+    public int difesa;
+    public int spirito;
+    public int exp;
+    public int soldi;
+    public umani Arma;
+    public umani Scudo;
+    
+    //statistiche armi
+    public int attaccoSpada;
+    public int difesaScudo;
+    
+    
     String[] dial=new String[20];
     int Inddialoghi=0;
     
@@ -63,15 +79,19 @@ public class umani {
         switch (p.player.direzione) {
             case "su":
                 direzione = "giu";
+                p.player.vita=p.player.VitaMax;
                 break;
             case "giu":
                 direzione = "su";
+                p.player.vita = p.player.VitaMax;
                 break;
             case "sinistra":
                 direzione = "destra";
+                p.player.vita = p.player.VitaMax;
                 break;
             case "destra":
                 direzione = "sinistra";
+                p.player.vita = p.player.VitaMax;
                 break;
         }
     }

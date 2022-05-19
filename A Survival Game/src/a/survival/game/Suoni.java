@@ -14,7 +14,7 @@ public class Suoni {
     URL suonoURL[]=new URL[30];
     
     public Suoni() {
-        suonoURL[0] = getClass().getResource("/immagini/suoni/A Survival Game.wav");
+        suonoURL[0] = getClass().getResource("/immagini/suoni/song.wav");
         suonoURL[1] = getClass().getResource("/immagini/suoni/cibo.wav");
         suonoURL[2] = getClass().getResource("/immagini/suoni/coltello.wav");
         suonoURL[3] = getClass().getResource("/immagini/suoni/porta.wav");

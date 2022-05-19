@@ -30,75 +30,110 @@ public class Tastiera implements KeyListener{
         //menu
         if (p.state==p.menu)
         {
-            if (tasto == KeyEvent.VK_UP) {
-                if (p.messaggi.comandi!=0)
-                {
-                    p.messaggi.comandi--;
-                }
-            }
-            if (tasto == KeyEvent.VK_DOWN) {
-                if (p.messaggi.comandi!=2)
-                {
-                    p.messaggi.comandi++;
-                }
-            }
-            if (tasto == KeyEvent.VK_ENTER) {
-                switch(p.messaggi.comandi)
-                {
-                    case 0:
-                        System.out.println("nuova partita");
-                        p.state=p.gioco;
-                        break;
-                    case 1:
-                        System.out.println("carica partita");
-                        break;
-                    case 2:
-                        System.out.println("esci");
-                        System.exit(0);
-                        break;
-                    default:
-                        break;
-                }
-            }
+            menu(tasto);
         }
         
         //gioco
         else if (p.state==p.gioco) {
-            if (tasto == KeyEvent.VK_W) {
-                su = true;
-            }
-
-            if (tasto == KeyEvent.VK_S) {
-                giu = true;
-            }
-
-            if (tasto == KeyEvent.VK_A) {
-                sinistra = true;
-            }
-
-            if (tasto == KeyEvent.VK_D) {
-                destra = true;
-            }
-
-            if (tasto == KeyEvent.VK_P) {
-                p.setPausa(!p.getPausa());
-            }
-            
-            if (tasto == KeyEvent.VK_ESCAPE) {
-                p.state=p.menu;
-            } 
-            if (tasto == KeyEvent.VK_ENTER) {
-                enterP=true;
-            }
-        } 
+            gioco(tasto);
+        }
+        
+        //pausa gioco
+        else if (p.pausa==true) {
+            pausa(tasto);
+        }
         
         //parla con npc
         else if(p.state==p.dialoghi) {
-            if (tasto == KeyEvent.VK_ENTER) {
-                p.state=p.gioco;
-            }
+            dialogo(tasto);
         }
         
+        //Dati giocatore con il tasto c
+        else if(p.state==p.DatiPlayer) {
+            datiPlayer(tasto);
+        }
+        
+    }
+    
+    public void menu(int tasto) {
+        if (tasto == KeyEvent.VK_UP) {
+            if (p.messaggi.comandi != 0) {
+                p.messaggi.comandi--;
+            }
+        }
+        if (tasto == KeyEvent.VK_DOWN) {
+            if (p.messaggi.comandi != 2) {
+                p.messaggi.comandi++;
+            }
+        }
+        if (tasto == KeyEvent.VK_ENTER) {
+            switch (p.messaggi.comandi) {
+                case 0:
+                    System.out.println("nuova partita");
+                    p.state = p.gioco;
+                    break;
+                case 1:
+                    System.out.println("carica partita");
+                    break;
+                case 2:
+                    System.out.println("esci");
+                    System.exit(0);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    
+    public void gioco(int tasto) {
+        if (tasto == KeyEvent.VK_W) {
+            su = true;
+        }
+
+        if (tasto == KeyEvent.VK_S) {
+            giu = true;
+        }
+
+        if (tasto == KeyEvent.VK_A) {
+            sinistra = true;
+        }
+
+        if (tasto == KeyEvent.VK_D) {
+            destra = true;
+        }
+
+        if (tasto == KeyEvent.VK_P) {
+            p.setPausa(!p.getPausa());
+        }
+
+        if (tasto == KeyEvent.VK_ESCAPE) {
+            p.state = p.menu;
+        }
+        if (tasto == KeyEvent.VK_ENTER) {
+            enterP = true;
+        }
+
+        if (tasto == KeyEvent.VK_C) {
+            p.state = p.DatiPlayer;
+        }
+    }
+    
+    public void pausa(int tasto) {
+        if (tasto == KeyEvent.VK_P) {
+            p.setPausa(!p.getPausa());
+        }
+    }
+    
+    public void dialogo(int tasto) {
+        if (tasto == KeyEvent.VK_ENTER) {
+            p.state = p.gioco;
+        }
+    }
+    
+    public void datiPlayer(int tasto) {
+        if (tasto == KeyEvent.VK_C) {
+            p.state = p.gioco;
+        }
     }
 
     @Override

@@ -70,6 +70,10 @@ public class Messaggi {
             drawVitaPlayer();
             drawDialoghi();
         }
+        //statistiche giocatore
+        if(p.state==p.DatiPlayer) {
+            drawDatiPlayer();
+        }
     }
 
     public void drawVitaPlayer() {
@@ -181,8 +185,11 @@ public class Messaggi {
         g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 28F));
         x += p.FinalAP;
         y += p.FinalAP;
-
-        g2.drawString(Dcorrente, x, y);
+        
+        for (String linea:Dcorrente.split("\n")) {
+            g2.drawString(linea, x, y);
+            y+=40;
+        }
 
         //ferma giocatore
         p.tastiera.destra=false;
@@ -191,8 +198,105 @@ public class Messaggi {
         p.tastiera.giu=false;
     }
 
+    public void drawDatiPlayer() {
+        //creiamo un frame
+        final int frameX=p.FinalAP*2;
+        final int frameY=p.FinalAP;
+        final int frameL=p.FinalAP*5;
+        final int frameA=p.FinalAP*11;
+        drawDialoghiF(frameX,frameY,frameL,frameA);
+        
+        //statistiche
+        g2.setColor(Color.white);
+        g2.setFont(g2.getFont().deriveFont(32F));
+        
+        int testoX=frameX+20;
+        int testoY=frameY+p.FinalAP;
+        final int lunghezzaLinea=64;
+        
+        //parametri
+        g2.drawString("livello", testoX, testoY);
+        testoY+=lunghezzaLinea;
+        g2.drawString("vita", testoX, testoY);
+        testoY += lunghezzaLinea;
+        g2.drawString("forza", testoX, testoY);
+        testoY += lunghezzaLinea;
+        g2.drawString("spirito", testoX, testoY);
+        testoY += lunghezzaLinea;
+        g2.drawString("exp", testoX, testoY);
+        testoY += lunghezzaLinea;
+        g2.drawString("soldi", testoX, testoY);
+        testoY += lunghezzaLinea;
+        g2.drawString("attacco", testoX, testoY);
+        testoY += lunghezzaLinea;
+        g2.drawString("difesa", testoX, testoY);
+        testoY += lunghezzaLinea+20;
+        g2.drawString("arma", testoX, testoY);
+        testoY += lunghezzaLinea+15;
+        g2.drawString("scudo", testoX, testoY);
+        testoY += lunghezzaLinea;
+        
+        //variabili
+        int parolaX=(frameX+frameL)-30;
+        testoY=frameY+p.FinalAP;
+        String variabile;
+        
+        //livello valore
+        variabile=String.valueOf(p.player.livello);
+        testoX=getXTestoAdestra(variabile,parolaX);
+        g2.drawString(variabile, testoX, testoY);
+        testoY += lunghezzaLinea;
+        
+        //valore vita
+        variabile = String.valueOf(p.player.vita+"/"+p.player.VitaMax);
+        testoX = getXTestoAdestra(variabile, parolaX);
+        g2.drawString(variabile, testoX, testoY);
+        testoY += lunghezzaLinea;
+        
+        //valore forza
+        variabile = String.valueOf(p.player.forza);
+        testoX = getXTestoAdestra(variabile, parolaX);
+        g2.drawString(variabile, testoX, testoY);
+        testoY += lunghezzaLinea;
+        
+        //valore spirito
+        variabile = String.valueOf(p.player.spirito);
+        testoX = getXTestoAdestra(variabile, parolaX);
+        g2.drawString(variabile, testoX, testoY);
+        testoY += lunghezzaLinea;
+        
+        //valore exp
+        variabile = String.valueOf(p.player.exp);
+        testoX = getXTestoAdestra(variabile, parolaX);
+        g2.drawString(variabile, testoX, testoY);
+        testoY += lunghezzaLinea;
+        
+        //valore soldi
+        variabile = String.valueOf(p.player.soldi);
+        testoX = getXTestoAdestra(variabile, parolaX);
+        g2.drawString(variabile, testoX, testoY);
+        testoY += lunghezzaLinea;
+        
+        //valore attacco
+        variabile = String.valueOf(p.player.attacco);
+        testoX = getXTestoAdestra(variabile, parolaX);
+        g2.drawString(variabile, testoX, testoY);
+        testoY += lunghezzaLinea;
+        
+        //valore difesa
+        variabile = String.valueOf(p.player.difesa);
+        testoX = getXTestoAdestra(variabile, parolaX);
+        g2.drawString(variabile, testoX, testoY);
+        testoY += lunghezzaLinea;
+        
+        //arma immagine
+        g2.drawImage(p.player.Arma.giu1, parolaX-p.FinalAP, testoY-15,null);
+        testoY+=p.FinalAP;
+        g2.drawImage(p.player.Scudo.giu1, parolaX-p.FinalAP, testoY-14,null);
+    }
+    
     public void drawDialoghiF(int x, int y, int larghezza, int altezza) {
-        Color c = new Color(0, 0, 0); //nero
+        Color c = new Color(0, 0, 0,210); //nero
         g2.setColor(c);
         g2.fillRoundRect(x, y, larghezza, altezza, 50, 50);
 
@@ -203,8 +307,15 @@ public class Messaggi {
     }
 
     public int getXTestoCentrato(String testo) {
-        return p.FinestraL / 2 - getLunghezzaStringa(testo) / 2;
-
+        int lunghezza=(int)g2.getFontMetrics().getStringBounds(testo, g2).getWidth();
+        int x=p.FinestraL/2-lunghezza/2;
+        return x;
+    }
+    
+    public int getXTestoAdestra(String testo,int parolaX) {
+        int lunghezza = (int) g2.getFontMetrics().getStringBounds(testo, g2).getWidth();
+        int x = parolaX-lunghezza;
+        return x;
     }
 
     public int getLunghezzaStringa(String testo) {

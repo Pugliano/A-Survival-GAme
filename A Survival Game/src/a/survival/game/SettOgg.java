@@ -1,7 +1,9 @@
 package a.survival.game;
 
+import Nemici.MONape;
 import Nemici.MONslime;
 import Umani.NPC_anziano;
+import oggetti.OGGcartello;
 import oggetti.OGGpozzo;
 
 /**
@@ -13,6 +15,14 @@ public class SettOgg {
     
     public SettOgg(Pannello p) {
         this.p=p;
+    }
+    
+    public void setoggetto() {
+        //cartello
+        p.ogg[0]=new OGGcartello(p);
+        p.ogg[0].Mondox=p.FinalAP*54;
+        p.ogg[0].Mondoy=p.FinalAP*132;
+        p.ogg[0].collisioniSI=true;
     }
     
     public void setNpc() {
@@ -31,5 +41,13 @@ public class SettOgg {
         p.nemici[1] = new MONslime(p);
         p.nemici[1].Mondox = p.FinalAP * 57;
         p.nemici[1].Mondoy = p.FinalAP * 93;
+        
+        p.nemici[2] = new MONape(p);
+        p.nemici[2].Mondox = p.FinalAP * 58;
+        p.nemici[2].Mondoy = p.FinalAP * 93;
+        
+        p.nemici[3] = new MONape(p);
+        p.nemici[3].Mondox = p.FinalAP * 59;
+        p.nemici[3].Mondoy = p.FinalAP * 93;
     }
 }

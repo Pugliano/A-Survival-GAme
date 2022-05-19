@@ -76,6 +76,9 @@ public class Pannello extends JPanel implements Runnable {
     public final int menu = 0;
     public final int gioco = 1;
     public final int dialoghi = 2;
+    
+    //printo le statistiche del player
+    public final int DatiPlayer=4;
 
     public Pannello() {
         this.setPreferredSize(new Dimension(FinestraL, FinestraL));
@@ -88,6 +91,7 @@ public class Pannello extends JPanel implements Runnable {
     }
 
     public void setGioco() {
+        sett.setoggetto();
         sett.setNpc();
         sett.setNemici();
         viaMusica(0);

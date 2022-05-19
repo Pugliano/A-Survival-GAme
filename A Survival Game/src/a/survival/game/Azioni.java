@@ -24,15 +24,10 @@ public class Azioni {
     }
     
     public void ControllaAzioni() {
-        if(hit(54,135,"su")==true || hit(54, 135, "giu") == true) {
+        if (hit(54, 132, "su") == true) {
             //accade qual che accade
-            dannoP(p.dialoghi);
-            System.out.println("cade");
-        }
-        if (hit(58, 119, "giu") == true|| hit(58, 120, "su") == true) {
-            //accade qual che accade
-            Bere(p.dialoghi);
-            System.out.println("Acqua");
+            Leggere(p.dialoghi);
+            System.out.println("cartello");
         }
     }
     
@@ -70,5 +65,13 @@ public class Azioni {
             p.player.vita=p.player.VitaMax;
         }
         p.tastiera.enterP=false;
+    }
+    
+    public void Leggere(int Azione) {
+        if (p.tastiera.enterP == true) {
+            p.state = Azione;
+            p.messaggi.Dcorrente = "Sopravvivi 5 giorni per riuscire a scappare";
+        }
+        p.tastiera.enterP = false;
     }
 }
