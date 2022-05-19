@@ -40,6 +40,9 @@ public class giocatore extends umani {
         AreaSY = SArea.y;
         SArea.width = 32;
         SArea.height = 32;
+        
+        AreaAttacco.width=36;
+        AreaAttacco.height=36;
 
         setBasi();
         getImmagineG();
@@ -87,7 +90,7 @@ public class giocatore extends umani {
     }
 
     public void getImmagineAttaccoG() {
-        attaccoSu1 = setup("/immagini/giocatore/agsu1", p.FinalAP, p.FinalAP * 2);
+        attaccoSu1 = setup("/immagini/giocatore/agsu1", p.FinalAP, p.FinalAP*2);
         attaccoSu2 = setup("/immagini/giocatore/agsu2", p.FinalAP, p.FinalAP * 2);
         attaccoGiu1 = setup("/immagini/giocatore/agg1", p.FinalAP, p.FinalAP * 2);
         attaccoGiu2 = setup("/immagini/giocatore/agg2", p.FinalAP, p.FinalAP * 2);
@@ -99,7 +102,7 @@ public class giocatore extends umani {
 
     public void muovi() {
 
-        if (attaccando) {
+        if (attaccando==true) {
             attaccando();
         } else if (t.su == true || t.giu == true || t.sinistra == true || t.destra == true || t.enterP == true) {
             if (t.su == true) {
@@ -177,6 +180,44 @@ public class giocatore extends umani {
             }
         }
     }
+    
+    private void attaccando() {
+        Contat++;
+        if (Contat <= 5) {
+            Num = 1;
+        }
+        if (Contat > 5 && Contat <= 25) {
+            Num = 2;
+            
+            //controllo direzione del giocatore per la collisione con la spada
+            int mondoXesatto=Mondox;
+            int mondoYesatto=Mondoy;
+            int SAreaLarghezza=SArea.width;
+            int SAreaAltezza=SArea.height;
+            switch(direzione) {
+                case"su":Mondoy-=AreaAttacco.height;break;
+                case "giu":Mondoy += AreaAttacco.height;break;
+                case "sinistra":Mondox -= AreaAttacco.width;break;
+                case "destra":Mondox += AreaAttacco.width;break;
+            }
+            //Area d'attacco
+            SArea.width=AreaAttacco.width;
+            SArea.height = AreaAttacco.height;
+            //collisioni tra spada e nemico
+            int IndMostri=p.collis.ControllaU(this, p.nemici);
+            dannoNemico(IndMostri);
+            
+            Mondox=mondoXesatto;
+            Mondoy=mondoYesatto;
+            SArea.width=SAreaLarghezza;
+            SArea.height = SAreaAltezza;
+        }
+        if (Contat > 25) {
+            Num = 1;
+            Contat = 0;
+            attaccando = false;
+        }
+    }
 
     public void RaccogliOGG(int i) {
         if (i != 999) {
@@ -185,13 +226,15 @@ public class giocatore extends umani {
     }
 
     public void interazNPC(int i) {
-        if (t.enterP == true) {
-            if (i != 999) {
+        if (i != 999) {
+            if(p.tastiera.enterP==true) {
                 p.state = p.dialoghi;
                 p.npc[i].parla();
             }
         } else {
-            attaccando = true;
+            if(p.tastiera.enterP==true) {
+                attaccando = true;
+            }
         }
     }
 
@@ -205,88 +248,74 @@ public class giocatore extends umani {
 
         }
     }
+    
+    public void dannoNemico(int i) {
+        if(i!=999) {
+           if(p.nemici[i].invincibile==false) {
+               p.nemici[i].vita-=1;
+               p.nemici[i].invincibile=true;
+               
+               if(p.nemici[i].vita<=0) {
+                   p.nemici[i]=null;
+               }
+           }
+        }    
+    }
 
     public void draw(Graphics2D g2) {
         BufferedImage image = null;
+        int tempSX=schermoX;
+        int tempSY=schermoY;
 
         switch (direzione) {
             case "su":
-                if (!attaccando) {
-                    if (Num == 1) {
-                        image = su1;
-                    }
-                    if (Num == 2) {
-                        image = su2;
-                    }
+                if (attaccando==false) {
+                    if (Num == 1) {image = su1;}
+                    if (Num == 2) {image = su2;}
                 }
-                else if (attaccando) {
-                    if (Num == 1) {
-                        image = attaccoSu1;
-                    }
-                    if (Num == 2) {
-                        image = attaccoSu2;
-                    }
+                if (attaccando==true) {
+                    
+                    if (Num == 1) {image = attaccoSu1;}
+                    if (Num == 2) {image = attaccoSu2;}
                 }
                 break;
             case "giu":
-                if (!attaccando) {
-                    if (Num == 1) {
-                        image = giu1;
-                    }
-                    if (Num == 2) {
-                        image = giu2;
-                    }
+                if (attaccando==false) {
+                    if (Num == 1) {image = giu1;}
+                    if (Num == 2) {image = giu2;}
                 }
-                else if (attaccando) {
-                    if (Num == 1) {
-                        image = attaccoGiu1;
-                    }
-                    if (Num == 2) {
-                        image = attaccoGiu2;
-                    }
+                if (attaccando==true) {
+                    if (Num == 1) {image = attaccoGiu1;}
+                    if (Num == 2) {image = attaccoGiu2;}
                 }
                 break;
             case "sinistra":
-                if (!attaccando) {
-                    if (Num == 1) {
-                        image = sinistra1;
-                    }
-                    if (Num == 2) {
-                        image = sinistra2;
-                    }
+                
+                if (attaccando==false) {
+                    if (Num == 1) {image = sinistra1;}
+                    if (Num == 2) {image = sinistra2;}
                 }
-                else if (attaccando) {
-                    if (Num == 1) {
-                        image = attaccoSinistra1;
-                    }
-                    if (Num == 2) {
-                        image = attaccoSinistra2;
-                    }
+                if (attaccando==true) {
+                    
+                    if (Num == 1) {image = attaccoSinistra1;}
+                    if (Num == 2) {image = attaccoSinistra2;}
                 }
                 break;
             case "destra":
-                if (!attaccando) {
-                    if (Num == 1) {
-                        image = destra1;
-                    }
-                    if (Num == 2) {
-                        image = destra2;
-                    }
+                if (attaccando==false) {
+                    if (Num == 1) {image = destra1;}
+                    if (Num == 2) {image = destra2;}
                 }
-                else if (attaccando) {
-                    if (Num == 1) {
-                        image = attaccoDestra1;
-                    }
-                    if (Num == 2) {
-                        image = attaccoDestra2;
-                    }
+                if (attaccando==true) {
+                    if (Num == 1) {image = attaccoDestra1;}
+                    if (Num == 2) {image = attaccoDestra2;}
                 }
                 break;
         }
         if (invincibile == true) {
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.3f));
         }
-        g2.drawImage(image, schermoX, schermoY, p.FinalAP, p.FinalAP, null);
+        g2.drawImage(image, tempSX, tempSY,p.FinalAP,p.FinalAP, null);
 
         //reset alpha
         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
@@ -295,18 +324,5 @@ public class giocatore extends umani {
 //        g2.setFont(new Font("Arial",Font.PLAIN,26));
 //        g2.setColor(Color.white);
 //        g2.drawString("Invincibile: "+invincibileContatore,10,400);
-    }
-
-    private void attaccando() {
-        //spriteCounter++;
-        if (VelocitaM <= 5) {
-            Num = 1;
-        } else if (VelocitaM > 5 && VelocitaM <= 25) {
-            Num = 2;
-        } else if (VelocitaM > 25) {
-            Num = 1;
-            VelocitaM = 0;
-            attaccando = false;
-        }
     }
 }

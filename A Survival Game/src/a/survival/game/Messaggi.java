@@ -108,7 +108,6 @@ public class Messaggi {
     }
     
     public void drawOra(String ora) {
-        //p.player.vita=2;
 
         int x = p.IntFinestraL - (p.FinalAP / 2) - getLunghezzaStringa(ora);
         int y = p.FinalAP / 2;

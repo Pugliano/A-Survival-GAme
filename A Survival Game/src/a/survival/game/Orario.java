@@ -28,6 +28,7 @@ public class Orario extends Thread {
             //if (p.state==p.gioco) {
             aggiornaTempo();
             p.messaggi.drawOra(ora());
+            System.out.println(ora());
             if (oraprec != ora) {
                 oraprec = ora;
                 aggiornaMappa();

@@ -2,6 +2,7 @@ package Umani;
 
 import a.survival.game.Pannello;
 import a.survival.game.UtilityTool;
+import java.awt.AlphaComposite;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
@@ -25,6 +26,7 @@ public class umani {
     public int Num=1;
     
     public Rectangle SArea=new Rectangle(0,0,48,48);
+    public Rectangle AreaAttacco=new Rectangle(0,0,0,0);
     
     public int AreaSX,AreaSY;
     public boolean collisioniSI=false;
@@ -35,6 +37,8 @@ public class umani {
     public boolean collisioni = false;
     
     public boolean invincibile=false;
+    
+    public int spriteCounter=0;
     int invincibileContatore;
     
     public int type; //0->giocatore 1->npc 2->nemico
@@ -134,6 +138,14 @@ public class umani {
             }
             Contat = 0;
         }
+        
+        if (invincibile == true) {
+            invincibileContatore++;
+            if (invincibileContatore > 40) {
+                invincibile = false;
+                invincibileContatore = 0;
+            }
+        }
     }
     
     public void draw(Graphics2D g2) {
@@ -148,40 +160,30 @@ public class umani {
             
             switch (direzione) {
             case "su":
-                if (Num == 1) {
-                    image = su1;
-                }
-                if (Num == 2) {
-                    image = su2;
-                }
+                if (Num == 1) {image = su1;}
+                if (Num == 2) {image = su2;}
                 break;
             case "giu":
-                if (Num == 1) {
-                    image = giu1;
-                }
-                if (Num == 2) {
-                    image = giu2;
-                }
+                if (Num == 1) {image = giu1;}
+                if (Num == 2) {image = giu2;}
                 break;
             case "sinistra":
-                if (Num == 1) {
-                    image = sinistra1;
-                }
-                if (Num == 2) {
-                    image = sinistra2;
-                }
+                if (Num == 1) {image = sinistra1;}
+                if (Num == 2) {image = sinistra2;}
                 break;
             case "destra":
-                if (Num == 1) {
-                    image = destra1;
-                }
-                if (Num == 2) {
-                    image = destra2;
-                }
+                if (Num == 1) {image = destra1;}
+                if (Num == 2) {image = destra2;}
                 break;
         }
             
+            if (invincibile == true) {
+                g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.4f));
+            }
+            
             g2.drawImage(image, schermoX, schermoY, 45, 45, null);
+            
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
         }
     }
     
@@ -191,7 +193,7 @@ public class umani {
 
         try {
             img = ImageIO.read(getClass().getResourceAsStream(Nimmagine + ".png"));
-            img = uTool.Simm(img, l, a);
+            img = uTool.Simm(img, l,a);
         } catch (IOException e) {
             e.printStackTrace();
         }
