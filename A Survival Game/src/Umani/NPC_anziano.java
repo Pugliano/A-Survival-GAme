@@ -22,14 +22,14 @@ public class NPC_anziano extends umani {
     }
 
     public void getImmagineV() {
-        su1 = setup("/immagini/npc/Vsu1");
-        su2 = setup("/immagini/npc/vsu2");
-        giu1 = setup("/immagini/npc/vgiu1");
-        giu2 = setup("/immagini/npc/vgiu2");
-        sinistra1 = setup("/immagini/npc/vsinistra1");
-        sinistra2 = setup("/immagini/npc/vsinistra2");
-        destra1 = setup("/immagini/npc/vdestra1");
-        destra2 = setup("/immagini/npc/vdestra2");
+        su1 = setup("/immagini/npc/Vsu1",p.FinalAP,p.FinalAP);
+        su2 = setup("/immagini/npc/vsu2",p.FinalAP,p.FinalAP);
+        giu1 = setup("/immagini/npc/vgiu1",p.FinalAP,p.FinalAP);
+        giu2 = setup("/immagini/npc/vgiu2",p.FinalAP,p.FinalAP);
+        sinistra1 = setup("/immagini/npc/vsinistra1",p.FinalAP,p.FinalAP);
+        sinistra2 = setup("/immagini/npc/vsinistra2",p.FinalAP,p.FinalAP);
+        destra1 = setup("/immagini/npc/vdestra1",p.FinalAP,p.FinalAP);
+        destra2 = setup("/immagini/npc/vdestra2",p.FinalAP,p.FinalAP);
     }
 
     public void setDialoghi() {

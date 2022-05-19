@@ -77,6 +77,9 @@ public class Pannello extends JPanel implements Runnable {
     public final int gioco = 1;
     public final int dialoghi = 2;
     
+    //orario
+    public Orario ora;
+    
     //printo le statistiche del player
     public final int DatiPlayer=4;
 
@@ -107,6 +110,8 @@ public class Pannello extends JPanel implements Runnable {
     public void startGameThread() {
         gameThread = new Thread(this);
         gameThread.start();
+        ora = new Orario(this, 12, 0);
+        ora.start();
     }
 
     @Override

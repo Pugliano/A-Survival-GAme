@@ -13,9 +13,9 @@ public class OGGcuore extends umani{
     public OGGcuore(Pannello p) {
         super(p);
         nome = "cuore";
-        image1 = setup("/immagini/oggetti/cuore_m");
-        image2 = setup("/immagini/oggetti/cuore_p");
-        image3 = setup("/immagini/oggetti/cuore_b");
+        image1 = setup("/immagini/oggetti/cuore_m",p.FinalAP,p.FinalAP);
+        image2 = setup("/immagini/oggetti/cuore_p",p.FinalAP,p.FinalAP);
+        image3 = setup("/immagini/oggetti/cuore_b",p.FinalAP,p.FinalAP);
         
         image1 = uTool.Simm(image1, p.FinalAP, p.FinalAP);
         image2 = uTool.Simm(image2, p.FinalAP, p.FinalAP);
