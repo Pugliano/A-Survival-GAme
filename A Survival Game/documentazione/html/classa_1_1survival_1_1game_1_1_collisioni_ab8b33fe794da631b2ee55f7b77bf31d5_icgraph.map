@@ -1,0 +1,5 @@
+<map id="ControllaP" name="ControllaP">
+<area shape="rect" id="node2" href="$class_entita_1_1_entita.html#a1fe2f184b3cc7345c6a0f08d183a1d0b" title="metodo per gestire collisioni con i vari npc " alt="" coords="136,31,267,57"/>
+<area shape="rect" id="node3" href="$class_entita_1_1_mob.html#a13a43e6d814de94978c515cb084873b1" title="Metod run per tutti i mob. " alt="" coords="316,5,423,32"/>
+<area shape="rect" id="node4" href="$class_entita_1_1_n_p_c.html#a13a43e6d814de94978c515cb084873b1" title="Entita.NPC.run" alt="" coords="315,56,424,83"/>
+</map>

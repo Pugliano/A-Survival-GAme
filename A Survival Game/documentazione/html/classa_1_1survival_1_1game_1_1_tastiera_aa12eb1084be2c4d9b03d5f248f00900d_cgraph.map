@@ -1,0 +1,10 @@
+<map id="keyPressed" name="keyPressed">
+<area shape="rect" id="node2" href="$classa_1_1survival_1_1game_1_1_tastiera.html#a9084c4a99060ee721903b329b8028971" title="menu" alt="" coords="157,5,211,32"/>
+<area shape="rect" id="node3" href="$classa_1_1survival_1_1game_1_1_tastiera.html#a8b74f3af7a41bc6d69584817b83a067c" title="gioco" alt="" coords="157,56,211,83"/>
+<area shape="rect" id="node6" href="$classa_1_1survival_1_1game_1_1_tastiera.html#ae1955cea10e34f2e5f1df55d2a18cce7" title="pausa" alt="" coords="155,107,213,133"/>
+<area shape="rect" id="node7" href="$classa_1_1survival_1_1game_1_1_tastiera.html#a511fbdea77021f4250410b5565a4a663" title="dialogo" alt="" coords="153,157,215,184"/>
+<area shape="rect" id="node8" href="$classa_1_1survival_1_1game_1_1_tastiera.html#afdd8d3c804439a86dbe018e7b23878f1" title="datiPlayer" alt="" coords="144,208,224,235"/>
+<area shape="rect" id="node9" href="$classa_1_1survival_1_1game_1_1_tastiera.html#a6e3f5b499ce8fa385ff315cd3115e6b7" title="gameover" alt="" coords="145,259,223,285"/>
+<area shape="rect" id="node4" href="$classa_1_1survival_1_1game_1_1_pannello.html#a2283a8c1211827155404ab0ccb5c65c4" title="a.survival.game.Pannello.set\lPausa" alt="" coords="272,42,459,83"/>
+<area shape="rect" id="node5" href="$classa_1_1survival_1_1game_1_1_pannello.html#a6e565369e7a4cd8bee8616ba06ebae08" title="a.survival.game.Pannello.get\lPausa" alt="" coords="272,107,459,149"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="drawDialoghi" name="drawDialoghi">
+<area shape="rect" id="node2" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#ae8c972c0fb4fcbc09c2219dd32cbd053" title="Metodo draw per printare i messaggi. " alt="" coords="148,13,197,39"/>
+<area shape="rect" id="node3" href="$classa_1_1survival_1_1game_1_1_pannello.html#a65c6d6be4b2a0069d1920cb7f466643b" title="metto a schermo intero " alt="" coords="245,5,440,47"/>
+<area shape="rect" id="node4" href="$classa_1_1survival_1_1game_1_1_pannello.html#a13a43e6d814de94978c515cb084873b1" title="visualizzo fps " alt="" coords="488,13,675,39"/>
+</map>

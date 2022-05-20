@@ -1,0 +1,198 @@
+\hypertarget{classblocchi_1_1_tile_manager}{}\section{Tile\+Manager Class Reference}
+\label{classblocchi_1_1_tile_manager}\index{Tile\+Manager@{Tile\+Manager}}
+
+
+Collaboration diagram for Tile\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classblocchi_1_1_tile_manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classblocchi_1_1_tile_manager_a041c1b12a4eb5574dfedf0af6393c014}{Tile\+Manager} ()
+\item 
+\hyperlink{classblocchi_1_1_tile}{Tile} \hyperlink{classblocchi_1_1_tile_manager_a1855b58fdbe502789d9c14ee0deffb9e}{get\+Tile} (int id)
+\item 
+Buffered\+Image \hyperlink{classblocchi_1_1_tile_manager_a46ebd32c7ec4ac506010fe465687bdd7}{get\+Sprite} (int id)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classblocchi_1_1_tile}{Tile} \hyperlink{classblocchi_1_1_tile_manager_a976f8123c1fc10e66de7e7f98570d45a}{E\+R\+BA}
+\item 
+Buffered\+Image \hyperlink{classblocchi_1_1_tile_manager_a0f6db27994c397bfb9bb56d539707c02}{atlas}
+\item 
+Array\+List$<$ \hyperlink{classblocchi_1_1_tile}{Tile} $>$ \hyperlink{classblocchi_1_1_tile_manager_a4b6ed1e7aa1fffacfc6271483b48c304}{tiles} = new Array\+List$<$$>$()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classblocchi_1_1_tile_manager_abb7fa074b36e6e355db16761115fb367}{create\+Tiles} ()
+\item 
+void \hyperlink{classblocchi_1_1_tile_manager_afc6b9f4a25216ec36baa6e7518a7501a}{load\+Atlas} ()
+\item 
+Buffered\+Image \hyperlink{classblocchi_1_1_tile_manager_a96613c34a7cfb5341cc3c6a4fe3612a1}{get\+Sprite} (int x, int y)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 20 of file Tile\+Manager.\+java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classblocchi_1_1_tile_manager_a041c1b12a4eb5574dfedf0af6393c014}\label{classblocchi_1_1_tile_manager_a041c1b12a4eb5574dfedf0af6393c014}} 
+\index{blocchi\+::\+Tile\+Manager@{blocchi\+::\+Tile\+Manager}!Tile\+Manager@{Tile\+Manager}}
+\index{Tile\+Manager@{Tile\+Manager}!blocchi\+::\+Tile\+Manager@{blocchi\+::\+Tile\+Manager}}
+\subsubsection{\texorpdfstring{Tile\+Manager()}{TileManager()}}
+{\footnotesize\ttfamily \hyperlink{classblocchi_1_1_tile_manager}{Tile\+Manager} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file Tile\+Manager.\+java.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{classblocchi_1_1_tile_manager_a041c1b12a4eb5574dfedf0af6393c014_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classblocchi_1_1_tile_manager_abb7fa074b36e6e355db16761115fb367}\label{classblocchi_1_1_tile_manager_abb7fa074b36e6e355db16761115fb367}} 
+\index{blocchi\+::\+Tile\+Manager@{blocchi\+::\+Tile\+Manager}!create\+Tiles@{create\+Tiles}}
+\index{create\+Tiles@{create\+Tiles}!blocchi\+::\+Tile\+Manager@{blocchi\+::\+Tile\+Manager}}
+\subsubsection{\texorpdfstring{create\+Tiles()}{createTiles()}}
+{\footnotesize\ttfamily void create\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 30 of file Tile\+Manager.\+java.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classblocchi_1_1_tile_manager_abb7fa074b36e6e355db16761115fb367_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{classblocchi_1_1_tile_manager_abb7fa074b36e6e355db16761115fb367_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classblocchi_1_1_tile_manager_a46ebd32c7ec4ac506010fe465687bdd7}\label{classblocchi_1_1_tile_manager_a46ebd32c7ec4ac506010fe465687bdd7}} 
+\index{blocchi\+::\+Tile\+Manager@{blocchi\+::\+Tile\+Manager}!get\+Sprite@{get\+Sprite}}
+\index{get\+Sprite@{get\+Sprite}!blocchi\+::\+Tile\+Manager@{blocchi\+::\+Tile\+Manager}}
+\subsubsection{\texorpdfstring{get\+Sprite()}{getSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Buffered\+Image get\+Sprite (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 54 of file Tile\+Manager.\+java.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classblocchi_1_1_tile_manager_a46ebd32c7ec4ac506010fe465687bdd7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classblocchi_1_1_tile_manager_a96613c34a7cfb5341cc3c6a4fe3612a1}\label{classblocchi_1_1_tile_manager_a96613c34a7cfb5341cc3c6a4fe3612a1}} 
+\index{blocchi\+::\+Tile\+Manager@{blocchi\+::\+Tile\+Manager}!get\+Sprite@{get\+Sprite}}
+\index{get\+Sprite@{get\+Sprite}!blocchi\+::\+Tile\+Manager@{blocchi\+::\+Tile\+Manager}}
+\subsubsection{\texorpdfstring{get\+Sprite()}{getSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Buffered\+Image get\+Sprite (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 58 of file Tile\+Manager.\+java.
+
+\mbox{\Hypertarget{classblocchi_1_1_tile_manager_a1855b58fdbe502789d9c14ee0deffb9e}\label{classblocchi_1_1_tile_manager_a1855b58fdbe502789d9c14ee0deffb9e}} 
+\index{blocchi\+::\+Tile\+Manager@{blocchi\+::\+Tile\+Manager}!get\+Tile@{get\+Tile}}
+\index{get\+Tile@{get\+Tile}!blocchi\+::\+Tile\+Manager@{blocchi\+::\+Tile\+Manager}}
+\subsubsection{\texorpdfstring{get\+Tile()}{getTile()}}
+{\footnotesize\ttfamily \hyperlink{classblocchi_1_1_tile}{Tile} get\+Tile (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 50 of file Tile\+Manager.\+java.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classblocchi_1_1_tile_manager_a1855b58fdbe502789d9c14ee0deffb9e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classblocchi_1_1_tile_manager_afc6b9f4a25216ec36baa6e7518a7501a}\label{classblocchi_1_1_tile_manager_afc6b9f4a25216ec36baa6e7518a7501a}} 
+\index{blocchi\+::\+Tile\+Manager@{blocchi\+::\+Tile\+Manager}!load\+Atlas@{load\+Atlas}}
+\index{load\+Atlas@{load\+Atlas}!blocchi\+::\+Tile\+Manager@{blocchi\+::\+Tile\+Manager}}
+\subsubsection{\texorpdfstring{load\+Atlas()}{loadAtlas()}}
+{\footnotesize\ttfamily void load\+Atlas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 42 of file Tile\+Manager.\+java.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classblocchi_1_1_tile_manager_afc6b9f4a25216ec36baa6e7518a7501a_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classblocchi_1_1_tile_manager_a0f6db27994c397bfb9bb56d539707c02}\label{classblocchi_1_1_tile_manager_a0f6db27994c397bfb9bb56d539707c02}} 
+\index{blocchi\+::\+Tile\+Manager@{blocchi\+::\+Tile\+Manager}!atlas@{atlas}}
+\index{atlas@{atlas}!blocchi\+::\+Tile\+Manager@{blocchi\+::\+Tile\+Manager}}
+\subsubsection{\texorpdfstring{atlas}{atlas}}
+{\footnotesize\ttfamily Buffered\+Image atlas}
+
+
+
+Definition at line 22 of file Tile\+Manager.\+java.
+
+\mbox{\Hypertarget{classblocchi_1_1_tile_manager_a976f8123c1fc10e66de7e7f98570d45a}\label{classblocchi_1_1_tile_manager_a976f8123c1fc10e66de7e7f98570d45a}} 
+\index{blocchi\+::\+Tile\+Manager@{blocchi\+::\+Tile\+Manager}!E\+R\+BA@{E\+R\+BA}}
+\index{E\+R\+BA@{E\+R\+BA}!blocchi\+::\+Tile\+Manager@{blocchi\+::\+Tile\+Manager}}
+\subsubsection{\texorpdfstring{E\+R\+BA}{ERBA}}
+{\footnotesize\ttfamily \hyperlink{classblocchi_1_1_tile}{Tile} E\+R\+BA}
+
+
+
+Definition at line 21 of file Tile\+Manager.\+java.
+
+\mbox{\Hypertarget{classblocchi_1_1_tile_manager_a4b6ed1e7aa1fffacfc6271483b48c304}\label{classblocchi_1_1_tile_manager_a4b6ed1e7aa1fffacfc6271483b48c304}} 
+\index{blocchi\+::\+Tile\+Manager@{blocchi\+::\+Tile\+Manager}!tiles@{tiles}}
+\index{tiles@{tiles}!blocchi\+::\+Tile\+Manager@{blocchi\+::\+Tile\+Manager}}
+\subsubsection{\texorpdfstring{tiles}{tiles}}
+{\footnotesize\ttfamily Array\+List$<$\hyperlink{classblocchi_1_1_tile}{Tile}$>$ tiles = new Array\+List$<$$>$()}
+
+
+
+Definition at line 23 of file Tile\+Manager.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/blocchi/\hyperlink{_tile_manager_8java}{Tile\+Manager.\+java}\end{DoxyCompactItemize}

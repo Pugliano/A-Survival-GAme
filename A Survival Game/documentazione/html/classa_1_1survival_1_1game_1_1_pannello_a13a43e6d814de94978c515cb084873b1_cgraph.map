@@ -1,0 +1,38 @@
+<map id="run" name="run">
+<area shape="rect" id="node2" href="$classa_1_1survival_1_1game_1_1_pannello.html#a1fe2f184b3cc7345c6a0f08d183a1d0b" title="muovi" alt="" coords="133,518,187,545"/>
+<area shape="rect" id="node17" href="$classa_1_1survival_1_1game_1_1_pannello.html#a65c6d6be4b2a0069d1920cb7f466643b" title="metto a schermo intero " alt="" coords="93,839,227,866"/>
+<area shape="rect" id="node37" href="$classa_1_1survival_1_1game_1_1_pannello.html#ab07487900bba57d73694e694968a1993" title="drawSchermo" alt="" coords="109,890,211,917"/>
+<area shape="rect" id="node3" href="$class_entita_1_1_giocatore.html#a1fe2f184b3cc7345c6a0f08d183a1d0b" title="Metodo per far muovere il player e per caricare in base la direzione l&#39;immagine giusta. " alt="" coords="300,246,453,273"/>
+<area shape="rect" id="node4" href="$class_entita_1_1_giocatore.html#af4bcd86c7ccc1775a5fece50849563fe" title="Metodo per caricare le immagini quando attacco. " alt="" coords="553,63,737,90"/>
+<area shape="rect" id="node5" href="$classa_1_1survival_1_1game_1_1_collisioni.html#a87a22cc62f824d7a4e9a017a9b36b019" title="a.survival.game.Collisioni.\lControllaU" alt="" coords="827,5,998,47"/>
+<area shape="rect" id="node7" href="$classa_1_1survival_1_1game_1_1_collisioni.html#a839c38fa5d30f0458af3dcf4bf04f358" title="a.survival.game.Collisioni.\lControlla" alt="" coords="559,115,730,156"/>
+<area shape="rect" id="node10" href="$classa_1_1survival_1_1game_1_1_collisioni.html#ad38c8b3c50bbbd655ef3f9e2c80b21e0" title="a.survival.game.Collisioni.\lControllaOGG" alt="" coords="559,180,730,221"/>
+<area shape="rect" id="node11" href="$class_entita_1_1_giocatore.html#a9ba65e7d25928d62218cf14bee3c0273" title="Entita.Giocatore.RaccogliOGG" alt="" coords="545,246,745,273"/>
+<area shape="rect" id="node12" href="$class_entita_1_1_giocatore.html#aaf1d3a52e79be598afe385c91a9f4d0c" title="Entita.Giocatore.interazNPC" alt="" coords="551,297,738,323"/>
+<area shape="rect" id="node13" href="$class_entita_1_1_giocatore.html#a867fc5532a9f20042ecde7951b83c499" title="Entita.Giocatore.contatto\lNemici" alt="" coords="561,348,728,389"/>
+<area shape="rect" id="node14" href="$classa_1_1survival_1_1game_1_1_azioni.html#a39753d0160b9846cd1dd3d4556519456" title="setto un azione a 54*132 e se vado in quel blocco e premo invio allora printa il messaggio ..." alt="" coords="542,413,747,455"/>
+<area shape="rect" id="node6" href="$class_entita_1_1_giocatore.html#a0814609fcd5c78e217a57e65bb65f7b4" title="quando attacco i nemici diventano involnerabili per breve tempo " alt="" coords="813,71,1012,98"/>
+<area shape="rect" id="node8" href="$classblocchi_1_1_tile_manager.html#a1855b58fdbe502789d9c14ee0deffb9e" title="blocchi.TileManager.getTile" alt="" coords="823,122,1002,149"/>
+<area shape="rect" id="node9" href="$classblocchi_1_1_tile.html#a19996fc03739127aa64afbd2f49c2a7c" title="blocchi.Tile.getTileType" alt="" coords="834,173,991,199"/>
+<area shape="rect" id="node15" href="$classa_1_1survival_1_1game_1_1_azioni.html#aa8b8a425d9f7a22d14cf64d6d0263927" title="setto la x e la y dove posizionare l&#39;azione " alt="" coords="829,395,997,422"/>
+<area shape="rect" id="node16" href="$classa_1_1survival_1_1game_1_1_azioni.html#a9ca19225b144750b819e59fece5ef1a7" title="Avendo un azione chiamata cartello, questo metodo esiste per leggere le cose segnate sul oggetto cart..." alt="" coords="813,446,1013,473"/>
+<area shape="rect" id="node18" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#ae8c972c0fb4fcbc09c2219dd32cbd053" title="Metodo draw per printare i messaggi. " alt="" coords="275,719,479,746"/>
+<area shape="rect" id="node32" href="$classblocchi_1_1_gestione.html#ae8c972c0fb4fcbc09c2219dd32cbd053" title="Metodo per printare la mappa. " alt="" coords="301,870,452,897"/>
+<area shape="rect" id="node34" href="$classa_1_1survival_1_1game_1_1_pannello.html#abe2c4192cc87f74e6d45d5b5fe5283c3" title="orarioMappa" alt="" coords="330,981,423,1007"/>
+<area shape="rect" id="node19" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#aa13653318c21b0e6b86838e6091bfc9a" title="Metodo per printare il menu. " alt="" coords="527,610,763,637"/>
+<area shape="rect" id="node23" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a24697f9d9cd1d55fc26a7b7c0fd26697" title="Metodo per printare la vita del giocatore. " alt="" coords="543,712,747,753"/>
+<area shape="rect" id="node24" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a2dc05af87e20aefac5da3cd184d09456" title="Metodo per printare l&#39;ora nel gioco. " alt="" coords="532,661,757,687"/>
+<area shape="rect" id="node25" href="$classa_1_1survival_1_1game_1_1_pannello.html#a6e565369e7a4cd8bee8616ba06ebae08" title="getPausa" alt="" coords="606,778,683,805"/>
+<area shape="rect" id="node26" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a5ea2e0aa29eed2ee8e977ec1495103d3" title="Metodo per printare la scritta pausa. " alt="" coords="543,479,747,520"/>
+<area shape="rect" id="node27" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a07761ecd195353aa0f33107b57c3c852" title="Metodo per printare i dialoghi tra npc e player. " alt="" coords="543,829,747,871"/>
+<area shape="rect" id="node29" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#aa9a8046a21bf4083e12263a078701107" title="Metodo per printare le statisctiche del giocatore. " alt="" coords="543,895,747,936"/>
+<area shape="rect" id="node31" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#aeb2c7e9c7d14c9eccb7e624bd9611ef8" title="a.survival.game.Interfaccia.draw\lGameOver" alt="" coords="543,544,747,585"/>
+<area shape="rect" id="node20" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a33bfff0e4091d0c94334a82514ffa7ec" title="a.survival.game.Interfaccia.get\lXTestoCentrato" alt="" coords="815,531,1010,572"/>
+<area shape="rect" id="node21" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#af3e544b837451de1ad271a8d32b61385" title="a.survival.game.Interfaccia.get\lAltezzaStringa" alt="" coords="815,596,1010,637"/>
+<area shape="rect" id="node22" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a5e33eb51424c4888d0cd26cf5e0311de" title="a.survival.game.Interfaccia.get\lLunghezzaStringa" alt="" coords="815,661,1010,703"/>
+<area shape="rect" id="node28" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a73a0c3b24b1d27132d84f43de7262e36" title="a.survival.game.Interfaccia.draw\lDialoghiF" alt="" coords="811,829,1015,871"/>
+<area shape="rect" id="node30" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a587ecc556d77a50194f3e80ca09551ce" title="a.survival.game.Interfaccia.get\lXTestoAdestra" alt="" coords="815,895,1010,936"/>
+<area shape="rect" id="node33" href="$classblocchi_1_1_tile_manager.html#a46ebd32c7ec4ac506010fe465687bdd7" title="blocchi.TileManager.getSprite" alt="" coords="548,961,741,987"/>
+<area shape="rect" id="node35" href="$classa_1_1survival_1_1game_1_1_orario.html#afabaf052fc488e8c99104046a342feea" title="a.survival.game.Orario.getOra" alt="" coords="549,1011,741,1038"/>
+<area shape="rect" id="node36" href="$classa_1_1survival_1_1game_1_1_orario.html#a5dbecc8b3d698dae712952c4b30a4699" title="a.survival.game.Orario.ora" alt="" coords="827,1011,998,1038"/>
+</map>

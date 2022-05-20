@@ -1,0 +1,5 @@
+<map id="TileManager" name="TileManager">
+<area shape="rect" id="node2" href="$classblocchi_1_1_tile_manager.html#afc6b9f4a25216ec36baa6e7518a7501a" title="loadAtlas" alt="" coords="150,5,226,32"/>
+<area shape="rect" id="node3" href="$classblocchi_1_1_tile_manager.html#abb7fa074b36e6e355db16761115fb367" title="createTiles" alt="" coords="145,56,231,83"/>
+<area shape="rect" id="node4" href="$classblocchi_1_1_tile_manager.html#a46ebd32c7ec4ac506010fe465687bdd7" title="getSprite" alt="" coords="279,56,353,83"/>
+</map>

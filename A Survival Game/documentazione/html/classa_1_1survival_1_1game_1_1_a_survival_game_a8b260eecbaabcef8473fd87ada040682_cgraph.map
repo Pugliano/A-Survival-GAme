@@ -1,0 +1,12 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$classa_1_1survival_1_1game_1_1_pannello.html#a656b18ea5779c5d29c83a5abea629534" title="a.survival.game.Pannello.set\lGioco" alt="" coords="108,107,295,149"/>
+<area shape="rect" id="node10" href="$classa_1_1survival_1_1game_1_1_pannello.html#aeadd7c80de430e172e3231afe0d94bd1" title="a.survival.game.Pannello.start\lGameThread" alt="" coords="104,202,299,243"/>
+<area shape="rect" id="node3" href="$classa_1_1survival_1_1game_1_1_tuttecose.html#a709a0c0f5e1492a7d71d4548e5668707" title="a.survival.game.Tuttecose.setoggetto" alt="" coords="347,5,583,32"/>
+<area shape="rect" id="node4" href="$classa_1_1survival_1_1game_1_1_tuttecose.html#a80676eb19cc9cd7bacacb02ac21c11c7" title="Metodo per mettere gli npc sulla mappa, in questo caso 2. " alt="" coords="357,56,573,83"/>
+<area shape="rect" id="node5" href="$classa_1_1survival_1_1game_1_1_pannello.html#a443c6be9d46440deb1e73b957e28d56e" title="via musica " alt="" coords="373,107,556,149"/>
+<area shape="rect" id="node9" href="$classa_1_1survival_1_1game_1_1_pannello.html#afcdfb03d382a1f735d929602329d276b" title="a.survival.game.Pannello.schermo\lIntero" alt="" coords="355,173,574,214"/>
+<area shape="rect" id="node6" href="$classa_1_1survival_1_1game_1_1_suoni.html#ae823b8f4c288feca83157a7622d42652" title="uso questo metodo per aprire il file e far partire il suono " alt="" coords="631,64,821,91"/>
+<area shape="rect" id="node7" href="$classa_1_1survival_1_1game_1_1_suoni.html#ac738b68e43ea05bba3f9e9b8e020426f" title="faccio partire la musica " alt="" coords="643,115,809,141"/>
+<area shape="rect" id="node8" href="$classa_1_1survival_1_1game_1_1_suoni.html#afe461d27b9c48d5921c00d521181f12f" title="tengo in loop la musica " alt="" coords="639,165,813,192"/>
+<area shape="rect" id="node11" href="$classa_1_1survival_1_1game_1_1_tuttecose.html#ab2ada56f46e12f2fe9e2ec9b9dcf24b2" title="Metodo per mettere i mob ostili sulla mappa, ogni 30 millisec spawnano tot mob ostili su tutta la map..." alt="" coords="355,239,574,265"/>
+</map>

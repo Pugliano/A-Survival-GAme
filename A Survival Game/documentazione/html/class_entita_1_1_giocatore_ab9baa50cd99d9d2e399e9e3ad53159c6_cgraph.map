@@ -1,0 +1,8 @@
+<map id="Giocatore" name="Giocatore">
+<area shape="rect" id="node2" href="$class_entita_1_1_giocatore.html#a38a75be5807f155ff640bfa73518421d" title="Metodo per settare i valori base del giocatore. " alt="" coords="174,31,241,57"/>
+<area shape="rect" id="node5" href="$class_entita_1_1_giocatore.html#abac365540bed82b4025e8e845b779c72" title="setto le immagini quando cammino " alt="" coords="154,81,261,108"/>
+<area shape="rect" id="node7" href="$class_entita_1_1_giocatore.html#acc1691c076ed9335796eac421dce845f" title="setto le immagini quando attacco " alt="" coords="132,132,283,159"/>
+<area shape="rect" id="node3" href="$class_entita_1_1_giocatore.html#aafeab2e7e3b0e536c594b5aef8c31683" title="getAttacco" alt="" coords="353,5,439,32"/>
+<area shape="rect" id="node4" href="$class_entita_1_1_giocatore.html#a5cd7986fb28ad7739710f90e464b1b27" title="getDifesa" alt="" coords="358,56,434,83"/>
+<area shape="rect" id="node6" href="$class_entita_1_1_entita.html#a2f9ef9abd43cd7e34cd446aef3f499ab" title="Metodo per settare la grandezza dei vari tile. " alt="" coords="331,119,461,145"/>
+</map>

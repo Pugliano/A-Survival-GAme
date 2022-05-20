@@ -1,0 +1,16 @@
+<map id="Entita" name="Entita">
+<area shape="rect" id="node3" href="$class_entita_1_1_giocatore.html" title="Classe con extends Entita. " alt="" coords="5,652,176,1243"/>
+<area shape="rect" id="node4" href="$class_entita_1_1_mob.html" title="Classe con extends Entita. " alt="" coords="201,865,343,1030"/>
+<area shape="rect" id="node7" href="$class_entita_1_1_n_p_c.html" title="Classe con extends Entita. " alt="" coords="367,887,462,1008"/>
+<area shape="rect" id="node9" href="$classoggetti_1_1_o_g_gcartello.html" title="{OGGcartello\n||+ OGGcartello()\l}" alt="" coords="487,909,601,986"/>
+<area shape="rect" id="node10" href="$classoggetti_1_1_o_g_gcassa.html" title="Classe con extends Entita. " alt="" coords="625,909,732,986"/>
+<area shape="rect" id="node11" href="$classoggetti_1_1_o_g_gcoltello.html" title="Classe con extends Entita. " alt="" coords="757,909,870,986"/>
+<area shape="rect" id="node12" href="$classoggetti_1_1_o_g_gcuore.html" title="Classe con extends Entita. " alt="" coords="895,909,999,986"/>
+<area shape="rect" id="node13" href="$classoggetti_1_1_o_g_gmela.html" title="Classe con extends Entita. " alt="" coords="1023,909,1123,986"/>
+<area shape="rect" id="node14" href="$classoggetti_1_1_o_g_gmuro.html" title="Classe con extends Entita. " alt="" coords="1148,909,1249,986"/>
+<area shape="rect" id="node15" href="$classoggetti_1_1_o_g_gscudo.html" title="Classe con extends Entita. " alt="" coords="1273,909,1380,986"/>
+<area shape="rect" id="node16" href="$classoggetti_1_1_o_g_gspada.html" title="Classe con extends Entita. " alt="" coords="1404,909,1511,986"/>
+<area shape="rect" id="node5" href="$class_entita_1_1_ape.html" title="Classe con extends Mob. " alt="" coords="110,1313,205,1405"/>
+<area shape="rect" id="node6" href="$class_entita_1_1_slime.html" title="{Slime\n||+ Slime()\l+ getImage()\l}" alt="" coords="229,1313,323,1405"/>
+<area shape="rect" id="node8" href="$class_entita_1_1_n_p_c___anziano.html" title="Classe con extends EPC. " alt="" coords="352,1291,477,1427"/>
+</map>

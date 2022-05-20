@@ -1,0 +1,4 @@
+<map id="Controlla" name="Controlla">
+<area shape="rect" id="node2" href="$classblocchi_1_1_tile_manager.html#a1855b58fdbe502789d9c14ee0deffb9e" title="blocchi.TileManager.getTile" alt="" coords="127,5,305,32"/>
+<area shape="rect" id="node3" href="$classblocchi_1_1_tile.html#a19996fc03739127aa64afbd2f49c2a7c" title="blocchi.Tile.getTileType" alt="" coords="137,56,295,83"/>
+</map>

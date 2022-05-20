@@ -1,0 +1,5 @@
+<map id="viaMusica" name="viaMusica">
+<area shape="rect" id="node2" href="$classa_1_1survival_1_1game_1_1_suoni.html#ae823b8f4c288feca83157a7622d42652" title="uso questo metodo per aprire il file e far partire il suono " alt="" coords="132,5,323,32"/>
+<area shape="rect" id="node3" href="$classa_1_1survival_1_1game_1_1_suoni.html#ac738b68e43ea05bba3f9e9b8e020426f" title="faccio partire la musica " alt="" coords="144,56,311,83"/>
+<area shape="rect" id="node4" href="$classa_1_1survival_1_1game_1_1_suoni.html#afe461d27b9c48d5921c00d521181f12f" title="tengo in loop la musica " alt="" coords="140,107,315,133"/>
+</map>

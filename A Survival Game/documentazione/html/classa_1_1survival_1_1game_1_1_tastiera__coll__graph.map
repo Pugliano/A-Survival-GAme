@@ -1,0 +1,15 @@
+<map id="Tastiera" name="Tastiera">
+<area shape="rect" id="node3" href="$classa_1_1survival_1_1game_1_1_pannello.html" title="extends JPanel e implements Runnable " alt="" coords="1267,623,1421,1169"/>
+<area shape="rect" id="node25" href="$class_entita_1_1_entita.html" title="{Entita\n|+ x\l+ velocita\l+ direzione\l+ Contat\l+ Num\l+ AreaSX\l+ collisioniSI\l+ VelocitaM\l+ nome\l+ collisioni\land 7 more...\l~ y\l~ destra2\l~ AreaSY\l~ image2\l~ invincibileContatore\l~ Inddialoghi\l|+ Entita()\l+ Entita()\l+ setMove()\l+ muovi()\l+ draw()\l+ setup()\l+ parla()\l}" alt="" coords="133,1261,278,1661"/>
+<area shape="rect" id="node6" href="$classa_1_1survival_1_1game_1_1_orario.html" title="extends Thread " alt="" coords="956,1871,1087,2051"/>
+<area shape="rect" id="node8" href="$classa_1_1survival_1_1game_1_1_interfaccia.html" title="{Interfaccia\n|+ messON\l+ messag\l+ Fine\l+ comandi\l+ comandigo\l+ Dcorrente\l~ messT\l~ tempoG\l|+ Interfaccia()\l+ PrintMess()\l+ draw()\l+ drawFineGioco()\l+ drawVitaPlayer()\l+ drawOra()\l+ drawMenu()\l+ drawScrittaPausa()\l+ drawDialoghi()\l+ drawDatiPlayer()\land 8 more...\l}" alt="" coords="645,1298,789,1625"/>
+<area shape="rect" id="node14" href="$classa_1_1survival_1_1game_1_1_azioni.html" title="{Azioni\n|~ AzioniRx\l~ AzioniRy\l|+ Azioni()\l+ ControllaAzioni()\l+ hit()\l+ dannoP()\l+ Bere()\l+ Leggere()\l}" alt="" coords="1689,1379,1818,1544"/>
+<area shape="rect" id="node15" href="$classblocchi_1_1_gestione.html" title="{Gestione\n|+ Nmappe\l~ schermoX\l~ schermoY\l|+ Gestione()\l+ caricaM()\l+ draw()\l}" alt="" coords="1071,1393,1166,1529"/>
+<area shape="rect" id="node26" href="$classa_1_1survival_1_1game_1_1_tuttecose.html" title="{Tuttecose\n||+ Tuttecose()\l+ setoggetto()\l+ setNpc()\l+ setMob()\l}" alt="" coords="1479,1401,1582,1522"/>
+<area shape="rect" id="node27" href="$classa_1_1survival_1_1game_1_1_collisioni.html" title="{Collisioni\n|+ Nmappe\l|+ Collisioni()\l+ caricaM()\l+ Controlla()\l+ ControllaOGG()\l+ ControllaU()\l+ ControllaP()\l}" alt="" coords="1259,1386,1381,1537"/>
+<area shape="rect" id="node28" href="$classa_1_1survival_1_1game_1_1_mouse.html" title="implements MouseListener e MouseMotionListener " alt="" coords="1853,1371,1987,1551"/>
+<area shape="rect" id="node16" href="$classblocchi_1_1_tile_manager.html" title="{TileManager\n||+ TileManager()\l+ getTile()\l+ getSprite()\l&#45; createTiles()\l&#45; loadAtlas()\l&#45; getSprite()\l}" alt="" coords="827,821,939,971"/>
+<area shape="rect" id="node17" href="$classblocchi_1_1_tile.html" title="{Tile\n|~ tiletype\l&#45; id\l|+ Tile()\l+ getSprite()\l+ getId()\l+ getTileType()\l}" alt="" coords="385,211,493,347"/>
+<area shape="rect" id="node24" href="$class_entita_1_1_giocatore.html" title="Classe con extends Entita. " alt="" coords="117,1739,288,2183"/>
+<area shape="rect" id="node21" href="$classa_1_1survival_1_1game_1_1_suoni.html" title="{Suoni\n||+ Suoni()\l+ setFile()\l+ vai()\l+ loop()\l+ stop()\l}" alt="" coords="1431,211,1513,347"/>
+</map>

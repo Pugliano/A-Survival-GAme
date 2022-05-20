@@ -1,0 +1,9 @@
+<map id="run" name="run">
+<area shape="rect" id="node2" href="$class_entita_1_1_entita.html#a1fe2f184b3cc7345c6a0f08d183a1d0b" title="metodo per gestire collisioni con i vari npc " alt="" coords="93,129,224,156"/>
+<area shape="rect" id="node3" href="$classa_1_1survival_1_1game_1_1_collisioni.html#a839c38fa5d30f0458af3dcf4bf04f358" title="a.survival.game.Collisioni.\lControlla" alt="" coords="272,23,443,65"/>
+<area shape="rect" id="node6" href="$classa_1_1survival_1_1game_1_1_collisioni.html#ad38c8b3c50bbbd655ef3f9e2c80b21e0" title="a.survival.game.Collisioni.\lControllaOGG" alt="" coords="272,89,443,130"/>
+<area shape="rect" id="node7" href="$classa_1_1survival_1_1game_1_1_collisioni.html#a87a22cc62f824d7a4e9a017a9b36b019" title="a.survival.game.Collisioni.\lControllaU" alt="" coords="272,154,443,195"/>
+<area shape="rect" id="node8" href="$classa_1_1survival_1_1game_1_1_collisioni.html#ab8b33fe794da631b2ee55f7b77bf31d5" title="a.survival.game.Collisioni.\lControllaP" alt="" coords="272,219,443,261"/>
+<area shape="rect" id="node4" href="$classblocchi_1_1_tile_manager.html#a1855b58fdbe502789d9c14ee0deffb9e" title="blocchi.TileManager.getTile" alt="" coords="491,5,669,32"/>
+<area shape="rect" id="node5" href="$classblocchi_1_1_tile.html#a19996fc03739127aa64afbd2f49c2a7c" title="blocchi.Tile.getTileType" alt="" coords="501,56,659,83"/>
+</map>

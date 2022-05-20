@@ -1,0 +1,9 @@
+<map id="setGioco" name="setGioco">
+<area shape="rect" id="node2" href="$classa_1_1survival_1_1game_1_1_tuttecose.html#a709a0c0f5e1492a7d71d4548e5668707" title="a.survival.game.Tuttecose.setoggetto" alt="" coords="128,5,364,32"/>
+<area shape="rect" id="node3" href="$classa_1_1survival_1_1game_1_1_tuttecose.html#a80676eb19cc9cd7bacacb02ac21c11c7" title="Metodo per mettere gli npc sulla mappa, in questo caso 2. " alt="" coords="138,56,354,83"/>
+<area shape="rect" id="node4" href="$classa_1_1survival_1_1game_1_1_pannello.html#a443c6be9d46440deb1e73b957e28d56e" title="via musica " alt="" coords="207,107,285,133"/>
+<area shape="rect" id="node8" href="$classa_1_1survival_1_1game_1_1_pannello.html#afcdfb03d382a1f735d929602329d276b" title="schermoIntero" alt="" coords="194,157,298,184"/>
+<area shape="rect" id="node5" href="$classa_1_1survival_1_1game_1_1_suoni.html#ae823b8f4c288feca83157a7622d42652" title="uso questo metodo per aprire il file e far partire il suono " alt="" coords="412,56,603,83"/>
+<area shape="rect" id="node6" href="$classa_1_1survival_1_1game_1_1_suoni.html#ac738b68e43ea05bba3f9e9b8e020426f" title="faccio partire la musica " alt="" coords="424,107,591,133"/>
+<area shape="rect" id="node7" href="$classa_1_1survival_1_1game_1_1_suoni.html#afe461d27b9c48d5921c00d521181f12f" title="tengo in loop la musica " alt="" coords="420,157,595,184"/>
+</map>

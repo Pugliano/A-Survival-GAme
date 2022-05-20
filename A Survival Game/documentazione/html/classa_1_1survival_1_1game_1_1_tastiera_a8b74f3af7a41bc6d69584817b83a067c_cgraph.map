@@ -1,0 +1,4 @@
+<map id="gioco" name="gioco">
+<area shape="rect" id="node2" href="$classa_1_1survival_1_1game_1_1_pannello.html#a2283a8c1211827155404ab0ccb5c65c4" title="a.survival.game.Pannello.set\lPausa" alt="" coords="107,5,293,47"/>
+<area shape="rect" id="node3" href="$classa_1_1survival_1_1game_1_1_pannello.html#a6e565369e7a4cd8bee8616ba06ebae08" title="a.survival.game.Pannello.get\lPausa" alt="" coords="107,71,293,112"/>
+</map>

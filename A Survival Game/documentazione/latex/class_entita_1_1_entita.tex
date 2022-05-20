@@ -1,0 +1,438 @@
+\hypertarget{class_entita_1_1_entita}{}\section{Entita Class Reference}
+\label{class_entita_1_1_entita}\index{Entita@{Entita}}
+
+
+Inheritance diagram for Entita\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entita_1_1_entita__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Entita\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entita_1_1_entita__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_entita_1_1_entita_a2080d433e5b9b6ce5c9f0b9ec426e6fb}{Entita} (\hyperlink{classa_1_1survival_1_1game_1_1_pannello}{Pannello} p)
+\item 
+\hyperlink{class_entita_1_1_entita_a6984a7f67889d66d0b6e3627ff46b289}{Entita} (\hyperlink{classa_1_1survival_1_1game_1_1_pannello}{Pannello} p, \hyperlink{classa_1_1survival_1_1game_1_1_tastiera}{Tastiera} t)
+\item 
+void \hyperlink{class_entita_1_1_entita_a447f807a76b7ea97a78cb76241fe8bc8}{set\+Move} ()
+\item 
+void \hyperlink{class_entita_1_1_entita_a1fe2f184b3cc7345c6a0f08d183a1d0b}{muovi} ()
+\begin{DoxyCompactList}\small\item\em metodo per gestire collisioni con i vari npc \end{DoxyCompactList}\item 
+void \hyperlink{class_entita_1_1_entita_ae8c972c0fb4fcbc09c2219dd32cbd053}{draw} (Graphics2D g2)
+\begin{DoxyCompactList}\small\item\em Metodo per printare le immagini dei mob in base alla direzione in cui puntano. \end{DoxyCompactList}\item 
+Buffered\+Image \hyperlink{class_entita_1_1_entita_a2f9ef9abd43cd7e34cd446aef3f499ab}{setup} (String Nimmagine, int l, int a)
+\begin{DoxyCompactList}\small\item\em Metodo per settare la grandezza dei vari tile. \end{DoxyCompactList}\item 
+void \hyperlink{class_entita_1_1_entita_a8310c90e226ac9bc11547a3adb9cd0f3}{parla} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_entita_1_1_entita_a6150e0515f7202e2fb518f7206ed97dc}{x}
+\item 
+int \hyperlink{class_entita_1_1_entita_a40cd1c33d6ccf3a0571a5c5aa3c51a25}{velocita}
+\item 
+Buffered\+Image \hyperlink{class_entita_1_1_entita_a6e18c56eb6db900f07db511b10b4f075}{su1}
+\item 
+String \hyperlink{class_entita_1_1_entita_a5bda37a4dbca5f275a41dd383b905277}{direzione} =\char`\"{}giu\char`\"{}
+\item 
+int \hyperlink{class_entita_1_1_entita_a679c3f7220a014c0a3b78e6023747964}{Contat} =0
+\item 
+int \hyperlink{class_entita_1_1_entita_a558051bc0b213b418d65f58e4ad9a311}{Num} =1
+\item 
+Rectangle \hyperlink{class_entita_1_1_entita_abc4c4a84c9edea554a8b72a7d929e664}{S\+Area} =new Rectangle(0,0,48,48)
+\item 
+Rectangle \hyperlink{class_entita_1_1_entita_aee10046794f54deadcafb19e0494a719}{Area\+Attacco} =new Rectangle(0,0,0,0)
+\item 
+int \hyperlink{class_entita_1_1_entita_a2d5e9de91cc316910aafdea3973089d8}{Area\+SX}
+\item 
+boolean \hyperlink{class_entita_1_1_entita_a8253afab60c658fa3427e97e63e8d4ea}{collisioni\+SI} =false
+\item 
+int \hyperlink{class_entita_1_1_entita_a90a894e061963f9de7d3619983627ccc}{VelocitaM} =0
+\item 
+Buffered\+Image \hyperlink{class_entita_1_1_entita_a45e94f786577439d02e4f16aefa96717}{image}
+\item 
+String \hyperlink{class_entita_1_1_entita_a4cfff30ec02286864b995e013b6c2a41}{nome}
+\item 
+boolean \hyperlink{class_entita_1_1_entita_a8ba457fa7d76f9e2b54085588aced39f}{collisioni} = true
+\item 
+boolean \hyperlink{class_entita_1_1_entita_afb759606adf5eb47c3e8b17e32968115}{invincibile} =false
+\item 
+int \hyperlink{class_entita_1_1_entita_a6775e052c6cf2cbafd50a83d1e4b6fc3}{sprite\+Counter} =0
+\item 
+int \hyperlink{class_entita_1_1_entita_ac765329451135abec74c45e1897abf26}{type}
+\item 
+int \hyperlink{class_entita_1_1_entita_adf6e8908b656fe5199ca043083e48615}{Vita\+Max}
+\item 
+int \hyperlink{class_entita_1_1_entita_aa68a3a700682130e7af254a4b325f0cb}{vita}
+\item 
+int \hyperlink{class_entita_1_1_entita_a955d461d95cf97cd1806f6abc44ce485}{attacco\+Spada}
+\item 
+int \hyperlink{class_entita_1_1_entita_ad1c7c7fe90e4e2563cac9ed38ccb479d}{difesa\+Scudo}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 24 of file Entita.\+java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_entita_1_1_entita_a2080d433e5b9b6ce5c9f0b9ec426e6fb}\label{class_entita_1_1_entita_a2080d433e5b9b6ce5c9f0b9ec426e6fb}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!Entita@{Entita}}
+\index{Entita@{Entita}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{Entita()}{Entita()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_entita_1_1_entita}{Entita} (\begin{DoxyParamCaption}\item[{\hyperlink{classa_1_1survival_1_1game_1_1_pannello}{Pannello}}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line 72 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_a6984a7f67889d66d0b6e3627ff46b289}\label{class_entita_1_1_entita_a6984a7f67889d66d0b6e3627ff46b289}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!Entita@{Entita}}
+\index{Entita@{Entita}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{Entita()}{Entita()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_entita_1_1_entita}{Entita} (\begin{DoxyParamCaption}\item[{\hyperlink{classa_1_1survival_1_1game_1_1_pannello}{Pannello}}]{p,  }\item[{\hyperlink{classa_1_1survival_1_1game_1_1_tastiera}{Tastiera}}]{t }\end{DoxyParamCaption})}
+
+
+
+Definition at line 76 of file Entita.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_entita_1_1_entita_ae8c972c0fb4fcbc09c2219dd32cbd053}\label{class_entita_1_1_entita_ae8c972c0fb4fcbc09c2219dd32cbd053}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!draw@{draw}}
+\index{draw@{draw}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void draw (\begin{DoxyParamCaption}\item[{Graphics2D}]{g2 }\end{DoxyParamCaption})}
+
+
+
+Metodo per printare le immagini dei mob in base alla direzione in cui puntano. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g2} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 137 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_a1fe2f184b3cc7345c6a0f08d183a1d0b}\label{class_entita_1_1_entita_a1fe2f184b3cc7345c6a0f08d183a1d0b}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!muovi@{muovi}}
+\index{muovi@{muovi}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{muovi()}{muovi()}}
+{\footnotesize\ttfamily void muovi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+metodo per gestire collisioni con i vari npc 
+
+
+
+Definition at line 88 of file Entita.\+java.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entita_1_1_entita_a1fe2f184b3cc7345c6a0f08d183a1d0b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_entita_1_1_entita_a1fe2f184b3cc7345c6a0f08d183a1d0b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_entita_1_1_entita_a8310c90e226ac9bc11547a3adb9cd0f3}\label{class_entita_1_1_entita_a8310c90e226ac9bc11547a3adb9cd0f3}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!parla@{parla}}
+\index{parla@{parla}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{parla()}{parla()}}
+{\footnotesize\ttfamily void parla (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 196 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_a447f807a76b7ea97a78cb76241fe8bc8}\label{class_entita_1_1_entita_a447f807a76b7ea97a78cb76241fe8bc8}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!set\+Move@{set\+Move}}
+\index{set\+Move@{set\+Move}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{set\+Move()}{setMove()}}
+{\footnotesize\ttfamily void set\+Move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 81 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_a2f9ef9abd43cd7e34cd446aef3f499ab}\label{class_entita_1_1_entita_a2f9ef9abd43cd7e34cd446aef3f499ab}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!setup@{setup}}
+\index{setup@{setup}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily Buffered\+Image setup (\begin{DoxyParamCaption}\item[{String}]{Nimmagine,  }\item[{int}]{l,  }\item[{int}]{a }\end{DoxyParamCaption})}
+
+
+
+Metodo per settare la grandezza dei vari tile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Nimmagine} & \\
+\hline
+{\em l} & \\
+\hline
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 183 of file Entita.\+java.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entita_1_1_entita_a2f9ef9abd43cd7e34cd446aef3f499ab_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_entita_1_1_entita_aee10046794f54deadcafb19e0494a719}\label{class_entita_1_1_entita_aee10046794f54deadcafb19e0494a719}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!Area\+Attacco@{Area\+Attacco}}
+\index{Area\+Attacco@{Area\+Attacco}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{Area\+Attacco}{AreaAttacco}}
+{\footnotesize\ttfamily Rectangle Area\+Attacco =new Rectangle(0,0,0,0)}
+
+
+
+Definition at line 42 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_a2d5e9de91cc316910aafdea3973089d8}\label{class_entita_1_1_entita_a2d5e9de91cc316910aafdea3973089d8}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!Area\+SX@{Area\+SX}}
+\index{Area\+SX@{Area\+SX}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{Area\+SX}{AreaSX}}
+{\footnotesize\ttfamily int Area\+SX}
+
+
+
+Definition at line 44 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_a955d461d95cf97cd1806f6abc44ce485}\label{class_entita_1_1_entita_a955d461d95cf97cd1806f6abc44ce485}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!attacco\+Spada@{attacco\+Spada}}
+\index{attacco\+Spada@{attacco\+Spada}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{attacco\+Spada}{attaccoSpada}}
+{\footnotesize\ttfamily int attacco\+Spada}
+
+armi 
+
+Definition at line 66 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_a8ba457fa7d76f9e2b54085588aced39f}\label{class_entita_1_1_entita_a8ba457fa7d76f9e2b54085588aced39f}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!collisioni@{collisioni}}
+\index{collisioni@{collisioni}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{collisioni}{collisioni}}
+{\footnotesize\ttfamily boolean collisioni = true}
+
+
+
+Definition at line 51 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_a8253afab60c658fa3427e97e63e8d4ea}\label{class_entita_1_1_entita_a8253afab60c658fa3427e97e63e8d4ea}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!collisioni\+SI@{collisioni\+SI}}
+\index{collisioni\+SI@{collisioni\+SI}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{collisioni\+SI}{collisioniSI}}
+{\footnotesize\ttfamily boolean collisioni\+SI =false}
+
+
+
+Definition at line 45 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_a679c3f7220a014c0a3b78e6023747964}\label{class_entita_1_1_entita_a679c3f7220a014c0a3b78e6023747964}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!Contat@{Contat}}
+\index{Contat@{Contat}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{Contat}{Contat}}
+{\footnotesize\ttfamily int Contat =0}
+
+
+
+Definition at line 37 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_ad1c7c7fe90e4e2563cac9ed38ccb479d}\label{class_entita_1_1_entita_ad1c7c7fe90e4e2563cac9ed38ccb479d}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!difesa\+Scudo@{difesa\+Scudo}}
+\index{difesa\+Scudo@{difesa\+Scudo}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{difesa\+Scudo}{difesaScudo}}
+{\footnotesize\ttfamily int difesa\+Scudo}
+
+
+
+Definition at line 67 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_a5bda37a4dbca5f275a41dd383b905277}\label{class_entita_1_1_entita_a5bda37a4dbca5f275a41dd383b905277}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!direzione@{direzione}}
+\index{direzione@{direzione}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{direzione}{direzione}}
+{\footnotesize\ttfamily String direzione =\char`\"{}giu\char`\"{}}
+
+
+
+Definition at line 35 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_a45e94f786577439d02e4f16aefa96717}\label{class_entita_1_1_entita_a45e94f786577439d02e4f16aefa96717}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!image@{image}}
+\index{image@{image}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{image}{image}}
+{\footnotesize\ttfamily Buffered\+Image image}
+
+
+
+Definition at line 49 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_afb759606adf5eb47c3e8b17e32968115}\label{class_entita_1_1_entita_afb759606adf5eb47c3e8b17e32968115}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!invincibile@{invincibile}}
+\index{invincibile@{invincibile}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{invincibile}{invincibile}}
+{\footnotesize\ttfamily boolean invincibile =false}
+
+set per far diventare invincibile il player dopo aver subito danni 
+
+Definition at line 54 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_a4cfff30ec02286864b995e013b6c2a41}\label{class_entita_1_1_entita_a4cfff30ec02286864b995e013b6c2a41}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!nome@{nome}}
+\index{nome@{nome}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{nome}{nome}}
+{\footnotesize\ttfamily String nome}
+
+
+
+Definition at line 50 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_a558051bc0b213b418d65f58e4ad9a311}\label{class_entita_1_1_entita_a558051bc0b213b418d65f58e4ad9a311}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!Num@{Num}}
+\index{Num@{Num}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{Num}{Num}}
+{\footnotesize\ttfamily int Num =1}
+
+
+
+Definition at line 38 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_abc4c4a84c9edea554a8b72a7d929e664}\label{class_entita_1_1_entita_abc4c4a84c9edea554a8b72a7d929e664}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!S\+Area@{S\+Area}}
+\index{S\+Area@{S\+Area}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{S\+Area}{SArea}}
+{\footnotesize\ttfamily Rectangle S\+Area =new Rectangle(0,0,48,48)}
+
+set Area per le collisioni 
+
+Definition at line 41 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_a6775e052c6cf2cbafd50a83d1e4b6fc3}\label{class_entita_1_1_entita_a6775e052c6cf2cbafd50a83d1e4b6fc3}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!sprite\+Counter@{sprite\+Counter}}
+\index{sprite\+Counter@{sprite\+Counter}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{sprite\+Counter}{spriteCounter}}
+{\footnotesize\ttfamily int sprite\+Counter =0}
+
+
+
+Definition at line 56 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_a6e18c56eb6db900f07db511b10b4f075}\label{class_entita_1_1_entita_a6e18c56eb6db900f07db511b10b4f075}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!su1@{su1}}
+\index{su1@{su1}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{su1}{su1}}
+{\footnotesize\ttfamily Buffered\+Image su1}
+
+direzione mob 
+
+Definition at line 34 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_ac765329451135abec74c45e1897abf26}\label{class_entita_1_1_entita_ac765329451135abec74c45e1897abf26}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!type@{type}}
+\index{type@{type}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily int type}
+
+
+
+Definition at line 59 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_a40cd1c33d6ccf3a0571a5c5aa3c51a25}\label{class_entita_1_1_entita_a40cd1c33d6ccf3a0571a5c5aa3c51a25}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!velocita@{velocita}}
+\index{velocita@{velocita}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{velocita}{velocita}}
+{\footnotesize\ttfamily int velocita}
+
+velocita dei vari mob 
+
+Definition at line 31 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_a90a894e061963f9de7d3619983627ccc}\label{class_entita_1_1_entita_a90a894e061963f9de7d3619983627ccc}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!VelocitaM@{VelocitaM}}
+\index{VelocitaM@{VelocitaM}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{VelocitaM}{VelocitaM}}
+{\footnotesize\ttfamily int VelocitaM =0}
+
+
+
+Definition at line 46 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_aa68a3a700682130e7af254a4b325f0cb}\label{class_entita_1_1_entita_aa68a3a700682130e7af254a4b325f0cb}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!vita@{vita}}
+\index{vita@{vita}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{vita}{vita}}
+{\footnotesize\ttfamily int vita}
+
+
+
+Definition at line 63 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_adf6e8908b656fe5199ca043083e48615}\label{class_entita_1_1_entita_adf6e8908b656fe5199ca043083e48615}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!Vita\+Max@{Vita\+Max}}
+\index{Vita\+Max@{Vita\+Max}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{Vita\+Max}{VitaMax}}
+{\footnotesize\ttfamily int Vita\+Max}
+
+vita giocatore 
+
+Definition at line 62 of file Entita.\+java.
+
+\mbox{\Hypertarget{class_entita_1_1_entita_a6150e0515f7202e2fb518f7206ed97dc}\label{class_entita_1_1_entita_a6150e0515f7202e2fb518f7206ed97dc}} 
+\index{Entita\+::\+Entita@{Entita\+::\+Entita}!x@{x}}
+\index{x@{x}!Entita\+::\+Entita@{Entita\+::\+Entita}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int x}
+
+x e y mob 
+
+Definition at line 29 of file Entita.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Entita/\hyperlink{_entita_8java}{Entita.\+java}\end{DoxyCompactItemize}
