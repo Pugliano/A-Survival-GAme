@@ -61,6 +61,7 @@ public class Messaggi {
         } //pausa
         else if (p.state == p.gioco) {
             drawVitaPlayer();
+            drawOra(p.ora.ora());
             if (p.getPausa()) {
                 drawScrittaPausa();
             }
@@ -110,13 +111,12 @@ public class Messaggi {
     public void drawOra(String ora) {
 
         int x = p.IntFinestraL - (p.FinalAP / 2) - getLunghezzaStringa(ora);
-        int y = p.FinalAP / 2;
-        
+        int y = p.FinalAP;
         //ombra
-        g2.setColor(new Color(255,255,255));
-        g2.drawString(ora, x + 5, y + 5);
-        
         g2.setColor(new Color(0,0,0));
+        g2.drawString(ora, x + 2, y + 2);
+        
+        g2.setColor(new Color(255,255,255));
         g2.drawString(ora, x, y);
     }
 
@@ -148,8 +148,7 @@ public class Messaggi {
         testo = "Nuova partita";
         x = getXTestoCentrato(testo);
         y += p.FinalAP * 4; 
-        g2.drawRect(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
-        
+        //g2.drawRect(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
         rettangoloNuovo = new Rectangle(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
         g2.drawString(testo, x, y);
         if (comandi == 0) {
@@ -159,7 +158,7 @@ public class Messaggi {
         testo = "Carica partita";
         x = getXTestoCentrato(testo);
         y += p.FinalAP;
-        g2.drawRect(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
+        //g2.drawRect(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
         rettangoloCarica = new Rectangle(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
         g2.drawString(testo, x, y);
         if (comandi == 1) {
@@ -169,7 +168,7 @@ public class Messaggi {
         testo = "Esci";
         x = getXTestoCentrato(testo);
         y += p.FinalAP;
-        g2.drawRect(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
+        //g2.drawRect(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
         rettangoloEsci = new Rectangle(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
         g2.drawString(testo, x, y);
         if (comandi == 2) {

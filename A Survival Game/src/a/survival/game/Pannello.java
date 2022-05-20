@@ -3,6 +3,7 @@ package a.survival.game;
 import Umani.giocatore;
 import Umani.umani;
 import blocchi.Gestione;
+import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -22,7 +23,7 @@ import javax.swing.JPanel;
  */
 public class Pannello extends JPanel implements Runnable {
 
-    final int altezzaP = 32; //altezza del personaggio e degli npc fissi
+    final int altezzaP = 40; //altezza del personaggio e degli npc fissi
     final int scala = 2;
 
     //Impostazioni dello schermo
@@ -36,8 +37,8 @@ public class Pannello extends JPanel implements Runnable {
     public final int WordCol = 150;
     public final int WordRig = 150;
     //schermo intero
-    int IntFinestraL=FinestraL;
-    int IntFinestraA=FinestraA;
+    int IntFinestraL = FinestraL;
+    int IntFinestraA = FinestraA;
     BufferedImage schermoTemp;
     Graphics2D g2;
 
@@ -67,8 +68,8 @@ public class Pannello extends JPanel implements Runnable {
     public giocatore player = new giocatore(this, tastiera);
     public umani npc[] = new umani[50];
     public umani ogg[] = new umani[50];
-    public umani nemici[]=new umani[50];
-    ArrayList<umani> umaniList=new ArrayList<>();
+    public umani nemici[] = new umani[50];
+    ArrayList<umani> umaniList = new ArrayList<>();
 
     //stato del gioco
     public boolean pausa = false;
@@ -76,12 +77,12 @@ public class Pannello extends JPanel implements Runnable {
     public final int menu = 0;
     public final int gioco = 1;
     public final int dialoghi = 2;
-    
+
     //orario
     public Orario ora;
-    
+
     //printo le statistiche del player
-    public final int DatiPlayer=4;
+    public final int DatiPlayer = 4;
 
     public Pannello() {
         this.setPreferredSize(new Dimension(FinestraL, FinestraL));
@@ -99,10 +100,9 @@ public class Pannello extends JPanel implements Runnable {
         sett.setNemici();
         viaMusica(0);
         state = menu;
-        
-        
+
         //schermo temporaneo
-        schermoTemp=new BufferedImage(FinestraL, FinestraA, BufferedImage.TYPE_INT_ARGB);
+        schermoTemp = new BufferedImage(FinestraL, FinestraA, BufferedImage.TYPE_INT_ARGB);
         g2 = (Graphics2D) schermoTemp.getGraphics();
         schermoIntero();
     }
@@ -110,7 +110,7 @@ public class Pannello extends JPanel implements Runnable {
     public void startGameThread() {
         gameThread = new Thread(this);
         gameThread.start();
-        ora = new Orario(this, 12, 0);
+        ora = new Orario(this, 19, 0);
         ora.start();
     }
 
@@ -165,8 +165,8 @@ public class Pannello extends JPanel implements Runnable {
             }
         }
     }
-    
-    public void drawSchermoTemp(){
+
+    public void drawSchermoTemp() {
         //Menu
         if (state == menu) {
             messaggi.draw(g2);
@@ -174,65 +174,67 @@ public class Pannello extends JPanel implements Runnable {
         else {
             //blocchi
             GB.draw(g2);
-            
+
             //aggiungo umani alla lista
             umaniList.add(player);
-            
+
             //npc
             for (int i = 0; i < npc.length; i++) {
-                if(npc[i]!=null) {
+                if (npc[i] != null) {
                     umaniList.add(npc[i]);
                 }
             }
-            
+
             //oggetti
             for (int i = 0; i < ogg.length; i++) {
                 if (ogg[i] != null) {
                     umaniList.add(ogg[i]);
                 }
             }
-            
+
             //nemici
             for (int i = 0; i < nemici.length; i++) {
                 if (nemici[i] != null) {
                     umaniList.add(nemici[i]);
                 }
             }
-            
+
             //sort
-            Collections.sort(umaniList,new Comparator<umani>() {
+            Collections.sort(umaniList, new Comparator<umani>() {
                 @Override
                 public int compare(umani e1, umani e2) {
-                    int result=Integer.compare(e1.Mondox, e2.Mondoy);
+                    int result = Integer.compare(e1.Mondox, e2.Mondoy);
                     return result;
                 }
             });
-            
+
             //umani
             for (int i = 0; i < umaniList.size(); i++) {
                 umaniList.get(i).draw(g2);
             }
+
+            //orario
+            orarioMappa();
+
             //resetto
             umaniList.clear();
-            
+
             //messaggi
             messaggi.draw(g2);
         }
     }
-    
-    public void drawSchermo()
-    {
+
+    public void drawSchermo() {
         Graphics g = getGraphics();
         g.drawImage(schermoTemp, 0, 0, IntFinestraL, IntFinestraA, null);
     }
-    
-    public void schermoIntero()
-    {
+
+    public void schermoIntero() {
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         GraphicsDevice gd = ge.getDefaultScreenDevice();
         gd.setFullScreenWindow(ASurvivalGame.finestra);
-        IntFinestraL=ASurvivalGame.finestra.getWidth();
-        IntFinestraA=ASurvivalGame.finestra.getHeight();
+        IntFinestraL = ASurvivalGame.finestra.getWidth();
+        IntFinestraA = ASurvivalGame.finestra.getHeight();
     }
 
     public void viaMusica(int i) {
@@ -256,5 +258,24 @@ public class Pannello extends JPanel implements Runnable {
 
     public boolean getPausa() {
         return pausa;
+    }
+
+    public void orarioMappa() {
+        g2.setColor(new Color(20, 44, 140));
+        if (ora.getOra() < 5) {
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.6f));
+
+        }
+        else if (ora.getOra() < 8) {
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.2f));
+        }
+        else if (ora.getOra() < 20) {
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0f));
+        }
+        else if (ora.getOra() < 24) {
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.4f));
+        }
+        g2.fillRect(0, 0, FinestraL, FinestraA);
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
     }
 }
