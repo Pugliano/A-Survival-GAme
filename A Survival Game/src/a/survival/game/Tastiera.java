@@ -55,20 +55,17 @@ public class Tastiera implements KeyListener {
             }
         }
         if (tasto == KeyEvent.VK_DOWN) {
-            if (p.messaggi.comandi != 2) {
+            if (p.messaggi.comandi != 1) {
                 p.messaggi.comandi++;
             }
         }
         if (tasto == KeyEvent.VK_ENTER) {
             switch (p.messaggi.comandi) {
                 case 0:
-                    System.out.println("nuova partita");
+                    System.out.println("gioca");
                     p.state = p.gioco;
                     break;
                 case 1:
-                    System.out.println("carica partita");
-                    break;
-                case 2:
                     System.out.println("esci");
                     System.exit(0);
                     break;
@@ -169,7 +166,7 @@ public class Tastiera implements KeyListener {
         if (tasto == KeyEvent.VK_ENTER) {
             switch (p.messaggi.comandigo) {
                 case 0:
-                    System.out.println("riprova");
+                    System.out.println("rigenera");
                     p.player.vita = p.player.VitaMax;
                     p.state = p.gioco;
                     break;

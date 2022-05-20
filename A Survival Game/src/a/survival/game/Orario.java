@@ -23,9 +23,7 @@ public class Orario extends Thread {
     @Override
     public void run() {
         while (true) {
-            //if (p.state==p.gioco) {
             aggiornaTempo();
-            //}
         }
     }
 

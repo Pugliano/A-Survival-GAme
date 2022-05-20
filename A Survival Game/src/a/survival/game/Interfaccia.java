@@ -150,7 +150,7 @@ public class Interfaccia {
         //menu
         g2.setFont(g2.getFont().deriveFont(Font.BOLD, 48F));
 
-        testo = "Nuova partita";
+        testo = "Gioca";
         x = getXTestoCentrato(testo);
         y += p.FinalAP * 4; 
         //g2.drawRect(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
@@ -160,23 +160,13 @@ public class Interfaccia {
             g2.drawString(">", x - p.FinalAP, y);
         }
 
-        testo = "Carica partita";
-        x = getXTestoCentrato(testo);
-        y += p.FinalAP;
-        //g2.drawRect(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
-        rettangoloCarica = new Rectangle(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
-        g2.drawString(testo, x, y);
-        if (comandi == 1) {
-            g2.drawString(">", x - p.FinalAP, y);
-        }
-
         testo = "Esci";
         x = getXTestoCentrato(testo);
         y += p.FinalAP;
         //g2.drawRect(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
         rettangoloEsci = new Rectangle(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
         g2.drawString(testo, x, y);
-        if (comandi == 2) {
+        if (comandi == 1) {
             g2.drawString(">", x - p.FinalAP, y);
         }
 
@@ -348,13 +338,9 @@ public class Interfaccia {
             if (rettangoloNuovo.contains(e.getX(), e.getY())) {
             comandi = 0;
             }
-        if(rettangoloCarica!=null)
-            if (rettangoloCarica.contains(e.getX(), e.getY())) {
-            comandi = 1;
-            }
         if(rettangoloEsci!=null)
             if (rettangoloEsci.contains(e.getX(), e.getY())) {
-            comandi = 2;
+            comandi = 1;
             }
 
     }
@@ -363,9 +349,6 @@ public class Interfaccia {
         if (rettangoloNuovo.contains(e.getX(), e.getY())) {
             p.state = p.gioco;
             System.out.println("nuova partita");
-        }
-        if (rettangoloCarica.contains(e.getX(), e.getY())) {
-            System.out.println("carica partita");
         }
         if (rettangoloEsci.contains(e.getX(), e.getY())) {
             System.exit(0);

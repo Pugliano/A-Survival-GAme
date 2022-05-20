@@ -118,12 +118,12 @@ public class Collisioni {
     }
     
     //npc o nemici collisioni
-    public int ControllaU(Entita u, ArrayList<Entita> target) {
+    public int ControllaU(Entita e, ArrayList<Entita> target) {
         int ind = 999;
         for (int i = 0; i < target.size(); i++) {
             if (target.get(i) != null) {
-                u.SArea.x = u.x + u.SArea.x;
-                u.SArea.y = u.y + u.SArea.y;
+                e.SArea.x = e.x + e.SArea.x;
+                e.SArea.y = e.y + e.SArea.y;
 
                 //vedere posizione degli oggetti piazzati
                 Entita temp = target.get(i);
@@ -131,22 +131,22 @@ public class Collisioni {
                 temp.SArea.y = temp.y + temp.SArea.y;
                 target.set(i, temp);
 
-                switch (u.direzione) {
-                    case "su": u.SArea.y -= u.velocita;break;
-                    case "giu": u.SArea.y += u.velocita;break;
-                    case "sinistra": u.SArea.x -= u.velocita;break;
-                    case "destra": u.SArea.x += u.velocita;break;
+                switch (e.direzione) {
+                    case "su": e.SArea.y -= e.velocita;break;
+                    case "giu": e.SArea.y += e.velocita;break;
+                    case "sinistra": e.SArea.x -= e.velocita;break;
+                    case "destra": e.SArea.x += e.velocita;break;
                 }
                 
-                if(u.SArea.intersects(target.get(i).SArea)) {
-                    if(target.get(i)!=u) {
-                        u.collisioniSI = true;
+                if(e.SArea.intersects(target.get(i).SArea)) {
+                    if(target.get(i)!=e) {
+                        e.collisioniSI = true;
                         ind = i;
                     }
                 }
                 
-                u.SArea.x = u.AreaSX;
-                u.SArea.y = u.AreaSY;
+                e.SArea.x = e.AreaSX;
+                e.SArea.y = e.AreaSY;
                 temp = target.get(i);
                 temp.SArea.x = temp.AreaSX;
                 temp.SArea.y = temp.AreaSY;

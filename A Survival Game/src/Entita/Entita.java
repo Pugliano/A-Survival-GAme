@@ -41,7 +41,7 @@ public class Entita extends Thread{
     
     public BufferedImage image,image1, image2, image3;
     public String nome;
-    public boolean collisioni = false;
+    public boolean collisioni = true;
     
     public boolean invincibile=false;
     

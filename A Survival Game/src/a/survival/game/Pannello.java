@@ -97,7 +97,6 @@ public class Pannello extends JPanel implements Runnable {
     public void setGioco() {
         sett.setoggetto();
         sett.setNpc();
-        sett.setNemici();
         viaMusica(0);
         state = menu;
         
@@ -108,13 +107,14 @@ public class Pannello extends JPanel implements Runnable {
     }
 
     public void startGameThread() {
+        ora = new Orario(this, 23, 0);
+        ora.start();
         gameThread = new Thread(this);
         gameThread.start();
-        ora = new Orario(this, 15, 0);
-        ora.start();
         for (int i = 0; i < gestNPC.size(); i++) {
             gestNPC.get(i).start();
         }
+        sett.setMob();
         for (int i = 0; i < gestMob.size(); i++) {
             gestMob.get(i).start();
         }
@@ -155,7 +155,7 @@ public class Pannello extends JPanel implements Runnable {
     }
 
     public void muovi() {
-        if (pausa == false) {
+        if (!pausa) {
             //giocatore
             player.muovi();
         }
