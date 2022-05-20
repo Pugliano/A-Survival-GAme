@@ -1,10 +1,11 @@
 package a.survival.game;
 
-import Umani.umani;
+import Entita.Entita;
 import blocchi.TileManager;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 /**
  *
@@ -51,46 +52,46 @@ public class Collisioni {
             
         }
     }
-    public void Controlla(umani u) {
+    public void Controlla(Entita e) {
         int id;
-        switch (u.direzione) {
+        switch (e.direzione) {
             case "su":
-                id = Nmappe[p.player.Mondox / p.FinalAP][p.player.Mondoy / p.FinalAP -1];
+                id = Nmappe[p.player.x / p.FinalAP][p.player.y / p.FinalAP -1];
                 if (tm.getTile(id).getTileType() == 1) {
-                    u.collisioniSI = true;
+                    e.collisioniSI = true;
                 }
                 break;
             case "giu":
-                id = Nmappe[p.player.Mondox / p.FinalAP+2][p.player.Mondoy / p.FinalAP+2];
+                id = Nmappe[p.player.x / p.FinalAP+2][p.player.y / p.FinalAP+2];
                 if (tm.getTile(id).getTileType() == 1) {
-                    u.collisioniSI = true;
+                    e.collisioniSI = true;
                 }
                 break;
             case "sinistra":
-                id = Nmappe[p.player.Mondox / p.FinalAP - 1][p.player.Mondoy / p.FinalAP+2];
+                id = Nmappe[p.player.x / p.FinalAP - 1][p.player.y / p.FinalAP+2];
                 if (tm.getTile(id).getTileType() == 1) {
-                    u.collisioniSI = true;
+                    e.collisioniSI = true;
                 }
                 break;
             case "destra":
-                id = Nmappe[p.player.Mondox / p.FinalAP + 2][p.player.Mondoy / p.FinalAP+2];
+                id = Nmappe[p.player.x / p.FinalAP + 2][p.player.y / p.FinalAP+2];
                 if (tm.getTile(id).getTileType() == 1) {
-                    u.collisioniSI = true;
+                    e.collisioniSI = true;
                 }
                 break;
         }
 
     }
-    public int ControllaOGG(umani u, boolean giocatore) {
+    public int ControllaOGG(Entita u, boolean giocatore) {
         int ind=999;
-        for (int i = 0; i < p.ogg.length; i++) {
-            if(p.ogg[i]!=null) {
-                u.SArea.x=u.Mondox+u.SArea.x;
-                u.SArea.y=u.Mondoy+u.SArea.y;
+        for (int i = 0; i < p.gestOgg.size(); i++) {
+            if(p.gestOgg.get(i)!=null) {
+                u.SArea.x=u.x+u.SArea.x;
+                u.SArea.y=u.y+u.SArea.y;
                 
                 //vedere posizione degli oggetti piazzati
-                p.ogg[i].SArea.x=p.ogg[i].Mondox+p.ogg[i].SArea.x;
-                p.ogg[i].SArea.y=p.ogg[i].Mondoy+p.ogg[i].SArea.y;
+                p.gestOgg.get(i).SArea.x=p.gestOgg.get(i).x+p.gestOgg.get(i).SArea.x;
+                p.gestOgg.get(i).SArea.y=p.gestOgg.get(i).y+p.gestOgg.get(i).SArea.y;
                 
                 switch(u.direzione) {
                     case"su": u.SArea.y-=u.velocita;break;
@@ -98,8 +99,8 @@ public class Collisioni {
                     case "sinistra": u.SArea.x -= u.velocita; break;
                     case"destra": u.SArea.x+=u.velocita;break;
                 }
-                if (u.SArea.intersects(p.ogg[i].SArea)) {
-                    if (p.ogg[i].collisioni == true) {
+                if (u.SArea.intersects(p.gestOgg.get(i).SArea)) {
+                    if (p.gestOgg.get(i).collisioni == true) {
                         u.collisioniSI = true;
                     }
                     if (giocatore == true) {
@@ -109,24 +110,26 @@ public class Collisioni {
                 
                 u.SArea.x=u.AreaSX;
                 u.SArea.y=u.AreaSY;
-                p.ogg[i].SArea.x=p.ogg[i].AreaSX;
-                p.ogg[i].SArea.y = p.ogg[i].AreaSY;
+                p.gestOgg.get(i).SArea.x = p.gestOgg.get(i).AreaSX;
+                p.gestOgg.get(i).SArea.y = p.gestOgg.get(i).AreaSY;
             }
         }
         return ind;
     }
     
     //npc o nemici collisioni
-    public int ControllaU(umani u,umani[] target) {
+    public int ControllaU(Entita u, ArrayList<Entita> target) {
         int ind = 999;
-        for (int i = 0; i < target.length; i++) {
-            if (target[i] != null) {
-                u.SArea.x = u.Mondox + u.SArea.x;
-                u.SArea.y = u.Mondoy + u.SArea.y;
+        for (int i = 0; i < target.size(); i++) {
+            if (target.get(i) != null) {
+                u.SArea.x = u.x + u.SArea.x;
+                u.SArea.y = u.y + u.SArea.y;
 
                 //vedere posizione degli oggetti piazzati
-                target[i].SArea.x = target[i].Mondox + target[i].SArea.x;
-                target[i].SArea.y = target[i].Mondoy + target[i].SArea.y;
+                Entita temp = target.get(i);
+                temp.SArea.x = temp.x + temp.SArea.x;
+                temp.SArea.y = temp.y + temp.SArea.y;
+                target.set(i, temp);
 
                 switch (u.direzione) {
                     case "su": u.SArea.y -= u.velocita;break;
@@ -135,8 +138,8 @@ public class Collisioni {
                     case "destra": u.SArea.x += u.velocita;break;
                 }
                 
-                if(u.SArea.intersects(target[i].SArea)) {
-                    if(target[i]!=u) {
+                if(u.SArea.intersects(target.get(i).SArea)) {
+                    if(target.get(i)!=u) {
                         u.collisioniSI = true;
                         ind = i;
                     }
@@ -144,36 +147,38 @@ public class Collisioni {
                 
                 u.SArea.x = u.AreaSX;
                 u.SArea.y = u.AreaSY;
-                target[i].SArea.x = target[i].AreaSX;
-                target[i].SArea.y = target[i].AreaSY;
+                temp = target.get(i);
+                temp.SArea.x = temp.AreaSX;
+                temp.SArea.y = temp.AreaSY;
+                target.set(i, temp);
             }
         }
         return ind;
     }
     
     //collisioni con player da parte di npc
-    public boolean ControllaP(umani u) {
+    public boolean ControllaP(Entita e) {
         boolean contattoPlayer = false;
-        u.SArea.x = u.Mondox + u.SArea.x;
-        u.SArea.y = u.Mondoy + u.SArea.y;
+        e.SArea.x = e.x + e.SArea.x;
+        e.SArea.y = e.y + e.SArea.y;
 
         //vedere posizione degli oggetti piazzati
-        p.player.SArea.x = p.player.Mondox + p.player.SArea.x;
-        p.player.SArea.y = p.player.Mondoy + p.player.SArea.y;
+        p.player.SArea.x = p.player.x + p.player.SArea.x;
+        p.player.SArea.y = p.player.y + p.player.SArea.y;
 
-        switch (u.direzione) {
-            case "su":u.SArea.y -= u.velocita;break;
-            case "giu":u.SArea.y += u.velocita;break;
-            case "sinistra":u.SArea.x -= u.velocita;break;
-            case "destra":u.SArea.x += u.velocita;break;
+        switch (e.direzione) {
+            case "su":e.SArea.y -= e.velocita;break;
+            case "giu":e.SArea.y += e.velocita;break;
+            case "sinistra":e.SArea.x -= e.velocita;break;
+            case "destra":e.SArea.x += e.velocita;break;
         }
         
-        if (u.SArea.intersects(p.player.SArea)) {
-            u.collisioniSI = true;
+        if (e.SArea.intersects(p.player.SArea)) {
+            e.collisioniSI = true;
             contattoPlayer=true;
         }
-        u.SArea.x = u.AreaSX;
-        u.SArea.y = u.AreaSY;
+        e.SArea.x = e.AreaSX;
+        e.SArea.y = e.AreaSY;
         p.player.SArea.x = p.player.AreaSX;
         p.player.SArea.y = p.player.AreaSY;
         

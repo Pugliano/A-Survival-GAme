@@ -1,6 +1,6 @@
 package oggetti;
 
-import Umani.umani;
+import Entita.Entita;
 import a.survival.game.Pannello;
 import a.survival.game.UtilityTool;
 
@@ -8,7 +8,7 @@ import a.survival.game.UtilityTool;
  *
  * @author Denis
  */
-public class OGGcuore extends umani{
+public class OGGcuore extends Entita{
     UtilityTool uTool=new UtilityTool();
     public OGGcuore(Pannello p) {
         super(p);

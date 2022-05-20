@@ -75,6 +75,7 @@ public class Tastiera implements KeyListener {
                 default:
                     break;
             }
+            p.messaggi.comandi = 0;
         }
     }
 
@@ -169,18 +170,20 @@ public class Tastiera implements KeyListener {
             switch (p.messaggi.comandigo) {
                 case 0:
                     System.out.println("riprova");
-                    p.player.vita=p.player.VitaMax;
+                    p.player.vita = p.player.VitaMax;
                     p.state = p.gioco;
                     break;
                 case 1:
                     System.out.println("torna al menu");
-                    p.player.vita=p.player.VitaMax;
+                    p.player.vita = p.player.VitaMax;
                     p.state = p.menu;
-                    
+
                     break;
                 default:
                     break;
             }
+
+            p.messaggi.comandigo = 0;
         }
     }
 }

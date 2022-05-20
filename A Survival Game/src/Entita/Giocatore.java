@@ -1,10 +1,12 @@
-package Umani;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Entita;
 
 import a.survival.game.Pannello;
 import a.survival.game.Tastiera;
 import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
@@ -13,13 +15,29 @@ import oggetti.OGGspada;
 
 /**
  *
- * @author Denis
+ * @author Andrea
  */
-public class giocatore extends umani {
-
-    Pannello p;
-    Tastiera t;
-
+public class Giocatore extends Entita{
+    
+    public BufferedImage attaccoSu1, attaccoSu2, attaccoGiu1, attaccoGiu2, attaccoSinistra1, attaccoSinistra2, attaccoDestra1, attaccoDestra2;
+    
+//statistiche giocatore
+    public int livello;
+    public int forza;
+    public int attacco;
+    public int difesa;
+    public int spirito;
+    public int exp;
+    public int soldi;
+    public Entita Arma;
+    public Entita Scudo;
+    
+    //statistiche armi
+    public int attaccoSpada;
+    public int difesaScudo;                       
+    
+    boolean attaccando=false;
+    
     public final int schermoX;
     public final int schermoY;
 
@@ -27,10 +45,8 @@ public class giocatore extends umani {
     int ContFermo = 0;
     public boolean ContAttacchi = false;
 
-    public giocatore(Pannello p, Tastiera t) {
-        super(p);
-        this.p=p;
-        this.t = t;
+    public Giocatore(Pannello p, Tastiera t) {
+        super(p,t);
 
         schermoX = p.FinestraL / 2 - (p.FinalAP / 2);
         schermoY = p.FinestraL / 2 - (p.FinalAP / 2);
@@ -52,8 +68,8 @@ public class giocatore extends umani {
     }
 
     public void setBasi() {
-        Mondox = p.FinalAP * 54;
-        Mondoy = p.FinalAP * 137;
+        x = p.FinalAP * 54;
+        y = p.FinalAP * 137;
 
         velocita = 15;
         direzione = "giu";
@@ -126,11 +142,11 @@ public class giocatore extends umani {
             RaccogliOGG(indOGG);
 
             //collisioni con npc
-            int indNPC = p.collis.ControllaU(this, p.npc);
+            int indNPC = p.collis.ControllaU(this, p.gestNPC);
             interazNPC(indNPC);
 
             //collisioni con nemici
-            int indNemici = p.collis.ControllaU(this, p.nemici);
+            int indNemici = p.collis.ControllaU(this, p.gestMob);
             contattoNemici(indNemici);
 
             //controlla azione
@@ -141,16 +157,16 @@ public class giocatore extends umani {
             if (collisioniSI == false && t.enterP == false) {
                 switch (direzione) {
                     case "su":
-                        Mondoy -= velocita;
+                        y -= velocita;
                         break;
                     case "giu":
-                        Mondoy += velocita;
+                        y += velocita;
                         break;
                     case "sinistra":
-                        Mondox -= velocita;
+                        x -= velocita;
                         break;
                     case "destra":
-                        Mondox += velocita;
+                        x += velocita;
                         break;
                 }
             }
@@ -197,25 +213,25 @@ public class giocatore extends umani {
             Num = 2;
             
             //controllo direzione del giocatore per la collisione con la spada
-            int mondoXesatto=Mondox;
-            int mondoYesatto=Mondoy;
+            int mondoXesatto=x;
+            int mondoYesatto=y;
             int SAreaLarghezza=SArea.width;
             int SAreaAltezza=SArea.height;
             switch(direzione) {
-                case"su":Mondoy-=AreaAttacco.height;break;
-                case "giu":Mondoy += AreaAttacco.height;break;
-                case "sinistra":Mondox -= AreaAttacco.width;break;
-                case "destra":Mondox += AreaAttacco.width;break;
+                case"su":y-=AreaAttacco.height;break;
+                case "giu":y += AreaAttacco.height;break;
+                case "sinistra":x -= AreaAttacco.width;break;
+                case "destra":x += AreaAttacco.width;break;
             }
             //Area d'attacco
             SArea.width=AreaAttacco.width;
             SArea.height = AreaAttacco.height;
             //collisioni tra spada e nemico
-            int IndMostri=p.collis.ControllaU(this, p.nemici);
+            int IndMostri=p.collis.ControllaU(this, p.gestMob);
             dannoNemico(IndMostri);
             
-            Mondox=mondoXesatto;
-            Mondoy=mondoYesatto;
+            x=mondoXesatto;
+            y=mondoYesatto;
             SArea.width=SAreaLarghezza;
             SArea.height = SAreaAltezza;
         }
@@ -236,7 +252,7 @@ public class giocatore extends umani {
         if (i != 999) {
             if(p.tastiera.enterP==true) {
                 p.state = p.dialoghi;
-                p.npc[i].parla();
+                p.gestNPC.get(i).parla();
             }
         } else {
             if(p.tastiera.enterP==true) {
@@ -258,13 +274,14 @@ public class giocatore extends umani {
     
     public void dannoNemico(int i) {
         if(i!=999) {
-           if(p.nemici[i].invincibile==false) {
-               p.nemici[i].vita-=1;
-               p.nemici[i].invincibile=true;
-               
-               if(p.nemici[i].vita<=0) {
-                   p.nemici[i]=null;
+           if(p.gestMob.get(i).invincibile==false) {
+               Entita temp = p.gestMob.get(i);
+               temp.vita-=1;
+               temp.invincibile=true;
+               if(temp.vita<=0) {
+                   temp=null;
                }
+               p.gestMob.set(i,temp);
            }
         }    
     }
@@ -333,4 +350,6 @@ public class giocatore extends umani {
 //        g2.setColor(Color.white);
 //        g2.drawString("Invincibile: "+invincibileContatore,10,400);
     }
+    
+    
 }

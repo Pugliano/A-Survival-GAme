@@ -1,13 +1,13 @@
 package oggetti;
 
-import Umani.umani;
+import Entita.Entita;
 import a.survival.game.Pannello;
 
 /**
  *
  * @author Denis
  */
-public class OGGcassa extends umani{
+public class OGGcassa extends Entita{
     public OGGcassa(Pannello p) {
         super(p);
         nome = "cassa";

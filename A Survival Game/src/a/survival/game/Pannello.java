@@ -1,7 +1,9 @@
 package a.survival.game;
 
-import Umani.giocatore;
-import Umani.umani;
+import Entita.Entita;
+import Entita.Giocatore;
+import Entita.Mob;
+import Entita.NPC;
 import blocchi.Gestione;
 import java.awt.AlphaComposite;
 import java.awt.Color;
@@ -10,7 +12,6 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
-import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -54,22 +55,18 @@ public class Pannello extends JPanel implements Runnable {
     Suoni musica = new Suoni();
     Suoni effs = new Suoni();
 
-    //collisioni
-    public Collisioni collis = new Collisioni(this);
-    public SettOgg sett = new SettOgg(this);
-
     //messaggi
     public Interfaccia messaggi = new Interfaccia(this);
     public Azioni azioni = new Azioni(this);
 
     Thread gameThread;
 
-    //umani e oggetti
-    public giocatore player = new giocatore(this, tastiera);
-    public umani npc[] = new umani[50];
-    public umani ogg[] = new umani[50];
-    public umani nemici[] = new umani[50];
-    ArrayList<umani> umaniList = new ArrayList<>();
+    //entità e oggetti
+    public Giocatore player = new Giocatore(this, tastiera);
+    public ArrayList<Entita> gestEnt = new ArrayList<>();
+    public ArrayList<Entita> gestNPC = new ArrayList<>();
+    public ArrayList<Entita> gestMob = new ArrayList<>();
+    public ArrayList<Entita> gestOgg = new ArrayList<>();
 
     //stato del gioco
     public boolean pausa = false;
@@ -79,6 +76,10 @@ public class Pannello extends JPanel implements Runnable {
     public final int dialoghi = 2;
     public final int gameover = 3;
     public final int dati = 4;
+    
+    //collisioni
+    public Collisioni collis = new Collisioni(this);
+    public Tuttecose sett = new Tuttecose(this);
 
     //orario
     public Orario ora;
@@ -99,7 +100,7 @@ public class Pannello extends JPanel implements Runnable {
         sett.setNemici();
         viaMusica(0);
         state = menu;
-
+        
         //schermo temporaneo
         schermoTemp = new BufferedImage(FinestraL, FinestraA, BufferedImage.TYPE_INT_ARGB);
         g2 = (Graphics2D) schermoTemp.getGraphics();
@@ -111,6 +112,12 @@ public class Pannello extends JPanel implements Runnable {
         gameThread.start();
         ora = new Orario(this, 15, 0);
         ora.start();
+        for (int i = 0; i < gestNPC.size(); i++) {
+            gestNPC.get(i).start();
+        }
+        for (int i = 0; i < gestMob.size(); i++) {
+            gestMob.get(i).start();
+        }
     }
 
     @Override
@@ -151,17 +158,6 @@ public class Pannello extends JPanel implements Runnable {
         if (pausa == false) {
             //giocatore
             player.muovi();
-            //npc
-            for (int i = 0; i < npc.length; i++) {
-                if (npc[i] != null) {
-                    npc[i].muovi();
-                }
-            }
-            for (int i = 0; i < nemici.length; i++) {
-                if (nemici[i] != null) {
-                    nemici[i].muovi();
-                }
-            }
         }
     }
 
@@ -175,48 +171,48 @@ public class Pannello extends JPanel implements Runnable {
             GB.draw(g2);
 
             //aggiungo umani alla lista
-            umaniList.add(player);
+            gestEnt.add(player);
 
             //npc
-            for (int i = 0; i < npc.length; i++) {
-                if (npc[i] != null) {
-                    umaniList.add(npc[i]);
+            for (int i = 0; i < gestNPC.size() ;i++) {
+                if (gestNPC.get(i) != null) {
+                    gestEnt.add(gestNPC.get(i));
                 }
             }
 
             //oggetti
-            for (int i = 0; i < ogg.length; i++) {
-                if (ogg[i] != null) {
-                    umaniList.add(ogg[i]);
+            for (int i = 0; i < gestOgg.size(); i++) {
+                if (gestOgg.get(i) != null) {
+                    gestEnt.add(gestOgg.get(i));
                 }
             }
 
             //nemici
-            for (int i = 0; i < nemici.length; i++) {
-                if (nemici[i] != null) {
-                    umaniList.add(nemici[i]);
+            for (int i = 0; i < gestMob.size(); i++) {
+                if (gestMob.get(i) != null) {
+                    gestEnt.add(gestMob.get(i));
                 }
             }
 
             //sort
-            Collections.sort(umaniList, new Comparator<umani>() {
+            Collections.sort(gestEnt, new Comparator<Entita>() {
                 @Override
-                public int compare(umani e1, umani e2) {
-                    int result = Integer.compare(e1.Mondox, e2.Mondoy);
+                public int compare(Entita e1, Entita e2) {
+                    int result = Integer.compare(e1.x, e2.y);
                     return result;
                 }
             });
 
             //umani
-            for (int i = 0; i < umaniList.size(); i++) {
-                umaniList.get(i).draw(g2);
+            for (int i = 0; i < gestEnt.size(); i++) {
+                gestEnt.get(i).draw(g2);
             }
 
             //orario
             orarioMappa();
 
             //resetto
-            umaniList.clear();
+            gestEnt.clear();
 
             //messaggi
             messaggi.draw(g2);

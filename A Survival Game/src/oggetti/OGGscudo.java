@@ -1,13 +1,14 @@
 package oggetti;
 
-import Umani.umani;
+import Entita.Entita;
 import a.survival.game.Pannello;
 
 /**
  *
  * @author Denis
  */
-public class OGGscudo extends umani{
+public class OGGscudo extends Entita{
+    
     public OGGscudo(Pannello p) {
         super(p);
 

@@ -1,6 +1,6 @@
 package a.survival.game;
 
-import Umani.umani;
+import Entita.Entita;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
@@ -40,7 +40,7 @@ public class Interfaccia {
         Arial_80B = new Font("Arial", Font.BOLD, 80);
 
         //set immagine cuore
-        umani cuore = new OGGcuore(p);
+        Entita cuore = new OGGcuore(p);
         cuore_m = cuore.image1;
         cuore_p = cuore.image2;
         cuore_b = cuore.image3;

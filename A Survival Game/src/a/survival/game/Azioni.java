@@ -33,8 +33,8 @@ public class Azioni {
     
     public boolean hit(int Azionicol,int Azionirig,String direzioneRic) {
         boolean hit=false;
-        p.player.SArea.x = p.player.Mondox + p.player.SArea.x;
-        p.player.SArea.y = p.player.Mondoy + p.player.SArea.y;
+        p.player.SArea.x = p.player.x + p.player.SArea.x;
+        p.player.SArea.y = p.player.y + p.player.SArea.y;
         AzioniR.x = Azionicol * p.FinalAP + AzioniR.x;
         AzioniR.y = Azionirig * p.FinalAP + AzioniR.y;
         

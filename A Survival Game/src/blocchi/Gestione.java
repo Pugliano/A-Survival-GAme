@@ -65,13 +65,13 @@ public class Gestione {
             
             int mondoX=col * p.FinalAP;
             int mondoY = rig * p.FinalAP;
-            schermoX=mondoX-p.player.Mondox+p.player.schermoX;
-            schermoY = mondoY - p.player.Mondoy + p.player.schermoY;
+            schermoX=mondoX-p.player.x+p.player.schermoX;
+            schermoY = mondoY - p.player.y + p.player.schermoY;
             
-            if(mondoX + p.FinalAP >p.player.Mondox-p.player.schermoX && 
-               mondoX - p.FinalAP<p.player.Mondox+p.player.schermoX &&
-               mondoY + p.FinalAP>p.player.Mondoy-p.player.schermoY &&
-               mondoY - p.FinalAP<p.player.Mondoy+p.player.schermoY) {
+            if(mondoX + p.FinalAP >p.player.x-p.player.schermoX && 
+               mondoX - p.FinalAP<p.player.x+p.player.schermoX &&
+               mondoY + p.FinalAP>p.player.y-p.player.schermoY &&
+               mondoY - p.FinalAP<p.player.y+p.player.schermoY) {
                //g2.drawImage(blocchi[Nblocchi].image, schermoX, schermoY, p.FinalAP, p.FinalAP, null);
                int id = Nmappe[col][rig];
                g2.drawImage(tm.getSprite(id-1), schermoX, schermoY, p.FinalAP, p.FinalAP, null);

@@ -1,4 +1,8 @@
-package Umani;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Entita;
 
 import a.survival.game.Pannello;
 import java.util.Random;
@@ -7,14 +11,11 @@ import java.util.Random;
  *
  * @author Andrea
  */
-public class NPC_anziano extends umani {
-
-    Pannello p;
+public class NPC_Anziano extends NPC{
     boolean tutorial;
 
-    public NPC_anziano(Pannello p,boolean tutorial) {
+    public NPC_Anziano(Pannello p,boolean tutorial) {
         super(p);
-        this.p = p;
         direzione = "giu";
         velocita = 1;
         this.tutorial=tutorial;
@@ -49,6 +50,7 @@ public class NPC_anziano extends umani {
         }
     }
 
+    @Override
     public void setMove() {
         if (p.state == p.dialoghi) {
             
@@ -82,9 +84,9 @@ public class NPC_anziano extends umani {
 
     public void parla() {
         super.parla();
-        if(p.npc[0].Inddialoghi==4)
+        if(p.gestNPC.get(0).Inddialoghi==4)
         {
-            p.npc[0]=null;
+            p.gestNPC.remove(0);
         }
     }
 }

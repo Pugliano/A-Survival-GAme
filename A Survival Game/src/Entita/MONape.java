@@ -1,6 +1,5 @@
-package Nemici;
+package Entita;
 
-import Umani.umani;
 import a.survival.game.Pannello;
 import java.util.Random;
 
@@ -8,7 +7,7 @@ import java.util.Random;
  *
  * @author Denis
  */
-public class MONape extends umani{
+public class MONape extends Entita{
     
     Pannello p;
     

@@ -1,6 +1,11 @@
-package Umani;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Entita;
 
 import a.survival.game.Pannello;
+import a.survival.game.Tastiera;
 import a.survival.game.UtilityTool;
 import java.awt.AlphaComposite;
 import java.awt.Graphics2D;
@@ -11,15 +16,16 @@ import javax.imageio.ImageIO;
 
 /**
  *
- * @author Denis
+ * @author Andrea
  */
-public class umani {
+public class Entita extends Thread{
     Pannello p;
-    public int Mondox,Mondoy;
+    Tastiera t;
+    
+    public int x,y;
     public int velocita;
     
     public BufferedImage  su1,su2,giu1,giu2,sinistra1,sinistra2,destra1,destra2;
-    public BufferedImage attaccoSu1, attaccoSu2, attaccoGiu1, attaccoGiu2, attaccoSinistra1, attaccoSinistra2, attaccoDestra1, attaccoDestra2;
     public String direzione="giu";
     
     public int Contat=0;
@@ -31,6 +37,7 @@ public class umani {
     public int AreaSX,AreaSY;
     public boolean collisioniSI=false;
     public int VelocitaM=0;
+    
     
     public BufferedImage image,image1, image2, image3;
     public String nome;
@@ -47,60 +54,24 @@ public class umani {
     public int VitaMax;
     public int vita;
     
-    //statistiche giocatore
-    public int livello;
-    public int forza;
-    public int attacco;
-    public int difesa;
-    public int spirito;
-    public int exp;
-    public int soldi;
-    public umani Arma;
-    public umani Scudo;
-    
-    //statistiche armi
+    //armi
     public int attaccoSpada;
     public int difesaScudo;
     
-    boolean attaccando=false;
+    //npc
+    int Inddialoghi;
     
-    
-    String[] dial=new String[20];
-    public int Inddialoghi=0;
-    
-    public umani(Pannello p) {
+    public Entita(Pannello p) {
         this.p=p;
+    }
+    
+    public Entita(Pannello p, Tastiera t) {
+        this.p=p;
+        this.t=t;
     }
     
     public void setMove() {
         
-    }
-    
-    public void parla() {
-        if (dial[Inddialoghi] == null) {
-            Inddialoghi = 0;
-        }
-        p.messaggi.Dcorrente = dial[Inddialoghi];
-        Inddialoghi++;
-
-        switch (p.player.direzione) {
-            case "su":
-                direzione = "giu";
-                p.player.vita=p.player.VitaMax;
-                break;
-            case "giu":
-                direzione = "su";
-                p.player.vita = p.player.VitaMax;
-                break;
-            case "sinistra":
-                direzione = "destra";
-                p.player.vita = p.player.VitaMax;
-                break;
-            case "destra":
-                direzione = "sinistra";
-                p.player.vita = p.player.VitaMax;
-                break;
-        }
     }
     
     public void muovi() {
@@ -108,8 +79,8 @@ public class umani {
         collisioniSI=false;
         p.collis.Controlla(this);
         p.collis.ControllaOGG(this,false);
-        p.collis.ControllaU(this, p.npc);
-        p.collis.ControllaU(this, p.nemici);
+        p.collis.ControllaU(this, p.gestNPC);
+        p.collis.ControllaU(this, p.gestMob);
         boolean contattoPlayer=p.collis.ControllaP(this);
         
         if(this.type==2 && contattoPlayer==true) {
@@ -122,10 +93,10 @@ public class umani {
         
         if (collisioniSI == false) {
             switch (direzione) {
-                case "su": Mondoy -= velocita; break;
-                case "giu": Mondoy += velocita; break; 
-                case "sinistra": Mondox -= velocita; break;
-                case "destra": Mondox += velocita; break;
+                case "su": y -= velocita; break;
+                case "giu": y += velocita; break; 
+                case "sinistra": x -= velocita; break;
+                case "destra": x += velocita; break;
             }
         }
 
@@ -150,13 +121,13 @@ public class umani {
     
     public void draw(Graphics2D g2) {
         BufferedImage image=null;
-        int schermoX = Mondox - p.player.Mondox + p.player.schermoX;
-        int schermoY = Mondoy - p.player.Mondoy + p.player.schermoY;
+        int schermoX = x - p.player.x + p.player.schermoX;
+        int schermoY = y - p.player.y + p.player.schermoY;
 
-        if (Mondox + p.FinalAP > p.player.Mondox - p.player.schermoX && 
-            Mondox - p.FinalAP < p.player.Mondox + p.player.schermoX && 
-            Mondoy + p.FinalAP > p.player.Mondoy - p.player.schermoY && 
-            Mondoy - p.FinalAP < p.player.Mondoy + p.player.schermoY) {
+        if (x + p.FinalAP > p.player.x - p.player.schermoX && 
+            x - p.FinalAP < p.player.x + p.player.schermoX && 
+            y + p.FinalAP > p.player.y - p.player.schermoY && 
+            y - p.FinalAP < p.player.y + p.player.schermoY) {
             
             switch (direzione) {
             case "su":
@@ -198,5 +169,9 @@ public class umani {
             e.printStackTrace();
         }
         return img;
+    }
+    
+    public void parla(){
+        
     }
 }
