@@ -16,7 +16,7 @@ import oggetti.OGGcuore;
  *
  * @author Denis
  */
-public class Messaggi {
+public class Interfaccia {
 
     Pannello p;
     Graphics2D g2;
@@ -28,12 +28,13 @@ public class Messaggi {
     double tempoG;
     DecimalFormat df = new DecimalFormat("#0.00");
     public int comandi = 0;
+    public int comandigo = 0;
     private Rectangle rettangoloNuovo;
     private Rectangle rettangoloCarica;
     private Rectangle rettangoloEsci;
     public String Dcorrente = "";
 
-    public Messaggi(Pannello p) {
+    public Interfaccia(Pannello p) {
         this.p = p;
         Arial_40 = new Font("Cambria", Font.PLAIN, 40);
         Arial_80B = new Font("Arial", Font.BOLD, 80);
@@ -72,8 +73,12 @@ public class Messaggi {
             drawDialoghi();
         }
         //statistiche giocatore
-        if(p.state==p.DatiPlayer) {
+        if(p.state==p.dati) {
             drawDatiPlayer();
+        }
+        //game over
+        if(p.state==p.gameover) {
+            drawGameOver();
         }
     }
 
@@ -365,6 +370,46 @@ public class Messaggi {
         if (rettangoloEsci.contains(e.getX(), e.getY())) {
             System.exit(0);
             System.out.println("esci");
+        }
+    }
+
+    public void drawGameOver() {
+        g2.setColor(new Color(0,0,0,150));
+        g2.fillRect(0,0, p.FinestraL, p.FinestraA);
+        
+        int x;
+        int y;
+        String testo="Game Over";
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD, 110F));
+        
+        //ombra
+        g2.setColor(new Color(0,0,0));
+        x=getXTestoCentrato(testo);
+        y=p.FinalAP*4;
+        g2.drawString(testo, x, y);
+        
+        //testo
+        g2.setColor(new Color(255,255,255));
+        x=getXTestoCentrato(testo);
+        y=p.FinalAP*4;
+        g2.drawString(testo, x-3, y-3);
+        
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD, 48F));
+        
+        testo="Riprova";
+        x=getXTestoCentrato(testo);
+        y+=p.FinalAP*4;
+        g2.drawString(testo, x, y);
+        if (comandigo == 0) {
+            g2.drawString(">", x - p.FinalAP, y);
+        }
+        
+        testo="Torna al menù";
+        x=getXTestoCentrato(testo);
+        y+=p.FinalAP;
+        g2.drawString(testo, x, y);
+        if (comandigo == 1) {
+            g2.drawString(">", x - p.FinalAP, y);
         }
     }
 }

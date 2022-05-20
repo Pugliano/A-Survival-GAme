@@ -59,7 +59,7 @@ public class Pannello extends JPanel implements Runnable {
     public SettOgg sett = new SettOgg(this);
 
     //messaggi
-    public Messaggi messaggi = new Messaggi(this);
+    public Interfaccia messaggi = new Interfaccia(this);
     public Azioni azioni = new Azioni(this);
 
     Thread gameThread;
@@ -77,12 +77,11 @@ public class Pannello extends JPanel implements Runnable {
     public final int menu = 0;
     public final int gioco = 1;
     public final int dialoghi = 2;
+    public final int gameover = 3;
+    public final int dati = 4;
 
     //orario
     public Orario ora;
-
-    //printo le statistiche del player
-    public final int DatiPlayer = 4;
 
     public Pannello() {
         this.setPreferredSize(new Dimension(FinestraL, FinestraL));

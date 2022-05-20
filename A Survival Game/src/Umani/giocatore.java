@@ -17,6 +17,7 @@ import oggetti.OGGspada;
  */
 public class giocatore extends umani {
 
+    Pannello p;
     Tastiera t;
 
     public final int schermoX;
@@ -28,6 +29,7 @@ public class giocatore extends umani {
 
     public giocatore(Pannello p, Tastiera t) {
         super(p);
+        this.p=p;
         this.t = t;
 
         schermoX = p.FinestraL / 2 - (p.FinalAP / 2);
@@ -178,6 +180,11 @@ public class giocatore extends umani {
                 invincibile = false;
                 invincibileContatore = 0;
             }
+        }
+        
+        if (vita<=0)
+        {
+            p.state=p.gameover;
         }
     }
     
