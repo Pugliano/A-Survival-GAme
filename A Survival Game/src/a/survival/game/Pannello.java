@@ -110,7 +110,7 @@ public class Pannello extends JPanel implements Runnable {
     public void startGameThread() {
         gameThread = new Thread(this);
         gameThread.start();
-        ora = new Orario(this, 19, 0);
+        ora = new Orario(this, 15, 0);
         ora.start();
     }
 

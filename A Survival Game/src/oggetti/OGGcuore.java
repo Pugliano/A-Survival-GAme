@@ -16,5 +16,7 @@ public class OGGcuore extends umani{
         image1 = setup("/immagini/oggetti/cuore_m",p.FinalAP,p.FinalAP);
         image2 = setup("/immagini/oggetti/cuore_p",p.FinalAP,p.FinalAP);
         image3 = setup("/immagini/oggetti/cuore_b",p.FinalAP,p.FinalAP);
+        
+        
     }
 }

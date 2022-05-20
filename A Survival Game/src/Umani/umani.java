@@ -193,7 +193,7 @@ public class umani {
 
         try {
             img = ImageIO.read(getClass().getResourceAsStream(Nimmagine + ".png"));
-            img = uTool.Simm(img, l,a);
+            //img = uTool.Simm(img, l,a);
         } catch (IOException e) {
             e.printStackTrace();
         }

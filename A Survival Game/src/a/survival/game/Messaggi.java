@@ -86,7 +86,7 @@ public class Messaggi {
 
         //vita max
         while (i < p.player.VitaMax / 2) {
-            g2.drawImage(cuore_b, x, y, null);
+            g2.drawImage(cuore_b, x, y,p.FinalAP,p.FinalAP, null);
             i++;
             x += p.FinalAP;
         }
@@ -98,10 +98,10 @@ public class Messaggi {
 
         //vita 
         while (i < p.player.vita) {
-            g2.drawImage(cuore_m, x, y, null);
+            g2.drawImage(cuore_m, x, y,p.FinalAP,p.FinalAP, null);
             i++;
             if (i < p.player.vita) {
-                g2.drawImage(cuore_p, x, y, null);
+                g2.drawImage(cuore_p, x, y,p.FinalAP,p.FinalAP, null);
             }
             i++;
             x += p.FinalAP;
@@ -339,15 +339,18 @@ public class Messaggi {
     }
 
     public void mouseMoved(MouseEvent e) {
-        if (rettangoloNuovo.contains(e.getX(), e.getY())) {
+        if(rettangoloNuovo!=null)
+            if (rettangoloNuovo.contains(e.getX(), e.getY())) {
             comandi = 0;
-        }
-        if (rettangoloCarica.contains(e.getX(), e.getY())) {
+            }
+        if(rettangoloCarica!=null)
+            if (rettangoloCarica.contains(e.getX(), e.getY())) {
             comandi = 1;
-        }
-        if (rettangoloEsci.contains(e.getX(), e.getY())) {
+            }
+        if(rettangoloEsci!=null)
+            if (rettangoloEsci.contains(e.getX(), e.getY())) {
             comandi = 2;
-        }
+            }
 
     }
 

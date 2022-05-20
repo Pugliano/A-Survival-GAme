@@ -3,36 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/Suoni.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/Umani/umani.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/SettOgg.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/blocchi/Gestione.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/Pannello.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/UtilityTool.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/oggetti/OGGcuore.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/Umani/NPC_anziano.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/Umani/giocatore.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/oggetti/OGGmela.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/oggetti/OGGscudo.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/immagini/mappe/word.txt</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/Collisioni.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/Mouse.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/oggetti/OGGmuro.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/blocchi/Tile.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/Azioni.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/oggetti/OGGspada.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/Tastiera.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/Nemici/MONslime.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/Orario.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/Nemici/MONape.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/ASurvivalGame.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/blocchi/TileManager.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/oggetti/OGGcassa.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/Messaggi.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/oggetti/OGGcartello.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/oggetti/OGGporta.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/oggetti/OGGpozzo.java</file>
-            <file>file:/C:/Users/Denis/Documents/GitHub/A-Survival-Game/A%20Survival%20Game/src/oggetti/OGGcoltello.java</file>
+            <file>file:/C:/Users/Andrea/Desktop/Scuola/Quarta/Tecnologie/gioco/A-Survival-Game/A%20Survival%20Game/src/Umani/NPC_anziano.java</file>
+            <file>file:/C:/Users/Andrea/Desktop/Scuola/Quarta/Tecnologie/gioco/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/Azioni.java</file>
+            <file>file:/C:/Users/Andrea/Desktop/Scuola/Quarta/Tecnologie/gioco/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/Pannello.java</file>
+            <file>file:/C:/Users/Andrea/Desktop/Scuola/Quarta/Tecnologie/gioco/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/Tastiera.java</file>
+            <file>file:/C:/Users/Andrea/Desktop/Scuola/Quarta/Tecnologie/gioco/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/Mouse.java</file>
+            <file>file:/C:/Users/Andrea/Desktop/Scuola/Quarta/Tecnologie/gioco/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/SettOgg.java</file>
+            <file>file:/C:/Users/Andrea/Desktop/Scuola/Quarta/Tecnologie/gioco/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/ASurvivalGame.java</file>
+            <file>file:/C:/Users/Andrea/Desktop/Scuola/Quarta/Tecnologie/gioco/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/UtilityTool.java</file>
+            <file>file:/C:/Users/Andrea/Desktop/Scuola/Quarta/Tecnologie/gioco/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/Orario.java</file>
+            <file>file:/C:/Users/Andrea/Desktop/Scuola/Quarta/Tecnologie/gioco/A-Survival-Game/A%20Survival%20Game/src/a/survival/game/Messaggi.java</file>
+            <file>file:/C:/Users/Andrea/Desktop/Scuola/Quarta/Tecnologie/gioco/A-Survival-Game/A%20Survival%20Game/src/Umani/umani.java</file>
+            <file>file:/C:/Users/Andrea/Desktop/Scuola/Quarta/Tecnologie/gioco/A-Survival-Game/A%20Survival%20Game/src/Umani/giocatore.java</file>
+            <file>file:/C:/Users/Andrea/Desktop/Scuola/Quarta/Tecnologie/gioco/A-Survival-Game/A%20Survival%20Game/src/oggetti/OGGcuore.java</file>
         </group>
     </open-files>
 </project-private>

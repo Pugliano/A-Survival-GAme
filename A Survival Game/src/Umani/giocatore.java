@@ -315,7 +315,8 @@ public class giocatore extends umani {
         if (invincibile == true) {
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.3f));
         }
-        g2.drawImage(image, tempSX, tempSY,p.FinalAP,p.FinalAP, null);
+        if(image!=null)
+            g2.drawImage(image, schermoX, schermoY,p.FinalAP,p.FinalAP, null);
 
         //reset alpha
         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
