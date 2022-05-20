@@ -1,6 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * @author Pugliano Denis, Occhiato Andrea
+ * @version 1.0
+ * @file Giocatore.java
+ * @brief Classe per settare player
  */
 package Entita;
 
@@ -14,14 +16,15 @@ import oggetti.OGGscudo;
 import oggetti.OGGspada;
 
 /**
- *
- * @author Andrea
+ * @class Giocatore
+ * @brief Classe con extends Entita
  */
 public class Giocatore extends Entita{
     
+    /**setto immagi per quando attacca ill giocatore*/
     public BufferedImage attaccoSu1, attaccoSu2, attaccoGiu1, attaccoGiu2, attaccoSinistra1, attaccoSinistra2, attaccoDestra1, attaccoDestra2;
     
-//statistiche giocatore
+    /**statistiche giocatore*/
     public int livello;
     public int forza;
     public int attacco;
@@ -32,7 +35,7 @@ public class Giocatore extends Entita{
     public Entita Arma;
     public Entita Scudo;
     
-    //statistiche armi
+    /**statistiche armi*/
     public int attaccoSpada;
     public int difesaScudo;                       
     
@@ -41,10 +44,15 @@ public class Giocatore extends Entita{
     public final int schermoX;
     public final int schermoY;
 
-    //public int coltelloSI=0;
+    /**public int coltelloSI=0;*/
     int ContFermo = 0;
     public boolean ContAttacchi = false;
 
+    /**\brief
+     * Metodo per caricare immagine del giocatore nel gioco
+     * @param p
+     * @param t 
+     */
     public Giocatore(Pannello p, Tastiera t) {
         super(p,t);
 
@@ -67,21 +75,34 @@ public class Giocatore extends Entita{
         getImmagineAttaccoG();
     }
 
+    /**\brief
+     * Metodo per settare i valori base del giocatore
+     */
     public void setBasi() {
+        /**x dove spawna*/
         x = p.FinalAP * 54;
+        /**y dove spawna*/
         y = p.FinalAP * 137;
 
-        velocita = 15;
+        /**velocita*/
+        velocita = 4;
+        /**direzione fissa quando spawna*/
         direzione = "giu";
 
-        //vita
+        /**vita*/
         livello = 1;
         VitaMax = 6;
         vita = VitaMax;
-        forza = 1; //più forza hai, più colpisci forte
+        /**
+         * più forza hai, più colpisci forte
+         */
+        forza = 1; 
         exp = 0;
         soldi = 0;
-        spirito = 1; //più spirito hai, più sei invulnerabile
+        /**
+         * più spirito hai, più sei invulnerabile
+         */
+        spirito = 1; 
         Arma = new OGGspada(p);
         Scudo = new OGGscudo(p);
         attacco = getAttacco();
@@ -96,6 +117,9 @@ public class Giocatore extends Entita{
         return difesa = spirito * Scudo.difesaScudo;
     }
 
+    /**\brief
+     * setto le immagini quando cammino
+     */
     public void getImmagineG() {
         su1 = setup("/immagini/giocatore/gsu1", p.FinalAP, p.FinalAP);
         su2 = setup("/immagini/giocatore/gsu2", p.FinalAP, p.FinalAP);
@@ -107,6 +131,9 @@ public class Giocatore extends Entita{
         destra2 = setup("/immagini/giocatore/gd2", p.FinalAP, p.FinalAP);
     }
 
+    /**\brief
+     * setto le immagini quando attacco
+     */
     public void getImmagineAttaccoG() {
         attaccoSu1 = setup("/immagini/giocatore/agsu1", p.FinalAP, p.FinalAP*2);
         attaccoSu2 = setup("/immagini/giocatore/agsu2", p.FinalAP, p.FinalAP * 2);
@@ -118,6 +145,9 @@ public class Giocatore extends Entita{
         attaccoDestra2 = setup("/immagini/giocatore/agd2", p.FinalAP * 2, p.FinalAP);
     }
 
+    /**\brief
+     * Metodo per far muovere il player e per caricare in base la direzione l'immagine giusta
+     */
     public void muovi() {
 
         if (attaccando==true) {
@@ -204,6 +234,9 @@ public class Giocatore extends Entita{
         }
     }
     
+    /**\brief
+     * Metodo per caricare le immagini quando attacco
+     */
     private void attaccando() {
         Contat++;
         if (Contat <= 5) {
@@ -272,6 +305,10 @@ public class Giocatore extends Entita{
         }
     }
     
+    /**\brief
+     * quando attacco i nemici diventano involnerabili per breve tempo
+     * @param i 
+     */
     public void dannoNemico(int i) {
         if(i!=999) {
            if(p.gestMob.get(i).invincibile==false) {
@@ -286,6 +323,10 @@ public class Giocatore extends Entita{
         }    
     }
 
+    /**\brief
+     * Metodo draw per printare sullo schermo tali immagini
+     * @param g2 
+     */
     public void draw(Graphics2D g2) {
         BufferedImage image = null;
         int tempSX=schermoX;
@@ -341,14 +382,8 @@ public class Giocatore extends Entita{
         }
         if(image!=null)
             g2.drawImage(image, schermoX, schermoY,p.FinalAP,p.FinalAP, null);
-
-        //reset alpha
+        
         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
-
-//        //debug
-//        g2.setFont(new Font("Arial",Font.PLAIN,26));
-//        g2.setColor(Color.white);
-//        g2.drawString("Invincibile: "+invincibileContatore,10,400);
     }
     
     

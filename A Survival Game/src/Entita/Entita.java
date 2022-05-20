@@ -1,7 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * @author Pugliano Denis, Occhiato Andrea
+ * @version 1.0
+ * @file Entita.java
+ * @brief Classe per settare variabili comuni per tutti i mob  e gli npc
  */
+
 package Entita;
 
 import a.survival.game.Pannello;
@@ -15,22 +18,26 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 /**
- *
- * @author Andrea
+ * @class Ape
+ * @brief Classe con extends Thread
  */
 public class Entita extends Thread{
     Pannello p;
     Tastiera t;
     
+    /**x e y mob*/
     public int x,y;
+    /**velocita dei vari mob*/
     public int velocita;
     
+    /**direzione mob*/
     public BufferedImage  su1,su2,giu1,giu2,sinistra1,sinistra2,destra1,destra2;
     public String direzione="giu";
     
     public int Contat=0;
     public int Num=1;
     
+    /**set Area per le collisioni*/
     public Rectangle SArea=new Rectangle(0,0,48,48);
     public Rectangle AreaAttacco=new Rectangle(0,0,0,0);
     
@@ -43,6 +50,7 @@ public class Entita extends Thread{
     public String nome;
     public boolean collisioni = true;
     
+    /**set per far diventare invincibile il player dopo aver subito danni*/
     public boolean invincibile=false;
     
     public int spriteCounter=0;
@@ -50,15 +58,15 @@ public class Entita extends Thread{
     
     public int type; //0->giocatore 1->npc 2->nemico
     
-    //vita giocatore
+    /**vita giocatore*/
     public int VitaMax;
     public int vita;
     
-    //armi
+    /**armi*/
     public int attaccoSpada;
     public int difesaScudo;
     
-    //npc
+    /**npc*/
     int Inddialoghi;
     
     public Entita(Pannello p) {
@@ -74,6 +82,9 @@ public class Entita extends Thread{
         
     }
     
+    /**\brief
+     * metodo per gestire collisioni con i vari npc
+     */
     public void muovi() {
         setMove();
         collisioniSI=false;
@@ -119,6 +130,10 @@ public class Entita extends Thread{
         }
     }
     
+    /**\brief
+     * Metodo per printare le immagini dei mob in base alla direzione in cui puntano
+     * @param g2 
+     */
     public void draw(Graphics2D g2) {
         BufferedImage image=null;
         int schermoX = x - p.player.x + p.player.schermoX;
@@ -158,6 +173,13 @@ public class Entita extends Thread{
         }
     }
     
+    /**\brief
+     * Metodo per settare la grandezza dei vari tile
+     * @param Nimmagine
+     * @param l
+     * @param a
+     * @return 
+     */
     public BufferedImage setup(String Nimmagine, int l, int a) {
         UtilityTool uTool=new UtilityTool();
         BufferedImage img = null;

@@ -1,3 +1,10 @@
+/**
+ * @author Pugliano Denis, Occhiato Andrea
+ * @version 1.0
+ * @file Pannello.java
+ * @brief Classe Per gestire tutto
+ */
+
 package a.survival.game;
 
 import Entita.Entita;
@@ -19,56 +26,66 @@ import java.util.Comparator;
 import javax.swing.JPanel;
 
 /**
- *
- * @author Denis
+ * @class Pannello
+ * @brief extends JPanel e implements Runnable
  */
 public class Pannello extends JPanel implements Runnable {
 
-    final int altezzaP = 40; //altezza del personaggio e degli npc fissi
+    /**altezza del personaggio e degli npc*/
+    final int altezzaP = 40; 
+    /**altezza in scala 2*/
     final int scala = 2;
 
-    //Impostazioni dello schermo
+    /**altezza final del personaggio*/
     public final int FinalAP = altezzaP * scala; //64*64
+    /**altezza schermo x*/
     public final int AltezzaSMX = 24;
+    /**
+     * larghezza schermo y
+     */
     public final int AltezzaSMY = 15;
+    /**largezza schermo*/
     public final int FinestraL = FinalAP * AltezzaSMX; //768px->altezza
+    /**
+     * sltezza schermo
+     */
     public final int FinestraA = FinalAP * AltezzaSMY; //576px->larghezza
 
-    //impostazioni mappa
+    /**impostazioni mappa*/
     public final int WordCol = 150;
     public final int WordRig = 150;
-    //schermo intero
+    /**schermo intero*/
     int IntFinestraL = FinestraL;
     int IntFinestraA = FinestraA;
     BufferedImage schermoTemp;
     Graphics2D g2;
 
-    //fps
+    /**fps*/
     int fps = 60;
 
-    //gioco 
+    /**gioco*/
     Gestione GB = new Gestione(this);
     public Tastiera tastiera = new Tastiera(this);
     Mouse mouse = new Mouse(this);
 
-    //Suoni
+    /**Suoni*/
     Suoni musica = new Suoni();
     Suoni effs = new Suoni();
 
-    //messaggi
+    /**messaggi*/
     public Interfaccia messaggi = new Interfaccia(this);
     public Azioni azioni = new Azioni(this);
 
     Thread gameThread;
 
-    //entità e oggetti
+    /**entità e oggetti*/
     public Giocatore player = new Giocatore(this, tastiera);
     public ArrayList<Entita> gestEnt = new ArrayList<>();
     public ArrayList<Entita> gestNPC = new ArrayList<>();
     public ArrayList<Entita> gestMob = new ArrayList<>();
     public ArrayList<Entita> gestOgg = new ArrayList<>();
 
-    //stato del gioco
+    /**stato del gioco*/
     public boolean pausa = false;
     public int state;
     public final int menu = 0;
@@ -77,11 +94,11 @@ public class Pannello extends JPanel implements Runnable {
     public final int gameover = 3;
     public final int dati = 4;
     
-    //collisioni
+    /**collisioni*/
     public Collisioni collis = new Collisioni(this);
     public Tuttecose sett = new Tuttecose(this);
 
-    //orario
+    /**orario*/
     public Orario ora;
 
     public Pannello() {
@@ -120,6 +137,9 @@ public class Pannello extends JPanel implements Runnable {
         }
     }
 
+    /**\brief
+     * visualizzo fps
+     */
     @Override
     public void run() {
 
@@ -161,6 +181,9 @@ public class Pannello extends JPanel implements Runnable {
         }
     }
 
+    /**\brief
+     * metto a schermo intero
+     */
     public void drawSchermoTemp() {
         //Menu
         if (state == menu) {
@@ -232,6 +255,10 @@ public class Pannello extends JPanel implements Runnable {
         IntFinestraA = ASurvivalGame.finestra.getHeight();
     }
 
+    /**\brief
+     * via musica
+     * @param i 
+     */
     public void viaMusica(int i) {
         musica.setFile(i);
         musica.vai();
@@ -255,6 +282,9 @@ public class Pannello extends JPanel implements Runnable {
         return pausa;
     }
 
+    /**\brift
+     * Visualizza orario nel gioco
+     */
     public void orarioMappa() {
         g2.setColor(new Color(20, 44, 140));
         if (ora.getOra() < 5) {

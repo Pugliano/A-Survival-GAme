@@ -1,3 +1,10 @@
+/**
+ * @author Pugliano Denis, Occhiato Andrea
+ * @version 1.0
+ * @file Interfaccia.java
+ * @brief Classe Per gestire tutti i messaggi che appaiono nel gico
+ */
+
 package a.survival.game;
 
 import Entita.Entita;
@@ -13,8 +20,7 @@ import oggetti.OGGcoltello;
 import oggetti.OGGcuore;
 
 /**
- *
- * @author Denis
+ * @class Interfaccia
  */
 public class Interfaccia {
 
@@ -25,6 +31,7 @@ public class Interfaccia {
     public boolean messON = false;
     public String messag = "";
     int messT = 0;
+    public boolean Fine=false;
     double tempoG;
     DecimalFormat df = new DecimalFormat("#0.00");
     public int comandi = 0;
@@ -51,6 +58,10 @@ public class Interfaccia {
         messON = true;
     }
 
+    /**\brief
+     * Metodo draw per printare i messaggi
+     * @param g2 
+     */
     public void draw(Graphics2D g2) {
         this.g2 = g2;
         g2.setFont(Arial_40);
@@ -80,8 +91,32 @@ public class Interfaccia {
         if(p.state==p.gameover) {
             drawGameOver();
         }
+        
+        
+    }
+    
+    /**\brief
+     * Metodo per printare la scritta di fine gioco
+     */
+    public void drawFineGioco() {
+        if (Fine==true) {
+            String testo;
+            int LungTesto;
+            int x, y;
+            g2.setFont(Arial_80B);
+            g2.setColor(Color.yellow);
+            testo = "Sei Sopravissuto";
+            LungTesto = (int) g2.getFontMetrics().getStringBounds(testo, g2).getWidth();
+            x = p.FinestraA / 2 - LungTesto / 2;
+            y = p.FinestraL / 2 + (p.FinalAP * 2);
+            g2.drawString(testo, x, y);
+            p.gameThread = null;
+        }
     }
 
+    /**
+     * \brief Metodo per printare la vita del giocatore
+     */
     public void drawVitaPlayer() {
         //p.player.vita=2;
 
@@ -113,6 +148,9 @@ public class Interfaccia {
         }
     }
     
+    /**
+     * \brief Metodo per printare l'ora nel gioco
+     */
     public void drawOra(String ora) {
 
         int x = p.IntFinestraL - (p.FinalAP / 2) - getLunghezzaStringa(ora);
@@ -125,6 +163,9 @@ public class Interfaccia {
         g2.drawString(ora, x, y);
     }
 
+    /**
+     * \brief Metodo per printare il menu
+     */
     public void drawMenu() {
         //set e sfondo nero
         g2.setColor(new Color(0, 0, 0));
@@ -172,6 +213,9 @@ public class Interfaccia {
 
     }
 
+    /**
+     * \brief Metodo per printare la scritta pausa
+     */
     public void drawScrittaPausa() {
         g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 80F));
         String testo = "PAUSA";
@@ -180,6 +224,9 @@ public class Interfaccia {
         g2.drawString(testo, x, y);
     }
 
+    /**
+     * \brief Metodo per printare i dialoghi tra npc e player
+     */
     public void drawDialoghi() {
         //finestra
         int x = p.FinalAP * 2;
@@ -205,6 +252,9 @@ public class Interfaccia {
         p.tastiera.giu=false;
     }
 
+    /**
+     * \brief Metodo per printare le statisctiche del giocatore
+     */
     public void drawDatiPlayer() {
         //creiamo un frame
         final int frameX=p.FinalAP*2;

@@ -1,13 +1,25 @@
+/**
+ * @author Pugliano Denis, Occhiato Andrea
+ * @version 1.0
+ * @file OGGcartello.java
+ * @brief Classe per implementare l'immagine di un cartello nel gioco
+ */
+
 package oggetti;
 
 import Entita.Entita;
 import a.survival.game.Pannello;
 
 /**
- *
- * @author Denis
+ * @class OGGcoltello
+ * @brief Classe con extends Entita
  */
 public class OGGcartello extends Entita{
+    /**
+     * \brief Costruttore parametrico + set area collisioni
+     *
+     * @param p
+     */
     public OGGcartello(Pannello p) {
         super(p);
         nome = "cartello";

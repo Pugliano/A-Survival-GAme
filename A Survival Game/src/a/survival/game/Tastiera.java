@@ -1,11 +1,18 @@
+/**
+ * @author Pugliano Denis, Occhiato Andrea
+ * @version 1.0
+ * @file Tastiera.java
+ * @brief Classe Per implementare i tasti
+ */
+
 package a.survival.game;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 /**
- *
- * @author Denis
+ * @class Tastiera
+ * @brief extends KeyListener
  */
 public class Tastiera implements KeyListener {
 
@@ -22,26 +29,39 @@ public class Tastiera implements KeyListener {
 
     }
 
+    /**\brief
+     * metodo per settare i tasti quando li premo
+     * @param e 
+     */
     @Override
     public void keyPressed(KeyEvent e) {
         int tasto = e.getKeyCode();
         enterP = false;
 
-        //menu
+        /**settaggio tasti nel menu*/
         if (p.state == p.menu) {
             menu(tasto);
-        } //gioco
+        } /**settaggio tasti nel gioco*/
         else if (p.state == p.gioco) {
             gioco(tasto);
-        } //pausa gioco
+        } /**
+         * settaggio tasto nel gioco quando premo P
+         */
         else if (p.pausa == true) {
             pausa(tasto);
-        } //parla con npc
+        } /**
+         * settaggio tasto nel gioco quando premo ENTER vicino a un npc
+         */
         else if (p.state == p.dialoghi) {
             dialogo(tasto);
-        } //Dati giocatore con il tasto c
+        } /**
+         * settaggio tasto nel gioco quando premo C
+         */
         else if (p.state == p.dati) {
             datiPlayer(tasto);
+            /**
+             * settaggio tasto nel gioco quando perdo
+             */
         } else if (p.state == p.gameover) {
             gameover(tasto);
         }

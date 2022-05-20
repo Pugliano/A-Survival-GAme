@@ -1,3 +1,10 @@
+/**
+ * @author Pugliano Denis, Occhiato Andrea
+ * @version 1.0
+ * @file Orario.java
+ * @brief Classe Per gestire oarario
+ */
+
 package a.survival.game;
 
 import static java.lang.Thread.sleep;
@@ -5,15 +12,23 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author occhiato_andrea
+ * @class Orario
+ * @brief extends Thread
  */
 public class Orario extends Thread {
 
     Pannello p;
     public int ora;
     public int min;
+    public int giorno=0;
+    public Interfaccia inter=new Interfaccia(p);
 
+    /**\brief
+     * Costruttore Parametrico
+     * @param p
+     * @param ora
+     * @param min 
+     */
     public Orario(Pannello p, int ora, int min) {
         this.p = p;
         this.ora = ora;
@@ -42,6 +57,9 @@ public class Orario extends Thread {
         return temp;
     }
 
+    /**\brief
+     * Aggiorno le ore nel gioco
+     */
     public void aggiornaTempo() {
         try {
             sleep(125); //1 min di gioco
@@ -51,12 +69,18 @@ public class Orario extends Thread {
         if (min == 59) {
             min = 0;
             if (ora == 23) {
+                giorno++;
                 ora = 0;
             } else {
                 ora++;
             }
         } else {
             min++;
+        }
+        if(giorno==2) {
+            p.messaggi.Fine=true;
+            inter.drawFineGioco();
+            p.stopMusica();
         }
     }
     

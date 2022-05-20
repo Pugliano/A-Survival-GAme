@@ -1,3 +1,10 @@
+/**
+ * @author Pugliano Denis, Occhiato Andrea
+ * @version 1.0
+ * @file Gestione.java
+ * @brief Classe per implementare la mappa nel gioco
+ */
+
 package blocchi;
 
 import a.survival.game.Pannello;
@@ -7,16 +14,23 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
- *
- * @author Denis
+ * @class Gestione
  */
 public class Gestione {
     Pannello p;
+    /**matrice per settare numero tile della mappa*/
     public int Nmappe[][];
     TileManager tm;
+    /**
+     * matrice per settare grandezza della mappa
+     */
     int schermoX;
     int schermoY;
     
+    /**\brief
+     * Costruttore parametrico
+     * @param p 
+     */
     public Gestione(Pannello p) {
         tm=new TileManager();
         this.p=p;
@@ -27,10 +41,15 @@ public class Gestione {
             }
         }
        
+        /**Richiamo il metodo caricaM e gli passo il txt dove prendere la mappa*/
         caricaM("/immagini/mappe/word.txt");
         
     }
     
+    /**\brief
+     * Metodo per trasformare il txt e i vari numeri in tile
+     * @param file 
+     */
     public void caricaM(String file) {
         try{
             InputStream is = getClass().getResourceAsStream(file);
@@ -57,6 +76,10 @@ public class Gestione {
         }
     }
     
+    /**\brief
+     * Metodo per printare la mappa
+     * @param g2 
+     */
     public void draw(Graphics2D g2) {
         int col=0;
         int rig=0;

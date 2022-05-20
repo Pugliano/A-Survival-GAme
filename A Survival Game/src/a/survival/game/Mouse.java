@@ -1,7 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * @author Pugliano Denis, Occhiato Andrea
+ * @version 1.0
+ * @file Mouse.java
+ * @brief Classe Per gestire mouse
  */
+
 package a.survival.game;
 
 import java.awt.event.MouseEvent;
@@ -9,8 +12,8 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 /**
- *
- * @author Andrea
+ * @class Mouse
+ * @brief implements MouseListener e MouseMotionListener
  */
 public class Mouse implements MouseListener, MouseMotionListener{
 
@@ -20,7 +23,10 @@ public class Mouse implements MouseListener, MouseMotionListener{
         this.p = p;
     }
     
-    
+    /**\brief
+     * Al click del mouse se nel menù vai nel gioco in base al tasto selezionato con mause Moved
+     * @param e 
+     */
     @Override
     public void mouseClicked(MouseEvent e) {
         if (p.state == p.menu) {

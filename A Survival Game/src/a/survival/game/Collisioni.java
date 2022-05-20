@@ -1,3 +1,10 @@
+/**
+ * @author Pugliano Denis, Occhiato Andrea
+ * @version 1.0
+ * @file Collisioni.java
+ * @brief Classe Per gestire le collisioni tra npc,mob e player
+ */
+
 package a.survival.game;
 
 import Entita.Entita;

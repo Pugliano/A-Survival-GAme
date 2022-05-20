@@ -1,33 +1,52 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @author Pugliano Denis, Occhiato Andrea
+ * @version 1.0
+ * @file slime.java
+ * @brief Classe per settare gli npc nemici slime
  */
+
 package Entita;
 
 import a.survival.game.Pannello;
 
 /**
- *
- * @author occhiato_andrea
+ * @class slime
+ * @brief Classe con extends Mob
  */
 public class Slime extends Mob {
-
     public Slime(Pannello p) {
-        super(p, "Slime", 2);
+        super(p,"Slime",1);
+        /**
+         * tipo npc
+         */
         type = 2;
-        velocita = 1;
+
+        nome = "Slime Verde";
+        /**
+         * velocità slime
+         */
+        velocita = 4;
+        /**
+         * vita massima dello slime
+         */
         VitaMax = 4;
         vita = VitaMax;
-        SArea.x = 5;
+
+        /**
+         * settaggi per Area collisioni
+         */
+        SArea.x = 3;
         SArea.y = 18;
-        SArea.width = 2;
-        SArea.height = 2;
+        SArea.width = 42;
+        SArea.height = 30;
         AreaSX = SArea.x;
         AreaSY = SArea.y;
         getImage();
     }
 
+    /**
+     * \brief setto le immagini dell'ape
+     */
     public void getImage() {
         su1 = setup("/immagini/nemici/slime_giu1", p.FinalAP, p.FinalAP);
         su2 = setup("/immagini/nemici/slime_giu2", p.FinalAP, p.FinalAP);

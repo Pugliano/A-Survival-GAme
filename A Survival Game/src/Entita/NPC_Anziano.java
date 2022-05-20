@@ -1,20 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * @author Pugliano Denis, Occhiato Andrea
+ * @version 1.0
+ * @file NPC_Anziano.java
+ * @brief Classe per settare le impostazione degli npc anziano
  */
+
 package Entita;
 
 import a.survival.game.Pannello;
 import java.util.Random;
 
 /**
- *
- * @author Andrea
+ * @class NPC_Anziano
+ * @brief Classe con extends EPC
  */
 public class NPC_Anziano extends NPC {
 
     boolean tutorial;
 
+    /**\brief
+     * se il tutorial è true allora spiega i tasti, se inve il tutorial è false, il fantasma parla normalmente
+     * @param p
+     * @param tutorial 
+     */
     public NPC_Anziano(Pannello p, boolean tutorial) {
         super(p);
         direzione = "sinistra";
@@ -25,6 +33,9 @@ public class NPC_Anziano extends NPC {
         setDialoghi();
     }
 
+    /**\brief
+     * setto le immagini dell'npc
+     */
     public void getImmagineV() {
         su1 = setup("/immagini/npc/Vsu1", p.FinalAP, p.FinalAP);
         su2 = setup("/immagini/npc/vsu2", p.FinalAP, p.FinalAP);
@@ -36,6 +47,9 @@ public class NPC_Anziano extends NPC {
         destra2 = setup("/immagini/npc/vdestra2", p.FinalAP, p.FinalAP);
     }
 
+    /**\brief
+     * Setto i dialoghi
+     */
     public void setDialoghi() {
         if (tutorial) {
             dial[0] = "Ciao, sono un fantasma. Sono morto qui 27 anni fa";
@@ -49,6 +63,9 @@ public class NPC_Anziano extends NPC {
         }
     }
 
+    /**\brief
+     * Lo faccio muovere a random per la mappa
+     */
     @Override
     public void setMove() {
         VelocitaM++;

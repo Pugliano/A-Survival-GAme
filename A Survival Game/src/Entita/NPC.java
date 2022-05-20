@@ -1,7 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * @author Pugliano Denis, Occhiato Andrea
+ * @version 1.0
+ * @file NPC.java
+ * @brief Classe per settare Tutte le impostazione degli npc
  */
+
 package Entita;
 
 import a.survival.game.Pannello;
@@ -9,8 +12,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author Andrea
+ * @class NPC
+ * @brief Classe con extends Entita
  */
 public class NPC extends Entita {
 
@@ -21,6 +24,9 @@ public class NPC extends Entita {
         super(p);
     }
     
+    /**\brief
+     * metodo per far partire i dialoghi tra npc e player e in base alla direzione l'npc si girerà sempre verso la direzione del player
+     */
     @Override
     public void parla() {
         if (dial[Inddialoghi] == null) {

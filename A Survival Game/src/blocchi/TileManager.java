@@ -1,3 +1,10 @@
+/**
+ * @author Pugliano Denis, Occhiato Andrea
+ * @version 1.0
+ * @file TileManager.java
+ * @brief Classe per settare ogni tile dell'immagine in numeri
+ */
+
 package blocchi;
 
 import java.awt.image.BufferedImage;
@@ -8,8 +15,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 /**
- *
- * @author Denis
+ * @class TileManager
  */
 public class TileManager {
     public Tile ERBA, ACQUA; //erba=0 , acqua=1,

@@ -1,3 +1,10 @@
+/**
+ * @author Pugliano Denis, Occhiato Andrea
+ * @version 1.0
+ * @file Tuttecose.java
+ * @brief Classe Per piazzare oggetti,mob,npc sulla mappa
+ */
+
 package a.survival.game;
 
 import Entita.Ape;
@@ -5,11 +12,9 @@ import Entita.Entita;
 import Entita.NPC_Anziano;
 import Entita.Slime;
 import oggetti.OGGcartello;
-import oggetti.OGGpozzo;
 
 /**
- *
- * @author Denis
+ * @class Tuttecose
  */
 public class Tuttecose {
 
@@ -20,15 +25,11 @@ public class Tuttecose {
     }
 
     public void setoggetto() {
-        //cartello
-        p.gestOgg.add(new OGGcartello(p));
-        Entita temp = p.gestOgg.get(0);
-        temp.x = p.FinalAP * 54;
-        temp.y = p.FinalAP * 132;
-        temp.collisioniSI = true;
-        p.gestOgg.set(0, temp);
     }
 
+    /**\brief
+     * Metodo per mettere gli npc sulla mappa, in questo caso 2 
+     */
     public void setNpc() {
         //npc anziano
         p.gestNPC.add(new NPC_Anziano(p, true));
@@ -37,6 +38,7 @@ public class Tuttecose {
         temp.y = p.FinalAP * 137;
         temp.collisioniSI = true;
         p.gestNPC.set(0, temp);
+        
 
         p.gestNPC.add(new NPC_Anziano(p, false));
         temp = p.gestNPC.get(1);
@@ -46,6 +48,9 @@ public class Tuttecose {
         p.gestNPC.set(1, temp);
     }
 
+    /**
+     * \brief Metodo per mettere i mob ostili sulla mappa, ogni 30 millisec spawnano tot mob ostili su tutta la mappa
+     */
     public void setMob() {
 
         Entita temp;
@@ -63,18 +68,18 @@ public class Tuttecose {
             }
         }
         
-        conta = 0;
+//        conta = 0;
         
-        for (int i = 50; i < 150; i += 35) {
-            for (int j = 50; j < 150; j += 35) {
-                p.gestMob.add(new Slime(p));
-                temp = p.gestMob.get(conta);
-                temp.x = p.FinalAP * j;
-                temp.y = p.FinalAP * i;
-                temp.collisioniSI = true;
-                p.gestMob.set(conta, temp);
-                conta++;
-            }
-        }
+//        for (int i = 50; i < 150; i += 35) {
+//            for (int j = 50; j < 150; j += 35) {
+//                p.gestMob.add(new Slime(p));
+//                temp = p.gestMob.get(conta);
+//                temp.x = p.FinalAP * j;
+//                temp.y = p.FinalAP * i;
+//                temp.collisioniSI = true;
+//                p.gestMob.set(conta, temp);
+//                conta++;
+//            }
+//        }
     }
 }
