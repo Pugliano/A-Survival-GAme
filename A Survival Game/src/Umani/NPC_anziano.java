@@ -10,12 +10,14 @@ import java.util.Random;
 public class NPC_anziano extends umani {
 
     Pannello p;
+    boolean tutorial;
 
-    public NPC_anziano(Pannello p) {
+    public NPC_anziano(Pannello p,boolean tutorial) {
         super(p);
         this.p = p;
         direzione = "giu";
         velocita = 1;
+        this.tutorial=tutorial;
 
         getImmagineV();
         setDialoghi();
@@ -33,15 +35,28 @@ public class NPC_anziano extends umani {
     }
 
     public void setDialoghi() {
-        dial[0] = "Ciao";
-        dial[1] = "Sono un fantasma";
-        dial[2] = "Ma sono anche un mago, quindi tieni";
+        if (tutorial)
+        {
+            dial[0] = "Ciao, sono un fantasma. Sono morto qui 27 anni fa";
+            dial[1] = "Per muoverti usa WASD.\nPer attaccare un mostro usa INVIO\nPer parlare con un NPC usa INVIO\nPer visualizzare le tue statistiche usa C";
+            dial[2] = "Spero di esserti stato utile";
+            dial[3] = "Non so se ci rivedremo in questa forma";
+        }
+        else{
+            dial[0] = "Ciao";
+            dial[1] = "Sono un fantasma";
+            dial[2] = "Ma sono anche un mago, quindi tieni";
+        }
     }
 
     public void setMove() {
         if (p.state == p.dialoghi) {
             
         } 
+        else if (tutorial)
+        {
+            
+        }
         else {
             VelocitaM++;
             if (VelocitaM == 150) {
@@ -67,5 +82,9 @@ public class NPC_anziano extends umani {
 
     public void parla() {
         super.parla();
+        if(p.npc[0].Inddialoghi==4)
+        {
+            p.npc[0]=null;
+        }
     }
 }

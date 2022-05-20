@@ -27,10 +27,15 @@ public class SettOgg {
     
     public void setNpc() {
         //npc anziano
-        p.npc[0]=new NPC_anziano(p);
-        p.npc[0].Mondox=p.FinalAP*55;
-        p.npc[0].Mondoy=p.FinalAP*93;
+        p.npc[0]=new NPC_anziano(p,true);
+        p.npc[0].Mondox=p.FinalAP*56;
+        p.npc[0].Mondoy=p.FinalAP*137;
         p.npc[0].collisioniSI=true;
+        
+        p.npc[1]=new NPC_anziano(p,false);
+        p.npc[1].Mondox=p.FinalAP*55;
+        p.npc[1].Mondoy=p.FinalAP*93;
+        p.npc[1].collisioniSI=true;
     }
     
     public void setNemici() {

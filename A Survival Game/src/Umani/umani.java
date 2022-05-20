@@ -66,7 +66,7 @@ public class umani {
     
     
     String[] dial=new String[20];
-    int Inddialoghi=0;
+    public int Inddialoghi=0;
     
     public umani(Pannello p) {
         this.p=p;
