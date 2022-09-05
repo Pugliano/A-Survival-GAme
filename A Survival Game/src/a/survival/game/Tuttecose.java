@@ -32,20 +32,20 @@ public class Tuttecose {
      */
     public void setNpc() {
         //npc anziano
-        p.gestNPC.add(new NPC_Anziano(p, true));
-        Entita temp = p.gestNPC.get(0);
-        temp.x = p.FinalAP * 56;
-        temp.y = p.FinalAP * 137;
-        temp.collisioniSI = true;
-        p.gestNPC.set(0, temp);
-        
-
-        p.gestNPC.add(new NPC_Anziano(p, false));
-        temp = p.gestNPC.get(1);
-        temp.x = p.FinalAP * 55;
-        temp.y = p.FinalAP * 93;
-        temp.collisioniSI = true;
-        p.gestNPC.set(1, temp);
+//        p.gestNPC.add(new NPC_Anziano(p, true));
+//        Entita temp = p.gestNPC.get(0);
+//        temp.x = p.FinalAP * 56;
+//        temp.y = p.FinalAP * 137;
+//        temp.collisioniSI = true;
+//        p.gestNPC.set(0, temp);
+//        
+//
+//        p.gestNPC.add(new NPC_Anziano(p, false));
+//        temp = p.gestNPC.get(1);
+//        temp.x = p.FinalAP * 55;
+//        temp.y = p.FinalAP * 93;
+//        temp.collisioniSI = true;
+//        p.gestNPC.set(1, temp);
     }
 
     /**
@@ -53,20 +53,20 @@ public class Tuttecose {
      */
     public void setMob() {
 
-        Entita temp;
-        int conta = 0;
-
-        for (int i = 30; i < 150; i += 30) {
-            for (int j = 30; j < 150; j += 30) {
-                p.gestMob.add(new Ape(p));
-                temp = p.gestMob.get(conta);
-                temp.x = p.FinalAP * j;
-                temp.y = p.FinalAP * i;
-                temp.collisioniSI = true;
-                p.gestMob.set(conta, temp);
-                conta++;
-            }
-        }
+//        Entita temp;
+//        int conta = 0;
+//
+//        for (int i = 125; i < 150; i += 115) {
+//            for (int j = 30; j < 150; j += 30) {
+//                p.gestMob.add(new Ape(p));
+//                temp = p.gestMob.get(conta);
+//                temp.x = p.FinalAP * j;
+//                temp.y = p.FinalAP * i;
+//                temp.collisioniSI = true;
+//                p.gestMob.set(conta, temp);
+//                conta++;
+//            }
+//        }
         
 //        conta = 0;
         

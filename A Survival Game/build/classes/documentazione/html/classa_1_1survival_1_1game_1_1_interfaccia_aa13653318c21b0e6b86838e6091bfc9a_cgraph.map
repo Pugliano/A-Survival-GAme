@@ -1,0 +1,5 @@
+<map id="drawMenu" name="drawMenu">
+<area shape="rect" id="node2" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a33bfff0e4091d0c94334a82514ffa7ec" title="getXTestoCentrato" alt="" coords="143,5,271,32"/>
+<area shape="rect" id="node3" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#af3e544b837451de1ad271a8d32b61385" title="getAltezzaStringa" alt="" coords="144,56,269,83"/>
+<area shape="rect" id="node4" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a5e33eb51424c4888d0cd26cf5e0311de" title="getLunghezzaStringa" alt="" coords="135,107,279,133"/>
+</map>

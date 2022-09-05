@@ -1,0 +1,6 @@
+<map id="hit" name="hit">
+<area shape="rect" id="node2" href="$classa_1_1survival_1_1game_1_1_azioni.html#a39753d0160b9846cd1dd3d4556519456" title="setto un azione a 54*132 e se vado in quel blocco e premo invio allora printa il messaggio ..." alt="" coords="92,5,201,32"/>
+<area shape="rect" id="node3" href="$class_entita_1_1_giocatore.html#a1fe2f184b3cc7345c6a0f08d183a1d0b" title="Metodo per far muovere il player e per caricare in base la direzione l&#39;immagine giusta. " alt="" coords="249,5,403,32"/>
+<area shape="rect" id="node4" href="$classa_1_1survival_1_1game_1_1_pannello.html#a1fe2f184b3cc7345c6a0f08d183a1d0b" title="a.survival.game.Pannello.muovi" alt="" coords="451,5,652,32"/>
+<area shape="rect" id="node5" href="$classa_1_1survival_1_1game_1_1_pannello.html#a13a43e6d814de94978c515cb084873b1" title="visualizzo fps " alt="" coords="700,5,887,32"/>
+</map>

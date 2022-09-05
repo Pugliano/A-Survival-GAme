@@ -1,0 +1,7 @@
+<map id="drawDialoghiF" name="drawDialoghiF">
+<area shape="rect" id="node2" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a07761ecd195353aa0f33107b57c3c852" title="Metodo per printare i dialoghi tra npc e player. " alt="" coords="163,5,258,32"/>
+<area shape="rect" id="node6" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#aa9a8046a21bf4083e12263a078701107" title="Metodo per printare le statisctiche del giocatore. " alt="" coords="156,56,265,83"/>
+<area shape="rect" id="node3" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#ae8c972c0fb4fcbc09c2219dd32cbd053" title="Metodo draw per printare i messaggi. " alt="" coords="313,31,363,57"/>
+<area shape="rect" id="node4" href="$classa_1_1survival_1_1game_1_1_pannello.html#a65c6d6be4b2a0069d1920cb7f466643b" title="metto a schermo intero " alt="" coords="411,23,605,65"/>
+<area shape="rect" id="node5" href="$classa_1_1survival_1_1game_1_1_pannello.html#a13a43e6d814de94978c515cb084873b1" title="visualizzo fps " alt="" coords="653,31,840,57"/>
+</map>

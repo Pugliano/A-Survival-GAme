@@ -1,0 +1,699 @@
+\hypertarget{classa_1_1survival_1_1game_1_1_pannello}{}\section{Pannello Class Reference}
+\label{classa_1_1survival_1_1game_1_1_pannello}\index{Pannello@{Pannello}}
+
+
+extends J\+Panel e implements Runnable  
+
+
+
+
+Inheritance diagram for Pannello\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classa_1_1survival_1_1game_1_1_pannello__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Pannello\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classa_1_1survival_1_1game_1_1_pannello__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classa_1_1survival_1_1game_1_1_pannello_ab70bbeb2810224fb9e495d09a0b78ede}{Pannello} ()
+\item 
+void \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a656b18ea5779c5d29c83a5abea629534}{set\+Gioco} ()
+\item 
+void \hyperlink{classa_1_1survival_1_1game_1_1_pannello_aeadd7c80de430e172e3231afe0d94bd1}{start\+Game\+Thread} ()
+\item 
+void \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a13a43e6d814de94978c515cb084873b1}{run} ()
+\begin{DoxyCompactList}\small\item\em visualizzo fps \end{DoxyCompactList}\item 
+void \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a1fe2f184b3cc7345c6a0f08d183a1d0b}{muovi} ()
+\item 
+void \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a65c6d6be4b2a0069d1920cb7f466643b}{draw\+Schermo\+Temp} ()
+\begin{DoxyCompactList}\small\item\em metto a schermo intero \end{DoxyCompactList}\item 
+void \hyperlink{classa_1_1survival_1_1game_1_1_pannello_ab07487900bba57d73694e694968a1993}{draw\+Schermo} ()
+\item 
+void \hyperlink{classa_1_1survival_1_1game_1_1_pannello_afcdfb03d382a1f735d929602329d276b}{schermo\+Intero} ()
+\item 
+void \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a443c6be9d46440deb1e73b957e28d56e}{via\+Musica} (int i)
+\begin{DoxyCompactList}\small\item\em via musica \end{DoxyCompactList}\item 
+void \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a2e8ba1ecd18a0f6434c051caa55bb9d3}{stop\+Musica} ()
+\item 
+void \hyperlink{classa_1_1survival_1_1game_1_1_pannello_ace78d33408180273c794117936ab01e0}{via\+E\+FF} (int i)
+\item 
+void \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a2283a8c1211827155404ab0ccb5c65c4}{set\+Pausa} (boolean p)
+\item 
+boolean \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a6e565369e7a4cd8bee8616ba06ebae08}{get\+Pausa} ()
+\item 
+void \hyperlink{classa_1_1survival_1_1game_1_1_pannello_abe2c4192cc87f74e6d45d5b5fe5283c3}{orario\+Mappa} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final int \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a254f39b8c0d713267b41082239e95bed}{Final\+AP} = altezzaP $\ast$ scala
+\item 
+final int \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a3373f5f9365b8e16cdf3a7bb6d6c0bc9}{Altezza\+S\+MX} = 24
+\item 
+final int \hyperlink{classa_1_1survival_1_1game_1_1_pannello_ac5f4442e9873fde75688c00c817c49f6}{Altezza\+S\+MY} = 15
+\item 
+final int \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a319dcf1279476cf946d73808e782d39c}{FinestraL} = \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a254f39b8c0d713267b41082239e95bed}{Final\+AP} $\ast$ \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a3373f5f9365b8e16cdf3a7bb6d6c0bc9}{Altezza\+S\+MX}
+\item 
+final int \hyperlink{classa_1_1survival_1_1game_1_1_pannello_aa40a02fd0e358e545d2d3669b38dcc90}{FinestraA} = \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a254f39b8c0d713267b41082239e95bed}{Final\+AP} $\ast$ \hyperlink{classa_1_1survival_1_1game_1_1_pannello_ac5f4442e9873fde75688c00c817c49f6}{Altezza\+S\+MY}
+\item 
+final int \hyperlink{classa_1_1survival_1_1game_1_1_pannello_ae2957af001a1ecbc4831d6eddcecb539}{Word\+Col} = 150
+\item 
+final int \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a1b6b63331c98b61b838b1834813d57cb}{Word\+Rig} = 150
+\item 
+\hyperlink{classa_1_1survival_1_1game_1_1_tastiera}{Tastiera} \hyperlink{classa_1_1survival_1_1game_1_1_pannello_aa81b2ff7f225716affd276a1fff16da7}{tastiera} = new \hyperlink{classa_1_1survival_1_1game_1_1_tastiera}{Tastiera}(this)
+\item 
+\hyperlink{classa_1_1survival_1_1game_1_1_interfaccia}{Interfaccia} \hyperlink{classa_1_1survival_1_1game_1_1_pannello_aa4c65a419ff3f1f90a582300f0473acd}{messaggi} = new \hyperlink{classa_1_1survival_1_1game_1_1_interfaccia}{Interfaccia}(this)
+\item 
+\hyperlink{classa_1_1survival_1_1game_1_1_azioni}{Azioni} \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a99f79150ef5f334200f8f4e42301d9c5}{azioni} = new \hyperlink{classa_1_1survival_1_1game_1_1_azioni}{Azioni}(this)
+\item 
+\hyperlink{class_entita_1_1_giocatore}{Giocatore} \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a9d7f848831c53565ece98aa720fef0be}{player} = new \hyperlink{class_entita_1_1_giocatore}{Giocatore}(this, \hyperlink{classa_1_1survival_1_1game_1_1_pannello_aa81b2ff7f225716affd276a1fff16da7}{tastiera})
+\item 
+Array\+List$<$ \hyperlink{class_entita_1_1_entita}{Entita} $>$ \hyperlink{classa_1_1survival_1_1game_1_1_pannello_aadff08c4da8149167797dcb1d4c002b2}{gest\+Ent} = new Array\+List$<$$>$()
+\item 
+Array\+List$<$ \hyperlink{class_entita_1_1_entita}{Entita} $>$ \hyperlink{classa_1_1survival_1_1game_1_1_pannello_ac61970e82173552b43a93881ba83a5ba}{gest\+N\+PC} = new Array\+List$<$$>$()
+\item 
+Array\+List$<$ \hyperlink{class_entita_1_1_entita}{Entita} $>$ \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a6230af9e0e0b3961faec989890df6e0b}{gest\+Mob} = new Array\+List$<$$>$()
+\item 
+Array\+List$<$ \hyperlink{class_entita_1_1_entita}{Entita} $>$ \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a3b9d86a976e15cc8573437bb1072fb4f}{gest\+Ogg} = new Array\+List$<$$>$()
+\item 
+boolean \hyperlink{classa_1_1survival_1_1game_1_1_pannello_ae6f093cf66923883b189846396dc0088}{pausa} = false
+\item 
+int \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a89f234133d3efe315836311cbf21c64b}{state}
+\item 
+final int \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a1c03bce570322e5c42099db2b257aec0}{menu} = 0
+\item 
+final int \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a4a341629506aeb33ef77492890162cce}{gioco} = 1
+\item 
+final int \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a378b11e479e2f3101abe4b48f024ae50}{dialoghi} = 2
+\item 
+final int \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a9c21caf52c4f3bfeb8b074c16f5775a4}{gameover} = 3
+\item 
+final int \hyperlink{classa_1_1survival_1_1game_1_1_pannello_af1028ebda0895c215e64643e94360eee}{dati} = 4
+\item 
+\hyperlink{classa_1_1survival_1_1game_1_1_collisioni}{Collisioni} \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a4bccfc668ecd412a507c9c227ac1db42}{collis} = new \hyperlink{classa_1_1survival_1_1game_1_1_collisioni}{Collisioni}(this)
+\item 
+\hyperlink{classa_1_1survival_1_1game_1_1_tuttecose}{Tuttecose} \hyperlink{classa_1_1survival_1_1game_1_1_pannello_aa932d862196f83ce306903d6feb35b9b}{sett} = new \hyperlink{classa_1_1survival_1_1game_1_1_tuttecose}{Tuttecose}(this)
+\item 
+\hyperlink{classa_1_1survival_1_1game_1_1_orario}{Orario} \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a74824477a3f77bce08a4ec9db0b0600c}{ora}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+extends J\+Panel e implements Runnable 
+
+Definition at line 32 of file Pannello.\+java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_ab70bbeb2810224fb9e495d09a0b78ede}\label{classa_1_1survival_1_1game_1_1_pannello_ab70bbeb2810224fb9e495d09a0b78ede}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!Pannello@{Pannello}}
+\index{Pannello@{Pannello}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{Pannello()}{Pannello()}}
+{\footnotesize\ttfamily \hyperlink{classa_1_1survival_1_1game_1_1_pannello}{Pannello} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 104 of file Pannello.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_ab07487900bba57d73694e694968a1993}\label{classa_1_1survival_1_1game_1_1_pannello_ab07487900bba57d73694e694968a1993}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!draw\+Schermo@{draw\+Schermo}}
+\index{draw\+Schermo@{draw\+Schermo}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{draw\+Schermo()}{drawSchermo()}}
+{\footnotesize\ttfamily void draw\+Schermo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 245 of file Pannello.\+java.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classa_1_1survival_1_1game_1_1_pannello_ab07487900bba57d73694e694968a1993_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a65c6d6be4b2a0069d1920cb7f466643b}\label{classa_1_1survival_1_1game_1_1_pannello_a65c6d6be4b2a0069d1920cb7f466643b}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!draw\+Schermo\+Temp@{draw\+Schermo\+Temp}}
+\index{draw\+Schermo\+Temp@{draw\+Schermo\+Temp}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{draw\+Schermo\+Temp()}{drawSchermoTemp()}}
+{\footnotesize\ttfamily void draw\+Schermo\+Temp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+metto a schermo intero 
+
+
+
+Definition at line 187 of file Pannello.\+java.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classa_1_1survival_1_1game_1_1_pannello_a65c6d6be4b2a0069d1920cb7f466643b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classa_1_1survival_1_1game_1_1_pannello_a65c6d6be4b2a0069d1920cb7f466643b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a6e565369e7a4cd8bee8616ba06ebae08}\label{classa_1_1survival_1_1game_1_1_pannello_a6e565369e7a4cd8bee8616ba06ebae08}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!get\+Pausa@{get\+Pausa}}
+\index{get\+Pausa@{get\+Pausa}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{get\+Pausa()}{getPausa()}}
+{\footnotesize\ttfamily boolean get\+Pausa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 281 of file Pannello.\+java.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classa_1_1survival_1_1game_1_1_pannello_a6e565369e7a4cd8bee8616ba06ebae08_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a1fe2f184b3cc7345c6a0f08d183a1d0b}\label{classa_1_1survival_1_1game_1_1_pannello_a1fe2f184b3cc7345c6a0f08d183a1d0b}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!muovi@{muovi}}
+\index{muovi@{muovi}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{muovi()}{muovi()}}
+{\footnotesize\ttfamily void muovi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 177 of file Pannello.\+java.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classa_1_1survival_1_1game_1_1_pannello_a1fe2f184b3cc7345c6a0f08d183a1d0b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classa_1_1survival_1_1game_1_1_pannello_a1fe2f184b3cc7345c6a0f08d183a1d0b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_abe2c4192cc87f74e6d45d5b5fe5283c3}\label{classa_1_1survival_1_1game_1_1_pannello_abe2c4192cc87f74e6d45d5b5fe5283c3}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!orario\+Mappa@{orario\+Mappa}}
+\index{orario\+Mappa@{orario\+Mappa}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{orario\+Mappa()}{orarioMappa()}}
+{\footnotesize\ttfamily void orario\+Mappa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Visualizza orario nel gioco 
+
+Definition at line 288 of file Pannello.\+java.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classa_1_1survival_1_1game_1_1_pannello_abe2c4192cc87f74e6d45d5b5fe5283c3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classa_1_1survival_1_1game_1_1_pannello_abe2c4192cc87f74e6d45d5b5fe5283c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a13a43e6d814de94978c515cb084873b1}\label{classa_1_1survival_1_1game_1_1_pannello_a13a43e6d814de94978c515cb084873b1}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!run@{run}}
+\index{run@{run}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+visualizzo fps 
+
+
+
+Definition at line 144 of file Pannello.\+java.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classa_1_1survival_1_1game_1_1_pannello_a13a43e6d814de94978c515cb084873b1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_afcdfb03d382a1f735d929602329d276b}\label{classa_1_1survival_1_1game_1_1_pannello_afcdfb03d382a1f735d929602329d276b}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!schermo\+Intero@{schermo\+Intero}}
+\index{schermo\+Intero@{schermo\+Intero}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{schermo\+Intero()}{schermoIntero()}}
+{\footnotesize\ttfamily void schermo\+Intero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 250 of file Pannello.\+java.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classa_1_1survival_1_1game_1_1_pannello_afcdfb03d382a1f735d929602329d276b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a656b18ea5779c5d29c83a5abea629534}\label{classa_1_1survival_1_1game_1_1_pannello_a656b18ea5779c5d29c83a5abea629534}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!set\+Gioco@{set\+Gioco}}
+\index{set\+Gioco@{set\+Gioco}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{set\+Gioco()}{setGioco()}}
+{\footnotesize\ttfamily void set\+Gioco (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 114 of file Pannello.\+java.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classa_1_1survival_1_1game_1_1_pannello_a656b18ea5779c5d29c83a5abea629534_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{classa_1_1survival_1_1game_1_1_pannello_a656b18ea5779c5d29c83a5abea629534_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a2283a8c1211827155404ab0ccb5c65c4}\label{classa_1_1survival_1_1game_1_1_pannello_a2283a8c1211827155404ab0ccb5c65c4}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!set\+Pausa@{set\+Pausa}}
+\index{set\+Pausa@{set\+Pausa}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{set\+Pausa()}{setPausa()}}
+{\footnotesize\ttfamily void set\+Pausa (\begin{DoxyParamCaption}\item[{boolean}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line 277 of file Pannello.\+java.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classa_1_1survival_1_1game_1_1_pannello_a2283a8c1211827155404ab0ccb5c65c4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_aeadd7c80de430e172e3231afe0d94bd1}\label{classa_1_1survival_1_1game_1_1_pannello_aeadd7c80de430e172e3231afe0d94bd1}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!start\+Game\+Thread@{start\+Game\+Thread}}
+\index{start\+Game\+Thread@{start\+Game\+Thread}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{start\+Game\+Thread()}{startGameThread()}}
+{\footnotesize\ttfamily void start\+Game\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 126 of file Pannello.\+java.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classa_1_1survival_1_1game_1_1_pannello_aeadd7c80de430e172e3231afe0d94bd1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classa_1_1survival_1_1game_1_1_pannello_aeadd7c80de430e172e3231afe0d94bd1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a2e8ba1ecd18a0f6434c051caa55bb9d3}\label{classa_1_1survival_1_1game_1_1_pannello_a2e8ba1ecd18a0f6434c051caa55bb9d3}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!stop\+Musica@{stop\+Musica}}
+\index{stop\+Musica@{stop\+Musica}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{stop\+Musica()}{stopMusica()}}
+{\footnotesize\ttfamily void stop\+Musica (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 268 of file Pannello.\+java.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{classa_1_1survival_1_1game_1_1_pannello_a2e8ba1ecd18a0f6434c051caa55bb9d3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classa_1_1survival_1_1game_1_1_pannello_a2e8ba1ecd18a0f6434c051caa55bb9d3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_ace78d33408180273c794117936ab01e0}\label{classa_1_1survival_1_1game_1_1_pannello_ace78d33408180273c794117936ab01e0}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!via\+E\+FF@{via\+E\+FF}}
+\index{via\+E\+FF@{via\+E\+FF}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{via\+E\+F\+F()}{viaEFF()}}
+{\footnotesize\ttfamily void via\+E\+FF (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line 272 of file Pannello.\+java.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{classa_1_1survival_1_1game_1_1_pannello_ace78d33408180273c794117936ab01e0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a443c6be9d46440deb1e73b957e28d56e}\label{classa_1_1survival_1_1game_1_1_pannello_a443c6be9d46440deb1e73b957e28d56e}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!via\+Musica@{via\+Musica}}
+\index{via\+Musica@{via\+Musica}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{via\+Musica()}{viaMusica()}}
+{\footnotesize\ttfamily void via\+Musica (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+via musica 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 262 of file Pannello.\+java.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classa_1_1survival_1_1game_1_1_pannello_a443c6be9d46440deb1e73b957e28d56e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classa_1_1survival_1_1game_1_1_pannello_a443c6be9d46440deb1e73b957e28d56e_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a3373f5f9365b8e16cdf3a7bb6d6c0bc9}\label{classa_1_1survival_1_1game_1_1_pannello_a3373f5f9365b8e16cdf3a7bb6d6c0bc9}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!Altezza\+S\+MX@{Altezza\+S\+MX}}
+\index{Altezza\+S\+MX@{Altezza\+S\+MX}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{Altezza\+S\+MX}{AltezzaSMX}}
+{\footnotesize\ttfamily final int Altezza\+S\+MX = 24}
+
+altezza schermo x 
+
+Definition at line 42 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_ac5f4442e9873fde75688c00c817c49f6}\label{classa_1_1survival_1_1game_1_1_pannello_ac5f4442e9873fde75688c00c817c49f6}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!Altezza\+S\+MY@{Altezza\+S\+MY}}
+\index{Altezza\+S\+MY@{Altezza\+S\+MY}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{Altezza\+S\+MY}{AltezzaSMY}}
+{\footnotesize\ttfamily final int Altezza\+S\+MY = 15}
+
+larghezza schermo y 
+
+Definition at line 46 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a99f79150ef5f334200f8f4e42301d9c5}\label{classa_1_1survival_1_1game_1_1_pannello_a99f79150ef5f334200f8f4e42301d9c5}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!azioni@{azioni}}
+\index{azioni@{azioni}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{azioni}{azioni}}
+{\footnotesize\ttfamily \hyperlink{classa_1_1survival_1_1game_1_1_azioni}{Azioni} azioni = new \hyperlink{classa_1_1survival_1_1game_1_1_azioni}{Azioni}(this)}
+
+
+
+Definition at line 77 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a4bccfc668ecd412a507c9c227ac1db42}\label{classa_1_1survival_1_1game_1_1_pannello_a4bccfc668ecd412a507c9c227ac1db42}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!collis@{collis}}
+\index{collis@{collis}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{collis}{collis}}
+{\footnotesize\ttfamily \hyperlink{classa_1_1survival_1_1game_1_1_collisioni}{Collisioni} collis = new \hyperlink{classa_1_1survival_1_1game_1_1_collisioni}{Collisioni}(this)}
+
+collisioni 
+
+Definition at line 98 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_af1028ebda0895c215e64643e94360eee}\label{classa_1_1survival_1_1game_1_1_pannello_af1028ebda0895c215e64643e94360eee}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!dati@{dati}}
+\index{dati@{dati}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{dati}{dati}}
+{\footnotesize\ttfamily final int dati = 4}
+
+
+
+Definition at line 95 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a378b11e479e2f3101abe4b48f024ae50}\label{classa_1_1survival_1_1game_1_1_pannello_a378b11e479e2f3101abe4b48f024ae50}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!dialoghi@{dialoghi}}
+\index{dialoghi@{dialoghi}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{dialoghi}{dialoghi}}
+{\footnotesize\ttfamily final int dialoghi = 2}
+
+
+
+Definition at line 93 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a254f39b8c0d713267b41082239e95bed}\label{classa_1_1survival_1_1game_1_1_pannello_a254f39b8c0d713267b41082239e95bed}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!Final\+AP@{Final\+AP}}
+\index{Final\+AP@{Final\+AP}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{Final\+AP}{FinalAP}}
+{\footnotesize\ttfamily final int Final\+AP = altezzaP $\ast$ scala}
+
+altezza final del personaggio 
+
+Definition at line 40 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_aa40a02fd0e358e545d2d3669b38dcc90}\label{classa_1_1survival_1_1game_1_1_pannello_aa40a02fd0e358e545d2d3669b38dcc90}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!FinestraA@{FinestraA}}
+\index{FinestraA@{FinestraA}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{FinestraA}{FinestraA}}
+{\footnotesize\ttfamily final int FinestraA = \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a254f39b8c0d713267b41082239e95bed}{Final\+AP} $\ast$ \hyperlink{classa_1_1survival_1_1game_1_1_pannello_ac5f4442e9873fde75688c00c817c49f6}{Altezza\+S\+MY}}
+
+sltezza schermo 
+
+Definition at line 52 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a319dcf1279476cf946d73808e782d39c}\label{classa_1_1survival_1_1game_1_1_pannello_a319dcf1279476cf946d73808e782d39c}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!FinestraL@{FinestraL}}
+\index{FinestraL@{FinestraL}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{FinestraL}{FinestraL}}
+{\footnotesize\ttfamily final int FinestraL = \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a254f39b8c0d713267b41082239e95bed}{Final\+AP} $\ast$ \hyperlink{classa_1_1survival_1_1game_1_1_pannello_a3373f5f9365b8e16cdf3a7bb6d6c0bc9}{Altezza\+S\+MX}}
+
+largezza schermo 
+
+Definition at line 48 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a9c21caf52c4f3bfeb8b074c16f5775a4}\label{classa_1_1survival_1_1game_1_1_pannello_a9c21caf52c4f3bfeb8b074c16f5775a4}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!gameover@{gameover}}
+\index{gameover@{gameover}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{gameover}{gameover}}
+{\footnotesize\ttfamily final int gameover = 3}
+
+
+
+Definition at line 94 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_aadff08c4da8149167797dcb1d4c002b2}\label{classa_1_1survival_1_1game_1_1_pannello_aadff08c4da8149167797dcb1d4c002b2}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!gest\+Ent@{gest\+Ent}}
+\index{gest\+Ent@{gest\+Ent}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{gest\+Ent}{gestEnt}}
+{\footnotesize\ttfamily Array\+List$<$\hyperlink{class_entita_1_1_entita}{Entita}$>$ gest\+Ent = new Array\+List$<$$>$()}
+
+
+
+Definition at line 83 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a6230af9e0e0b3961faec989890df6e0b}\label{classa_1_1survival_1_1game_1_1_pannello_a6230af9e0e0b3961faec989890df6e0b}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!gest\+Mob@{gest\+Mob}}
+\index{gest\+Mob@{gest\+Mob}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{gest\+Mob}{gestMob}}
+{\footnotesize\ttfamily Array\+List$<$\hyperlink{class_entita_1_1_entita}{Entita}$>$ gest\+Mob = new Array\+List$<$$>$()}
+
+
+
+Definition at line 85 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_ac61970e82173552b43a93881ba83a5ba}\label{classa_1_1survival_1_1game_1_1_pannello_ac61970e82173552b43a93881ba83a5ba}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!gest\+N\+PC@{gest\+N\+PC}}
+\index{gest\+N\+PC@{gest\+N\+PC}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{gest\+N\+PC}{gestNPC}}
+{\footnotesize\ttfamily Array\+List$<$\hyperlink{class_entita_1_1_entita}{Entita}$>$ gest\+N\+PC = new Array\+List$<$$>$()}
+
+
+
+Definition at line 84 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a3b9d86a976e15cc8573437bb1072fb4f}\label{classa_1_1survival_1_1game_1_1_pannello_a3b9d86a976e15cc8573437bb1072fb4f}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!gest\+Ogg@{gest\+Ogg}}
+\index{gest\+Ogg@{gest\+Ogg}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{gest\+Ogg}{gestOgg}}
+{\footnotesize\ttfamily Array\+List$<$\hyperlink{class_entita_1_1_entita}{Entita}$>$ gest\+Ogg = new Array\+List$<$$>$()}
+
+
+
+Definition at line 86 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a4a341629506aeb33ef77492890162cce}\label{classa_1_1survival_1_1game_1_1_pannello_a4a341629506aeb33ef77492890162cce}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!gioco@{gioco}}
+\index{gioco@{gioco}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{gioco}{gioco}}
+{\footnotesize\ttfamily final int gioco = 1}
+
+
+
+Definition at line 92 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a1c03bce570322e5c42099db2b257aec0}\label{classa_1_1survival_1_1game_1_1_pannello_a1c03bce570322e5c42099db2b257aec0}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!menu@{menu}}
+\index{menu@{menu}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{menu}{menu}}
+{\footnotesize\ttfamily final int menu = 0}
+
+
+
+Definition at line 91 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_aa4c65a419ff3f1f90a582300f0473acd}\label{classa_1_1survival_1_1game_1_1_pannello_aa4c65a419ff3f1f90a582300f0473acd}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!messaggi@{messaggi}}
+\index{messaggi@{messaggi}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{messaggi}{messaggi}}
+{\footnotesize\ttfamily \hyperlink{classa_1_1survival_1_1game_1_1_interfaccia}{Interfaccia} messaggi = new \hyperlink{classa_1_1survival_1_1game_1_1_interfaccia}{Interfaccia}(this)}
+
+messaggi 
+
+Definition at line 76 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a74824477a3f77bce08a4ec9db0b0600c}\label{classa_1_1survival_1_1game_1_1_pannello_a74824477a3f77bce08a4ec9db0b0600c}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!ora@{ora}}
+\index{ora@{ora}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{ora}{ora}}
+{\footnotesize\ttfamily \hyperlink{classa_1_1survival_1_1game_1_1_orario}{Orario} ora}
+
+orario 
+
+Definition at line 102 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_ae6f093cf66923883b189846396dc0088}\label{classa_1_1survival_1_1game_1_1_pannello_ae6f093cf66923883b189846396dc0088}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!pausa@{pausa}}
+\index{pausa@{pausa}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{pausa}{pausa}}
+{\footnotesize\ttfamily boolean pausa = false}
+
+stato del gioco 
+
+Definition at line 89 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a9d7f848831c53565ece98aa720fef0be}\label{classa_1_1survival_1_1game_1_1_pannello_a9d7f848831c53565ece98aa720fef0be}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!player@{player}}
+\index{player@{player}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{player}{player}}
+{\footnotesize\ttfamily \hyperlink{class_entita_1_1_giocatore}{Giocatore} player = new \hyperlink{class_entita_1_1_giocatore}{Giocatore}(this, \hyperlink{classa_1_1survival_1_1game_1_1_pannello_aa81b2ff7f225716affd276a1fff16da7}{tastiera})}
+
+entità e oggetti 
+
+Definition at line 82 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_aa932d862196f83ce306903d6feb35b9b}\label{classa_1_1survival_1_1game_1_1_pannello_aa932d862196f83ce306903d6feb35b9b}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!sett@{sett}}
+\index{sett@{sett}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{sett}{sett}}
+{\footnotesize\ttfamily \hyperlink{classa_1_1survival_1_1game_1_1_tuttecose}{Tuttecose} sett = new \hyperlink{classa_1_1survival_1_1game_1_1_tuttecose}{Tuttecose}(this)}
+
+
+
+Definition at line 99 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a89f234133d3efe315836311cbf21c64b}\label{classa_1_1survival_1_1game_1_1_pannello_a89f234133d3efe315836311cbf21c64b}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!state@{state}}
+\index{state@{state}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily int state}
+
+
+
+Definition at line 90 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_aa81b2ff7f225716affd276a1fff16da7}\label{classa_1_1survival_1_1game_1_1_pannello_aa81b2ff7f225716affd276a1fff16da7}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!tastiera@{tastiera}}
+\index{tastiera@{tastiera}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{tastiera}{tastiera}}
+{\footnotesize\ttfamily \hyperlink{classa_1_1survival_1_1game_1_1_tastiera}{Tastiera} tastiera = new \hyperlink{classa_1_1survival_1_1game_1_1_tastiera}{Tastiera}(this)}
+
+
+
+Definition at line 68 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_ae2957af001a1ecbc4831d6eddcecb539}\label{classa_1_1survival_1_1game_1_1_pannello_ae2957af001a1ecbc4831d6eddcecb539}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!Word\+Col@{Word\+Col}}
+\index{Word\+Col@{Word\+Col}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{Word\+Col}{WordCol}}
+{\footnotesize\ttfamily final int Word\+Col = 150}
+
+impostazioni mappa 
+
+Definition at line 55 of file Pannello.\+java.
+
+\mbox{\Hypertarget{classa_1_1survival_1_1game_1_1_pannello_a1b6b63331c98b61b838b1834813d57cb}\label{classa_1_1survival_1_1game_1_1_pannello_a1b6b63331c98b61b838b1834813d57cb}} 
+\index{a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}!Word\+Rig@{Word\+Rig}}
+\index{Word\+Rig@{Word\+Rig}!a\+::survival\+::game\+::\+Pannello@{a\+::survival\+::game\+::\+Pannello}}
+\subsubsection{\texorpdfstring{Word\+Rig}{WordRig}}
+{\footnotesize\ttfamily final int Word\+Rig = 150}
+
+
+
+Definition at line 56 of file Pannello.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/a/survival/game/\hyperlink{_pannello_8java}{Pannello.\+java}\end{DoxyCompactItemize}

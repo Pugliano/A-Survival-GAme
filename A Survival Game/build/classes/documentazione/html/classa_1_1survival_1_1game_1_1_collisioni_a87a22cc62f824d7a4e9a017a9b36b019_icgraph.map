@@ -1,0 +1,9 @@
+<map id="ControllaU" name="ControllaU">
+<area shape="rect" id="node2" href="$class_entita_1_1_entita.html#a1fe2f184b3cc7345c6a0f08d183a1d0b" title="metodo per gestire collisioni con i vari npc " alt="" coords="163,31,293,57"/>
+<area shape="rect" id="node5" href="$class_entita_1_1_giocatore.html#a1fe2f184b3cc7345c6a0f08d183a1d0b" title="Metodo per far muovere il player e per caricare in base la direzione l&#39;immagine giusta. " alt="" coords="368,119,521,145"/>
+<area shape="rect" id="node8" href="$class_entita_1_1_giocatore.html#af4bcd86c7ccc1775a5fece50849563fe" title="Metodo per caricare le immagini quando attacco. " alt="" coords="136,132,320,159"/>
+<area shape="rect" id="node3" href="$class_entita_1_1_mob.html#a13a43e6d814de94978c515cb084873b1" title="Metod run per tutti i mob. " alt="" coords="391,5,498,32"/>
+<area shape="rect" id="node4" href="$class_entita_1_1_n_p_c.html#a13a43e6d814de94978c515cb084873b1" title="Entita.NPC.run" alt="" coords="390,56,499,83"/>
+<area shape="rect" id="node6" href="$classa_1_1survival_1_1game_1_1_pannello.html#a1fe2f184b3cc7345c6a0f08d183a1d0b" title="a.survival.game.Pannello.muovi" alt="" coords="569,119,771,145"/>
+<area shape="rect" id="node7" href="$classa_1_1survival_1_1game_1_1_pannello.html#a13a43e6d814de94978c515cb084873b1" title="visualizzo fps " alt="" coords="819,119,1005,145"/>
+</map>

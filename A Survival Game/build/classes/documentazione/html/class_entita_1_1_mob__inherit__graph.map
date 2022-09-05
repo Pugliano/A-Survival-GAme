@@ -1,0 +1,5 @@
+<map id="Mob" name="Mob">
+<area shape="rect" id="node4" href="$class_entita_1_1_ape.html" title="Classe con extends Mob. " alt="" coords="5,865,100,957"/>
+<area shape="rect" id="node5" href="$class_entita_1_1_slime.html" title="{Slime\n||+ Slime()\l+ getImage()\l}" alt="" coords="124,865,219,957"/>
+<area shape="rect" id="node2" href="$class_entita_1_1_entita.html" title="{Entita\n|+ x\l+ velocita\l+ su1\l+ direzione\l+ Contat\l+ Num\l+ SArea\l+ AreaAttacco\l+ AreaSX\l+ collisioniSI\land 11 more...\l~ p\l~ t\l~ y\l~ su2\l~ giu1\l~ giu2\l~ sinistra1\l~ sinistra2\l~ destra1\l~ destra2\land 6 more...\l|+ Entita()\l+ Entita()\l+ setMove()\l+ muovi()\l+ draw()\l+ setup()\l+ parla()\l}" alt="" coords="58,131,165,604"/>
+</map>

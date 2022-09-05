@@ -1,0 +1,19 @@
+<map id="setup" name="setup">
+<area shape="rect" id="node2" href="$class_entita_1_1_ape.html#acd4bd75c24769238f365de299bde96ac" title="setto le immagini dell&#39;ape " alt="" coords="152,5,292,32"/>
+<area shape="rect" id="node4" href="$class_entita_1_1_giocatore.html#abac365540bed82b4025e8e845b779c72" title="setto le immagini quando cammino " alt="" coords="120,56,324,83"/>
+<area shape="rect" id="node6" href="$class_entita_1_1_giocatore.html#acc1691c076ed9335796eac421dce845f" title="setto le immagini quando attacco " alt="" coords="125,107,319,149"/>
+<area shape="rect" id="node7" href="$class_entita_1_1_n_p_c___anziano.html#a3dc41fc873c15856e3f445fdb128aba0" title="setto le immagini dell&#39;npc " alt="" coords="108,173,336,200"/>
+<area shape="rect" id="node9" href="$class_entita_1_1_slime.html#acd4bd75c24769238f365de299bde96ac" title="setto le immagini dell&#39;ape " alt="" coords="147,224,297,251"/>
+<area shape="rect" id="node11" href="$classoggetti_1_1_o_g_gcartello.html#ad8ef3a2b8459eb976a19d634edb986f9" title="Costruttore parametrico + set area collisioni. " alt="" coords="115,275,329,301"/>
+<area shape="rect" id="node12" href="$classoggetti_1_1_o_g_gcassa.html#a392992c0ff0bc4643c39ed9485ef91fa" title="Costruttore parametrico. " alt="" coords="123,325,321,352"/>
+<area shape="rect" id="node13" href="$classoggetti_1_1_o_g_gcoltello.html#a813ca00c0be23b40227a4b6262c108ef" title="Costruttore parametrico. " alt="" coords="117,376,327,403"/>
+<area shape="rect" id="node14" href="$classoggetti_1_1_o_g_gcuore.html#a0107b552779c819ca78b66c4689e8b75" title="Costruttore parametrico. " alt="" coords="125,427,319,453"/>
+<area shape="rect" id="node15" href="$classoggetti_1_1_o_g_gmela.html#a3f758bed86524b65271eb844b67680be" title="Costruttore parametrico. " alt="" coords="129,477,315,504"/>
+<area shape="rect" id="node16" href="$classoggetti_1_1_o_g_gmuro.html#a938d7b2801316b27b70a11b2728f6811" title="Costruttore parametrico. " alt="" coords="129,528,315,555"/>
+<area shape="rect" id="node17" href="$classoggetti_1_1_o_g_gscudo.html#a21b65d2d8342c79e0340781948808f20" title="Costruttore parametrico. " alt="" coords="123,579,321,605"/>
+<area shape="rect" id="node18" href="$classoggetti_1_1_o_g_gspada.html#aaf8eb1525cea36aaf15c9a4045f0c0a0" title="Costruttore parametrico. " alt="" coords="123,629,321,656"/>
+<area shape="rect" id="node3" href="$class_entita_1_1_ape.html#a5c67298368c58376888777816ca421d4" title="Costruttore parametrico. " alt="" coords="417,5,527,32"/>
+<area shape="rect" id="node5" href="$class_entita_1_1_giocatore.html#ab9baa50cd99d9d2e399e9e3ad53159c6" title="Metodo per caricare immagine del giocatore nel gioco. " alt="" coords="384,111,560,137"/>
+<area shape="rect" id="node8" href="$class_entita_1_1_n_p_c___anziano.html#aef11e153cf80a3e395b957010c566d6b" title="se il tutorial è true allora spiega i tasti, se inve il tutorial è false, il fantasma parla normalmen..." alt="" coords="386,162,558,203"/>
+<area shape="rect" id="node10" href="$class_entita_1_1_slime.html#aab582adc4b82fabcf2dd0ea9012a6726" title="Entita.Slime.Slime" alt="" coords="407,228,537,255"/>
+</map>

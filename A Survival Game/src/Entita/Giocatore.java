@@ -85,7 +85,7 @@ public class Giocatore extends Entita{
         y = p.FinalAP * 137;
 
         /**velocita*/
-        velocita = 4;
+        velocita = 15;
         /**direzione fissa quando spawna*/
         direzione = "giu";
 

@@ -1,0 +1,5 @@
+<map id="loop" name="loop">
+<area shape="rect" id="node2" href="$classa_1_1survival_1_1game_1_1_pannello.html#a443c6be9d46440deb1e73b957e28d56e" title="via musica " alt="" coords="100,5,283,47"/>
+<area shape="rect" id="node3" href="$classa_1_1survival_1_1game_1_1_pannello.html#a656b18ea5779c5d29c83a5abea629534" title="a.survival.game.Pannello.set\lGioco" alt="" coords="331,5,517,47"/>
+<area shape="rect" id="node4" href="$classa_1_1survival_1_1game_1_1_a_survival_game.html#a8b260eecbaabcef8473fd87ada040682" title="Classe main dove creo una JFrame con titolo e passo tutti i metodi che servono per avviare il gioco..." alt="" coords="565,5,732,47"/>
+</map>

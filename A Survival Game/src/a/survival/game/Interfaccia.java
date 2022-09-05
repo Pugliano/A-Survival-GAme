@@ -47,10 +47,10 @@ public class Interfaccia {
         Arial_80B = new Font("Arial", Font.BOLD, 80);
 
         //set immagine cuore
-        Entita cuore = new OGGcuore(p);
-        cuore_m = cuore.image1;
-        cuore_p = cuore.image2;
-        cuore_b = cuore.image3;
+//        Entita cuore = new OGGcuore(p);
+//        cuore_m = cuore.image1;
+//        cuore_p = cuore.image2;
+//        cuore_b = cuore.image3;
     }
 
     public void PrintMess(String testo) {

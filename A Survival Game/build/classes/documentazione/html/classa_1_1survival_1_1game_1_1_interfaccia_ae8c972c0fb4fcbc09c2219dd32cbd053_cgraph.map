@@ -1,0 +1,15 @@
+<map id="draw" name="draw">
+<area shape="rect" id="node2" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#aa13653318c21b0e6b86838e6091bfc9a" title="Metodo per printare il menu. " alt="" coords="155,107,237,133"/>
+<area shape="rect" id="node6" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a24697f9d9cd1d55fc26a7b7c0fd26697" title="Metodo per printare la vita del giocatore. " alt="" coords="141,208,251,235"/>
+<area shape="rect" id="node7" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a2dc05af87e20aefac5da3cd184d09456" title="Metodo per printare l&#39;ora nel gioco. " alt="" coords="161,157,231,184"/>
+<area shape="rect" id="node8" href="$classa_1_1survival_1_1game_1_1_pannello.html#a6e565369e7a4cd8bee8616ba06ebae08" title="a.survival.game.Pannello.get\lPausa" alt="" coords="103,259,289,301"/>
+<area shape="rect" id="node9" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a5ea2e0aa29eed2ee8e977ec1495103d3" title="Metodo per printare la scritta pausa. " alt="" coords="134,5,258,32"/>
+<area shape="rect" id="node10" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a07761ecd195353aa0f33107b57c3c852" title="Metodo per printare i dialoghi tra npc e player. " alt="" coords="149,325,243,352"/>
+<area shape="rect" id="node12" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#aa9a8046a21bf4083e12263a078701107" title="Metodo per printare le statisctiche del giocatore. " alt="" coords="141,376,251,403"/>
+<area shape="rect" id="node14" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#aeb2c7e9c7d14c9eccb7e624bd9611ef8" title="drawGameOver" alt="" coords="141,56,251,83"/>
+<area shape="rect" id="node3" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a33bfff0e4091d0c94334a82514ffa7ec" title="getXTestoCentrato" alt="" coords="345,56,473,83"/>
+<area shape="rect" id="node4" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#af3e544b837451de1ad271a8d32b61385" title="getAltezzaStringa" alt="" coords="347,107,472,133"/>
+<area shape="rect" id="node5" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a5e33eb51424c4888d0cd26cf5e0311de" title="getLunghezzaStringa" alt="" coords="337,157,481,184"/>
+<area shape="rect" id="node11" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a73a0c3b24b1d27132d84f43de7262e36" title="drawDialoghiF" alt="" coords="358,325,461,352"/>
+<area shape="rect" id="node13" href="$classa_1_1survival_1_1game_1_1_interfaccia.html#a587ecc556d77a50194f3e80ca09551ce" title="getXTestoAdestra" alt="" coords="347,376,471,403"/>
+</map>

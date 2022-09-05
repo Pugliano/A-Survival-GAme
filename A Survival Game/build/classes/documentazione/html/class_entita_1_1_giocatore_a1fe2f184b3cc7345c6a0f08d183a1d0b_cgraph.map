@@ -1,0 +1,15 @@
+<map id="muovi" name="muovi">
+<area shape="rect" id="node2" href="$class_entita_1_1_giocatore.html#af4bcd86c7ccc1775a5fece50849563fe" title="Metodo per caricare le immagini quando attacco. " alt="" coords="167,66,254,93"/>
+<area shape="rect" id="node3" href="$classa_1_1survival_1_1game_1_1_collisioni.html#a87a22cc62f824d7a4e9a017a9b36b019" title="a.survival.game.Collisioni.\lControllaU" alt="" coords="376,8,547,50"/>
+<area shape="rect" id="node5" href="$classa_1_1survival_1_1game_1_1_collisioni.html#a839c38fa5d30f0458af3dcf4bf04f358" title="a.survival.game.Collisioni.\lControlla" alt="" coords="125,118,296,159"/>
+<area shape="rect" id="node8" href="$classa_1_1survival_1_1game_1_1_collisioni.html#ad38c8b3c50bbbd655ef3f9e2c80b21e0" title="a.survival.game.Collisioni.\lControllaOGG" alt="" coords="125,183,296,224"/>
+<area shape="rect" id="node9" href="$class_entita_1_1_giocatore.html#a9ba65e7d25928d62218cf14bee3c0273" title="RaccogliOGG" alt="" coords="159,249,262,276"/>
+<area shape="rect" id="node10" href="$class_entita_1_1_giocatore.html#aaf1d3a52e79be598afe385c91a9f4d0c" title="interazNPC" alt="" coords="167,300,255,326"/>
+<area shape="rect" id="node11" href="$class_entita_1_1_giocatore.html#a867fc5532a9f20042ecde7951b83c499" title="contattoNemici" alt="" coords="156,350,265,377"/>
+<area shape="rect" id="node12" href="$classa_1_1survival_1_1game_1_1_azioni.html#a39753d0160b9846cd1dd3d4556519456" title="setto un azione a 54*132 e se vado in quel blocco e premo invio allora printa il messaggio ..." alt="" coords="108,402,313,443"/>
+<area shape="rect" id="node4" href="$class_entita_1_1_giocatore.html#a0814609fcd5c78e217a57e65bb65f7b4" title="quando attacco i nemici diventano involnerabili per breve tempo " alt="" coords="411,74,512,101"/>
+<area shape="rect" id="node6" href="$classblocchi_1_1_tile_manager.html#a1855b58fdbe502789d9c14ee0deffb9e" title="blocchi.TileManager.getTile" alt="" coords="372,125,551,152"/>
+<area shape="rect" id="node7" href="$classblocchi_1_1_tile.html#a19996fc03739127aa64afbd2f49c2a7c" title="blocchi.Tile.getTileType" alt="" coords="383,176,540,202"/>
+<area shape="rect" id="node13" href="$classa_1_1survival_1_1game_1_1_azioni.html#aa8b8a425d9f7a22d14cf64d6d0263927" title="setto la x e la y dove posizionare l&#39;azione " alt="" coords="377,384,545,410"/>
+<area shape="rect" id="node14" href="$classa_1_1survival_1_1game_1_1_azioni.html#a9ca19225b144750b819e59fece5ef1a7" title="Avendo un azione chiamata cartello, questo metodo esiste per leggere le cose segnate sul oggetto cart..." alt="" coords="361,434,561,461"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="ora" name="ora">
+<area shape="rect" id="node2" href="$classa_1_1survival_1_1game_1_1_orario.html#a57c99bdca03a56a4712e83bbce52ca25" title="Costruttore Parametrico. " alt="" coords="95,5,153,32"/>
+<area shape="rect" id="node3" href="$classa_1_1survival_1_1game_1_1_orario.html#afabaf052fc488e8c99104046a342feea" title="getOra" alt="" coords="93,56,155,83"/>
+<area shape="rect" id="node4" href="$classa_1_1survival_1_1game_1_1_pannello.html#abe2c4192cc87f74e6d45d5b5fe5283c3" title="a.survival.game.Pannello.orario\lMappa" alt="" coords="203,49,403,90"/>
+<area shape="rect" id="node5" href="$classa_1_1survival_1_1game_1_1_pannello.html#a65c6d6be4b2a0069d1920cb7f466643b" title="metto a schermo intero " alt="" coords="451,49,645,90"/>
+<area shape="rect" id="node6" href="$classa_1_1survival_1_1game_1_1_pannello.html#a13a43e6d814de94978c515cb084873b1" title="visualizzo fps " alt="" coords="693,56,880,83"/>
+</map>

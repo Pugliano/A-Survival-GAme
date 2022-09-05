@@ -1,0 +1,5 @@
+<map id="stop" name="stop">
+<area shape="rect" id="node2" href="$classa_1_1survival_1_1game_1_1_pannello.html#a2e8ba1ecd18a0f6434c051caa55bb9d3" title="a.survival.game.Pannello.stop\lMusica" alt="" coords="100,5,293,47"/>
+<area shape="rect" id="node3" href="$classa_1_1survival_1_1game_1_1_orario.html#a397c02a7ddd736008cf4def497937bf2" title="Aggiorno le ore nel gioco. " alt="" coords="341,5,544,47"/>
+<area shape="rect" id="node4" href="$classa_1_1survival_1_1game_1_1_orario.html#a13a43e6d814de94978c515cb084873b1" title="a.survival.game.Orario.run" alt="" coords="592,13,763,39"/>
+</map>

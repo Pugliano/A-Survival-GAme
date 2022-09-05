@@ -1,0 +1,4 @@
+<map id="Slime" name="Slime">
+<area shape="rect" id="node2" href="$class_entita_1_1_slime.html#acd4bd75c24769238f365de299bde96ac" title="setto le immagini dell&#39;ape " alt="" coords="108,5,183,32"/>
+<area shape="rect" id="node3" href="$class_entita_1_1_entita.html#a2f9ef9abd43cd7e34cd446aef3f499ab" title="Metodo per settare la grandezza dei vari tile. " alt="" coords="231,5,361,32"/>
+</map>
