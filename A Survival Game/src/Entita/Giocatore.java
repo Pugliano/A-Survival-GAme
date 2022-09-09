@@ -8,6 +8,7 @@ package Entita;
 
 import a.survival.game.Pannello;
 import a.survival.game.Tastiera;
+import client.player2;
 import java.awt.AlphaComposite;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
@@ -34,6 +35,7 @@ public class Giocatore extends Entita{
     public int soldi;
     public Entita Arma;
     public Entita Scudo;
+    player2 p2;
     
     /**statistiche armi*/
     public int attaccoSpada;
@@ -73,6 +75,15 @@ public class Giocatore extends Entita{
         setBasi();
         getImmagineG();
         getImmagineAttaccoG();
+        
+        if(p2.pl2=true) {
+            //giocatore 1 
+            
+            
+            //giocatore 2
+            
+            
+        }
     }
 
     /**\brief

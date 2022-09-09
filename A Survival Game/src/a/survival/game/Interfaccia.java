@@ -210,6 +210,16 @@ public class Interfaccia {
         if (comandi == 1) {
             g2.drawString(">", x - p.FinalAP, y);
         }
+        
+        testo = "Online";
+        x = getXTestoCentrato(testo);
+        y += p.FinalAP;
+        //g2.drawRect(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
+        rettangoloEsci = new Rectangle(x, y - getAltezzaStringa(testo), getLunghezzaStringa(testo), getAltezzaStringa(testo));
+        g2.drawString(testo, x, y);
+        if (comandi == 2) {
+            g2.drawString(">", x - p.FinalAP, y);
+        }
 
     }
 

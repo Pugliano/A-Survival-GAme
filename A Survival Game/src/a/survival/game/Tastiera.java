@@ -89,6 +89,10 @@ public class Tastiera implements KeyListener {
                     System.out.println("esci");
                     System.exit(0);
                     break;
+                case 2:
+                    System.out.println("online");
+                    
+                    break;
                 default:
                     break;
             }
